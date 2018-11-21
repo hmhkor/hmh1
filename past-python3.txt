@@ -1,0 +1,6392 @@
+<빠르게 활용하는 파이썬 3.2 프로그래밍> 소스코드
+
+ master
+@wikibook
+wikibook committed on 25 Oct 2013
+0 parents commit 47274efc60d195e2ee01b493caa7324d26128993
+Showing 634 changed files with 48,527 additions and 0 deletions.
+ 
+----------------------------------
+/4-1-1.py
+@@ -0,0 +1,14 @@
+# -*- coding: cp949 -*-
+score = int(input(('Input Score: ')))       # 사용자로부터 정수값을 입력 받음
+if 90 <= score <= 100:
+    grade = "A"
+elif 80 <= score < 90:
+    grade = "B"
+elif 70 <= score < 80:
+    grade = "C"
+elif 60 <= score < 70:
+    grade = "D"
+else:
+    grade = "F"
+
+print ("Grade is " + grade)
+ 
+----------------------------------
+/4-3-1.py
+@@ -0,0 +1,6 @@
++# -*- coding: cp949 -*-
++a = 0
++if a & 10/a:
++    print ("a°¡ 0AO´I´U.")
++else:
++    print ("¿¡·?¾øAI Ae°u!")
+ 
+6  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ4ㅈㅏㅇ/4-3-2.py
+@@ -0,0 +1,6 @@
++# -*- coding: cp949 -*-
++a = 0
++if a and 10/a:
++    print ("a°¡ 0AO´I´U.")
++else:
++    print ("¿¡·?¾øAI Ae°u!")
+ 
+----------------------------------
+/4-5-1.py
+@@ -0,0 +1,6 @@
++# -*- coding: cp949 -*-
++for n in [1, 2]:
++    print("-- {0} ´U --".format(n))
++    for i in [1, 2, 3, 4, 5, 6, 7, 8, 9]:
++        print("{0} * {1} = {2}".format(n, i, n*i))
++
+ 
+ 
+ 
+---------------------------------- 
+/4-6-1.py
+@@ -0,0 1,9 @@
+# -*- coding: cp949 -*-
+L = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+for i in L:
+    if i % 2 == 0:   
+        continue
+    print("Item: {0}".format(i))
+else:
+    print("Exit without break.")      # break으로 루프가 종료되지 않은 경우 출력됩니다.
+print("Always this is printed")       # 루프 외부 문장
+ 
+---------------------------------- 
+/4-6-2.py
+@@ -0,0 +1,9 @@
++# -*- coding: cp949 -*-
++L = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
++for i in L:
++    if i > 5:                       # i가 5보다 큰 경우, 순회 중인 루프가 break으로 종료됩니다.
++        break
++    print("Item: {0}".format(i))
++else:
++    print("Exit without break.")    # break로 루프가 종료되기 때문에, 출력되지 않습니다.
++print("Always this is printed")
+
+
+---------------------------------- 
+/4-7-1.py
+@@ -0,0 +1,17 @@
++# -*- coding: cp949 -*-
++import time
++l = range(1000)
++
++t = time.mktime(time.localtime())      # for문으로 각 인자를 출력하는 경우
++for i in l:
++    print (i,)
++t1 = time.mktime(time.localtime()) - t
++
++t = time.mktime(time.localtime())      # join() 메소드를 이용하여 출력하는 경우
++print (", ".join(str(i) for i in l))
++t2 = time.mktime(time.localtime()) - t
++
++print ("for 문으로 각 인자를 출력")          # 측정한 시간 출력 
++print ("Take {0} seconds".format(t1))
++print ("join() 메소드로 출력")
++print ("Take {0} seconds".format(t2))
+
+
+
+---------------------------------- 
+13  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ5ㅈㅏㅇ/5-3-1.py
+@@ -0,0 +1,13 @@
++# -*- coding: cp949 -*-
++str = "NOT Class Member" # 전역 변수
++class GString:
++    str = ""             # 클래스 객체 멤버 변수
++    def Set(self, msg):
++        self.str = msg
++    def Print(self):  
++        print(str)       # self를 이용하여 Class 멤버를 접근하지 않는 경우 
++                         # 이름이 동일한 전역 변수에 접근하여 출력
++
++g = GString()
++g.Set("First Message")
++g.Print()
+ 
+13  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ5ㅈㅏㅇ/5-5-1.py
+@@ -0,0 +1,13 @@
++# -*- coding: cp949 -*-
++class MyClass:
++    def __init__(self, value):  # 생성자 메소드
++        self.Value = value
++        print("Class is created! Value = ", value)
++        
++    def __del__(self):          # 소멸자 메소드
++        print("Class is deleted!")
++
++def foo():  
++    d = MyClass(10)      # 함수 foo 블록안에서만 인스턴스 객체 d가 존재
++
++foo() 
+ 
+11  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ5ㅈㅏㅇ/5-6-1.py
+@@ -0,0 +1,11 @@
++# -*- coding: cp949 -*-
++class CounterManager:
++    insCount = 0
++    def __init__(self):         # 인스턴스 객체가 생성시 클래스 영역의 insCount 변수 증가 
++        CounterManager.insCount += 1
++    def printInstaceCount():    # 인스턴스 객체 갯수 출력 
++        print ("Instance Count: ", CounterManager.insCount)
++
++a, b, c = CounterManager(), CounterManager(), CounterManager()
++CounterManager.printInstaceCount()        # 인스턴스 개수 출력 
++b.printInstaceCount()           # 암시적으로 인스턴스 객체를 받기 때문에 Error가 발생
+ 
+22  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ5ㅈㅏㅇ/5-6-2.py
+@@ -0,0 +1,22 @@
++# -*- coding: cp949 -*-
++class CounterManager:
++    insCount = 0
++    def __init__(self):    
++        CounterManager.insCount += 1
++    def staticPrintCount():                         # 정적 메소드 정의
++        print ("Instance Count: ", CounterManager.insCount)
++    SPrintCount = staticmethod(staticPrintCount)    # 정적 메소드로 등록 
++
++    def classPrintCount(cls):                       # 클래스 메소드 정의(암시적으로 첫 인자는 클래스를 받음) 
++        print ("Instance Count: ", cls.insCount)
++    CPrintCount = classmethod(classPrintCount)      # 클래스 메소드로 등록 
++
++a, b, c = CounterManager(), CounterManager(), CounterManager()
++
++# 정적 메소드로 인스턴스 객체 갯수를 출력 
++CounterManager.SPrintCount()       
++b.SPrintCount()
++
++# 클래스 메소드로 인스턴스 객체 갯수를 출력
++CounterManager.CPrintCount()
++b.CPrintCount()
+ 
+11  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ5ㅈㅏㅇ/5-6-3.py
+@@ -0,0 +1,11 @@
++# -*- coding: cp949 -*-
++class CounterManager:
++    __insCount = 0			# 이름 변경을 위하여 '__'를 변수명 앞에 사용 
++    def __init__(self):    
++        CounterManager.__insCount += 1
++    def staticPrintCount():
++        print ("Instance Count: %d" % CounterManager.__insCount)  # 클래스 내부에서 사용시 선언한 이름과 동일하게 사용 가능
++    SPrintCount = staticmethod(staticPrintCount)
++
++a, b, c = CounterManager(), CounterManager(), CounterManager()
++CounterManager.SPrintCount()
+ 
+20  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ5ㅈㅏㅇ/5-7-1.py
+@@ -0,0 +1,20 @@
++# -*- coding: cp949 -*-
++class GString:
++    def __init__(self, init = None):    
++        self.content = init
++    def __sub__(self, str):             # '-'연산자를 중복 
++        for i in str:
++            self.content = self.content.replace(i, '')
++        return GString(self.content)
++
++    def __abs__(self):                  # 'abs()' 내장 함수를 중복 
++        return GString(self.content.upper())
++
++    def Print(self):
++        print (self.content);
++
++g = GString("aBcdef")
++g -= "df"           # '-'연산자가 중복된 경우 '-='도 지원 
++g.Print()           # 출력 결과: aBce
++g = abs(g)
++g.Print()           # 출력 결과: ABCE 
+ 
+14  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ5ㅈㅏㅇ/5-7-2.py
+@@ -0,0 +1,14 @@
++# -*- coding: cp949 -*-
++class GString:
++    def __init__(self, init = None):   
++        self.content = init
++
++    def __sub__(self, str):             # '-'연산자 중복
++       print("- opreator is called!")
++
++    def __isub__(self, str):            # '-='연산자 중복
++        print("-= opreator is called!")
++
++g = GString("aBcdef")
++g - "a"     # 출력 결과: - opreator is called!
++g -= "a"    # 출력 결과: -= opreator is called!
+ 
+13  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ5ㅈㅏㅇ/5-7-3.py
+@@ -0,0 +1,13 @@
++# -*- coding: cp949 -*-
++class Sequencer:
++    def __init__(self, maxValue):       # 생성자 메소드
++        self.maxValue = maxValue
++    def __len__(self):                  # len()호출시
++        return self.maxValue
++    def __getitem__(self, index):      # 인덱스로 아이템의 값을 접근 
++        if( 0 < index <= self.maxValue):
++            return index*10
++        else:
++            raise IndexError("Index out of range")
++    def __contains__(self, item):       # 불린 형태로 인덱스를 넘어갔는지 반환 
++        return (0 < item <= self.maxValue)
+ 
+12  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ5ㅈㅏㅇ/5-7.py
+@@ -0,0 +1,12 @@
++# -*- coding: cp949 -*-
++class GString:
++    def __init__(self, init = None):    # 생성자 
++        self.content = init
++
++    def __sub__(self, str):             # '-' 연산자 중복 
++        for i in str:
++            self.content = self.content.replace(i, '')
++        return GString(self.content)
++
++    def Remove(self, str):              # Remove 메소드는 '-' 연산자 중복과 동일하기에 '__sub__'를 재호출
++        return self.__sub__(str)
+ 
+20  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ5ㅈㅏㅇ/5-8-1.py
+@@ -0,0 +1,20 @@
++# -*- coding: cp949 -*-
++class Person:
++	" 부모 클래스 "
++	def __init__(self, name, phoneNumber):
++		self.Name = name
++		self.PhoneNumber = phoneNumber
++	
++	def PrintInfo(self):
++		print ("Info(Name:{0}, Phone Number: {1})".format(self.Name, self.PhoneNumber))
++	
++	def PrintPersonData(self):
++		print ("Person(Name:{0}, Phone Number: {1})".format(self.Name, self.PhoneNumber))
++
++class Student(Person):
++	" 자식 클래스 "
++	def __init__(self, name, phoneNumber, subject, studentID):   # 자식 클래스의 생성자 메소드
++		self.Name = name
++		self.PhoneNumber = phoneNumber
++		self.Subject = subject
++		self.StudentID = studentID
+ 
+19  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ5ㅈㅏㅇ/5-8-2.py
+@@ -0,0 +1,19 @@
++# -*- coding: cp949 -*-
++class Person:
++    " 부모 클래스 "
++    def __init__(self, name, phoneNumber):
++        self.Name = name
++        self.PhoneNumber = phoneNumber
++
++    def PrintInfo(self):    
++        print ("Info(Name:{0}, Phone Number: {1})".format(self.Name, self.PhoneNumber))
++
++    def PrintPersonData(self):
++        print ("Person(Name:{0}, Phone Number: {1})".format(self.Name, self.PhoneNumber))
++
++class Student(Person):
++    " 자식 클래스 "
++    def __init__(self, name, phoneNumber, subject, studentID):
++        Person.__init__(self, name, phoneNumber)    # 명시적으로 Person 생성자를 호출
++        self.Subject = subject
++        self.StudentID = studentID
+ 
+22  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ5ㅈㅏㅇ/5-8-3.py
+@@ -0,0 +1,22 @@
++# -*- coding: cp949 -*-
++class Person:
++    " 부모 클래스 "
++    def __init__(self, name, phoneNumber):
++        self.Name = name
++        self.PhoneNumber = phoneNumber
++
++    def PrintInfo(self):    
++        print ("Info(Name:{0}, Phone Number: {1})".format(self.Name, self.PhoneNumber))
++
++    def PrintPersonData(self):
++        print ("Person(Name:{0}, Phone Number: {1})".format(self.Name, self.PhoneNumber))
++
++class Student(Person):
++    " 자식 클래스 "
++    def __init__(self, name, phoneNumber, subject, studentID):
++        Person.__init__(self, name, phoneNumber)    
++        self.Subject = subject
++        self.StudentID = studentID
++
++    def PrintStudentData(self):         # 새로운 메소드를 추가
++        print("Student(Subject: {0}, Student ID: {1})".format(self.Subject, self.StudentID))
+ 
+25  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ5ㅈㅏㅇ/5-8-4.py
+@@ -0,0 +1,25 @@
++# -*- coding: cp949 -*-
++class Person:
++    " 부모 클래스 "
++    def __init__(self, name, phoneNumber):
++        self.Name = name
++        self.PhoneNumber = phoneNumber
++
++    def PrintInfo(self):    
++        print ("Info(Name:{0}, Phone Number: {1})".format(self.Name, self.PhoneNumber))
++
++    def PrintPersonData(self):
++        print ("Person(Name:{0}, Phone Number: {1})".format(self.Name, self.PhoneNumber))
++
++class Student(Person):          
++    def __init__(self, name, phoneNumber, subject, studentID):
++        Person.__init__(self, name, phoneNumber)    
++        self.Subject = subject
++        self.StudentID = studentID
++
++    def PrintStudentData(self):
++        print("Student(Subject: {0}, Student ID: {1})".format(self.Subject, self.StudentID))
++        
++    def PrintInfo(self):      # Person의 PrintInfo() 메소드를 재정의
++        print("Info(Name:{0}, Phone Number:{1})".format(self.Name, self.PhoneNumber))
++        print("Info(Subject:{0}, Student ID:{1})".format(self.Subject, self.StudentID))
+ 
+25  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ5ㅈㅏㅇ/5-8-5.py
+@@ -0,0 +1,25 @@
++# -*- coding: cp949 -*-
++class Person:
++    " 부모 클래스 "
++    def __init__(self, name, phoneNumber):
++        self.Name = name
++        self.PhoneNumber = phoneNumber
++
++    def PrintInfo(self):    
++        print ("Info(Name:{0}, Phone Number: {1})".format(self.Name, self.PhoneNumber))
++
++    def PrintPersonData(self):
++        print ("Person(Name:{0}, Phone Number: {1})".format(self.Name, self.PhoneNumber))
++
++class Student(Person):          
++    def __init__(self, name, phoneNumber, subject, studentID):
++        Person.__init__(self, name, phoneNumber)    
++        self.Subject = subject
++        self.StudentID = studentID
++
++    def PrintStudentData(self):
++        print("Student(Subject: {0}, Student ID: {1})".format(self.Subject, self.StudentID))
++        
++    def PrintInfo(self):
++        Person.PrintInfo(self)      # 명시적으로 Person 클래스의 PrintPersonData()를 호출
++        print("Info(Subject:{0}, Student ID:{1})".format(self.Subject, self.StudentID))
+ 
+12  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ5ㅈㅏㅇ/5-8-6.py
+@@ -0,0 +1,12 @@
++# -*- coding: cp949 -*-
++class Tiger:
++    def Jump(self):
++        print("호랑이처럼 멀리 점프하기")
++
++class Lion:
++    def Bite(self):
++        print("사자처럼 한입에 꿀꺽하기")
++
++class Liger(Tiger, Lion):	# 상속받을 클래스들
++    def Play(self):
++        print("라이거만의 사육사와 재미있게 놀기")
+ 
+17  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ5ㅈㅏㅇ/5-8-7.py
+@@ -0,0 +1,17 @@
++# -*- coding: cp949 -*-
++class Tiger:
++    def Jump(self):
++        print("호랑이처럼 멀리 점프하기")
++    def Cry(self):
++        print("호랑이: 어흥~")
++
++class Lion:
++    def Bite(self):
++        print("사자처럼 한입에 꿀꺽하기")
++    def Cry(self):
++        print("사자: 으르렁~")
++    
++
++class Liger(Tiger, Lion):
++    def Play(self):
++        print("라이거만의 사육사와 재미있게 놀기")
+ 
+20  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ5ㅈㅏㅇ/5-8-8.py
+@@ -0,0 +1,20 @@
++# -*- coding: cp949 -*-
++class Animal:
++    def __init__(self):
++        print("Animal __init__()")
++
++class Tiger(Animal):
++    def __init__(self):
++        Animal.__init__(self)		# Animal 생성자 메소드 호출
++        print("Tiger __init__()")
++
++class Lion(Animal):
++    def __init__(self):
++        Animal.__init__(self)		# Animal 생성자 메소드 호출
++        print("Lion __init__()")
++
++class Liger(Tiger, Lion):
++    def __init__(self):
++        Tiger.__init__(self)		# Tiger 생성자 메소드 호출
++        Lion.__init__(self)			# Lion 생성자 메소드 호출
++        print("Liger __init__()")
+ 
+19  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ5ㅈㅏㅇ/5-8-9.py
+@@ -0,0 +1,19 @@
++# -*- coding: cp949 -*-
++class Animal:
++    def __init__(self):
++        print("Animal __init__()")
++
++class Tiger(Animal):
++    def __init__(self):
++        super().__init__()			# 부모 클래스의 생성자 메소드 호출
++        print("Tiger __init__()")
++
++class Lion(Animal):
++    def __init__(self):
++        super().__init__()			# 부모 클래스의 생성자 메소드 호출
++        print("Lion __init__()")
++
++class Liger(Tiger, Lion):
++    def __init__(self):
++        super().__init__()			# 부모 클래스의 생성자 메소드 호출
++        print("Liger __init__()")
+ 
+7  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ6ㅈㅏㅇ/mymod.py
+@@ -0,0 +1,7 @@
++# -*- coding: cp949 -*-
++print ("my module")
++
++if __name__ == '__main__':
++   print ("모듈을 직접 실행 시키셨네요")
++else:
++   print ("임포트 하셨네요")
+ 
+40  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ6ㅈㅏㅇ/simpleset.py
+@@ -0,0 +1,40 @@
++from functools import *
++
++def intersect (*ar):
++    "intersection"
++    return reduce(__intersectSC,ar)
++ 
++def __intersectSC(listX,listY):
++    setList =[]
++    for x in listX:
++        if x in listY:
++            setList.append(x)
++    return setList
++
++def difference(*ar):
++    "difference of sets"
++    setList =[]
++    intersectSet=intersect(*ar)
++    unionSet = union(*ar)
++    for x in unionSet:
++        if not x in intersectSet:
++            setList.append(x)
++    return setList
++
++
++def union(*ar) :
++    "union"
++    setList = []
++    for item in ar:
++        for x in item:
++            if not x in setList :
++                setList.append(x)
++    return setList
++
++
++
++ 
++
++
++
++
+ 
+5  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ6ㅈㅏㅇ/testmodule.py
+@@ -0,0 +1,5 @@
++# -*- coding: cp949 -*-
++print ("test module")
++defaultvalue = 1
++def printDefaultValue():
++    print(defaultvalue) 
+ 
+10  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ6ㅈㅏㅇ/testmodule2.py
+@@ -0,0 +1,10 @@
++# -*- coding: cp949 -*-
++
++defaultvalue = 1
++def printDefaultValue():
++    print(defaultvalue)
++if __name__ == '__main__':
++    # test code
++    print ("hello world")
++    defaultvalue = 100
++    printDefaultValue() 
+ 
+12  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ7ㅈㅏㅇ/7-3-1.py
+@@ -0,0 +1,12 @@
++# -*- coding: cp949 -*-
++def devide(a, b):
++	return a/b
++
++try:
++	c = devide(5, 'string')
++except ZeroDivisionError:
++	print('두번째 인자는 0이면 안됩니다.')
++except TypeError:
++	print('모든 인수는 숫자이어야 합니다.')
++except:
++	print('음~ 무슨 에러인지 모르겠어요!!')  
+ 
+12  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ7ㅈㅏㅇ/7-3-2.py
+@@ -0,0 +1,12 @@
++# -*- coding: cp949 -*-
++def devide(a, b):
++    return a/b
++
++try:
++    c = devide(5, 'apple')
++except Exception:
++    print('음~ 무슨 에러인지 모르겠어요!!')  # 모든 에러에 대하여 이 부분에서 처리 
++except ZeroDivisionError:
++    print('두번째 인자는 0이면 안됩니다.')
++except TypeError:
++    print('모든 인수는 숫자이여야 합니다.')
+ 
+16  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ7ㅈㅏㅇ/7-3-3.py
+@@ -0,0 +1,16 @@
++# -*- coding: cp949 -*-
++def devide(a, b):
++    return a/b
++
++try:
++    c = devide(5, 2)
++except ZeroDivisionError:
++    print('두번째 인자는 0이면 안됩니다.')
++except TypeError:
++    print('모든 인수는 숫자이여야 합니다.')
++except:
++    print('ZeroDivisionError, TypeError를 제외한 다른 에러')
++else:      # 예외가 발생하지 않는 경우
++    print('Result: {0}'.format(c))
++finally:   # 예외 발생 유무와 상관없이 수행 
++    print('항상 finally 블록은 수행됩니다.')
+ 
+9  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ7ㅈㅏㅇ/7-3-4.py
+@@ -0,0 +1,9 @@
++# -*- coding: cp949 -*-
++def devide(a, b):
++    return a/b
++try:
++    c = devide(5, "af")
++except TypeError as e:	# 전달되는 예외 인스턴스 객체를 e로 받아서 사용
++    print('에러: ', e.args[0])
++except Exception:
++	print('음~ 무슨 에러인지 모르겠어요!!')
+ 
+11  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ7ㅈㅏㅇ/7-3-5.py
+@@ -0,0 +1,11 @@
++# -*- coding: cp949 -*-
++def devide(a, b):
++    return a/b
++try:
++    c = devide(5, 0)
++except (ZeroDivisionError, OverflowError, FloatingPointError): # 명시된 에러를 모두 처리 
++    print('수치 연산 관련 에러입니다.')
++except TypeError:
++    print('모든 인수는 숫자이어야 합니다.')
++except Exception:
++    print('음~ 무슨 에러인지 모르겠어요!!')
+ 
+11  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ7ㅈㅏㅇ/7-3-6.py
+@@ -0,0 +1,11 @@
++# -*- coding: cp949 -*-
++def devide(a, b):
++    return a/b
++try:
++    c = devide(5, 0)
++except ArithmeticError:    # 상위 클래스를 처리시 하위 모든 클래스도 이 분에서 처리
++    print('수치 연산 관련 에러입니다.')
++except TypeError:
++    print('모든 인수는 숫자이어야 합니다.')
++except Exception:
++    print('음~ 무슨 에러인지 모르겠어요!!')
+ 
+12  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ7ㅈㅏㅇ/7-3-7.py
+@@ -0,0 +1,12 @@
++# -*- coding: cp949 -*-
++FilePath = './test.txt'
++
++try:
++    f = open(FilePath, 'r')
++    try:
++        data = f.read(128)
++        print(data)
++    finally:
++        f.close() 
++except IOError:
++    print("Fail to open {0} file".format(FilePath))
+ 
+8  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ7ㅈㅏㅇ/7-4-1.py
+@@ -0,0 +1,8 @@
++# -*- coding: cp949 -*-
++def RaiseErrorFunc():
++    raise NameError     # ³≫Aa ¿¹¿UAI NameError¸| ¹ß≫y
++
++try:
++    RaiseErrorFunc()
++except: 
++    print("NameError is Catched")
+ 
+12  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ7ㅈㅏㅇ/7-4-2.py
+@@ -0,0 +1,12 @@
++# -*- coding: cp949 -*-
++def RaiseErrorFunc():
++    raise NameError("NameError의 인자")
++
++def PropagateError():
++    try:
++        RaiseErrorFunc()                        
++    except:
++        print("에러전달 이전에 먼저 이 메세지가 출력됩니다.")
++        raise     # 발생한 에러를 상위로 전달 
++
++PropagateError()
+ 
+20  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ7ㅈㅏㅇ/7-5-1.py
+@@ -0,0 +1,20 @@
++# -*- coding: cp949 -*-
++class NegativeDivisionError(Exception):   # 사용자 정의 예외 정의
++    def __init__(self, value):
++        self.value = value
++
++def PositiveDevide(a, b):
++    if(b < 0):         # 제수가 0보다 작은 경우, NegativeDivisionError 발생
++        raise NegativeDivisionError(b)
++    return a/b
++
++
++try:
++    ret = PositiveDevide(10, -3)
++    print('10 / 3 = {0}'.format(ret))
++except NegativeDivisionError as e:     # 사용자 정의 예외인 경우
++    print('Error - Second argument of PositiveDevide is ', e.value)
++except ZeroDivisionError as e:         # '0'으로 나누는 경우
++    print('Error - ', e.args[0])
++except :         # 그 외 모든 예외의 경우
++    print(e.args)
+ 
+7  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ7ㅈㅏㅇ/7-6-1.py
+@@ -0,0 +1,7 @@
++# -*- coding: cp949 -*-
++def foo(x):
++	assert type(x) == int, "Input value must be integer"   # 받은 인자의 type이 정수형인지 검사
++	return x*10
++
++ret = foo("a")   # AssertionError가 발생 
++print(ret)
+ 
+180  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ9ㅈㅏㅇ/circle/circle.c
+@@ -0,0 +1,180 @@
++#include <Python.h>
++#include "structmember.h"  // PyMethodDef 구조체를 사용하기 위해서 임포트 합니다.   
++#define PI  3.14
++typedef struct {
++    PyObject_HEAD
++    PyObject *color;   // 인스턴스 멤버: circle color 
++    int radius;        // 인스턴스 멤버: circle radius    
++} circle_CircleObject;
++static PyObject *
++Circle_new(PyTypeObject *type, PyObject *args, PyObject *keywords)
++{
++    circle_CircleObject *self;
++    self = (circle_CircleObject *)type->tp_alloc(type, 0);  // type allocation  
++    if (self != NULL) {
++        self->color = PyUnicode_FromString("");
++            if (self->color == NULL)
++            {
++                Py_DECREF(self);
++                return NULL;
++            }
++ 
++        self->radius = 0;
++    }
++    return (PyObject *)self;
++}
++static void
++Circle_dealloc(circle_CircleObject* self)
++{
++    Py_XDECREF(self->color);
++    Py_TYPE(self)->tp_free((PyObject*)self);
++}
++static int
++Circle_init(circle_CircleObject *self, PyObject *args, PyObject *keywords)
++{
++    PyObject *color=NULL, *tmp=NULL;
++    static char *keywordList[] = {"color", "radius", NULL};
++    if (! PyArg_ParseTupleAndKeywords(args, keywords, "|Si", keywordList,
++                                    &color, &self->radius))
++        return -1;
++    if (color) {    // 인수 초기화
++        tmp = self->color;
++        Py_INCREF(color);
++        self->color = color;   // 이전 인스턴스에 대해서 레퍼런스 카운트를 감소 시킵니다.  
++        Py_XDECREF(tmp);
++    }
++    return 0;
++}
++// 외부객체에 공개될 인스턴스 멤버를 등록합니다.
++static PyMemberDef Circle_members[] = {
++    {"color", T_OBJECT_EX, offsetof(circle_CircleObject, color), 0,
++    "color of circle"},
++    {"radius", T_INT, offsetof(circle_CircleObject, radius), 0,
++    "radius of circle"},
++    {NULL}  /* 스트럭쳐의 끝 */
++};
++
++// 사용자 정의 함수 구현부  
++static PyObject *
++Circle_color(circle_CircleObject* self)
++{
++    static PyObject *fmt = NULL;
++    PyObject *tmp, *result;
++    if (fmt == NULL) {
++        fmt = PyUnicode_FromString("The circle color is %s");
++        if (fmt == NULL)
++            return NULL;
++    }
++    if (self->color == NULL) {
++        PyErr_SetString(PyExc_AttributeError, "color");
++        return NULL;
++    }
++ 
++    tmp = Py_BuildValue("S", self->color);
++    if (tmp == NULL)
++        return NULL;
++    result = PyUnicode_Format(fmt, tmp);
++    Py_DECREF(tmp);     // 레퍼런스 카운트를 감소 시켜 줍니다.
++  
++    return result;
++}
++static PyObject *
++Circle_area(circle_CircleObject* self)
++{
++    int area_circle = 0;
++
++    if (self->radius < 0){
++    PyErr_SetString(PyExc_AttributeError, "radius");
++        return NULL;
++    }
++    area_circle = (int)(2 * (PI*(self->radius) ));
++  
++    return Py_BuildValue("i", area_circle);
++}
++// 사용자 정의 함수.  
++static PyMethodDef Circle_methods[] = {
++    {"color", (PyCFunction)Circle_color, METH_NOARGS,
++    "Return the color of circle"
++    },
++    {"area", (PyCFunction)Circle_area, METH_NOARGS,
++    "the area of a circle."
++    },
++    {NULL}
++};
++static PyObject* Circle_add(circle_CircleObject* self, circle_CircleObject* target)
++{
++    self->radius += target->radius;
++    return Py_BuildValue("i", self->radius);
++}
++static PyObject* Circle_multiply(circle_CircleObject* self, circle_CircleObject* target)
++{
++    PyErr_SetString(PyExc_NotImplementedError, "The multiply has been not Implemented");
++    return NULL;
++}
++static PyNumberMethods circle_number = {
++     (binaryfunc) Circle_add, /*nb_add*/
++     (binaryfunc) 0, /*nb_subtract*/
++     (binaryfunc) Circle_multiply, /*nb_multiply*/
++     (binaryfunc) 0 /*nb_remainder*/
++};
++static PyTypeObject circle_CircleType = {
++    PyObject_HEAD_INIT(NULL)
++    "circle.Circle",             /* tp_name */
++    sizeof(circle_CircleObject),   /* tp_basicsize*/
++    0,                         /* tp_itemsize */
++     (destructor)Circle_dealloc, /* tp_dealloc */
++    0,                         /* tp_print */
++    0,                         /* tp_getattr */
++    0,                         /* tp_setattr */
++    0,                         /* tp_reserved */
++    0,                         /* tp_repr */
++    &circle_number,       /* tp_as_number */
++    0,                         /* tp_as_sequence */
++    0,                         /* tp_as_mapping */
++    0,                         /* tp_hash  */
++    0,                         /* tp_call */
++    0,                         /* tp_str */
++    0,                         /* tp_getattro */
++    0,                         /* tp_setattro */
++    0,                         /* tp_as_buffer */
++    Py_TPFLAGS_DEFAULT | Py_TPFLAGS_BASETYPE,   /* tp_flags */
++    "The color & radius of circle has been saved",  /* tp_doc */
++    0,       /* tp_traverse */
++    0,       /* tp_clear */
++    0,       /* tp_richcompare */
++    0,       /* tp_weaklistoffset */
++    0,       /* tp_iter */
++    0,       /* tp_iternext */
++    Circle_methods,    /* tp_methods */
++    Circle_members, /* tp_members */
++    0,       /* tp_getset */
++    0,       /* tp_base */
++    0,       /* tp_dict */
++    0,       /* tp_descr_get */
++    0,       /* tp_descr_set */
++    0,       /* tp_dictoffset */
++     (initproc)Circle_init, /* tp_init */
++    0,                         /* tp_alloc */
++    Circle_new,   /* tp_new */
++};
++static PyModuleDef circlemodule = {
++    PyModuleDef_HEAD_INIT,
++    "circle",
++    "Example module that creates an extension type.",
++    -1,
++    NULL, NULL, NULL, NULL, NULL
++};
++
++PyMODINIT_FUNC
++PyInit_circle(void)
++{
++    PyObject* m;
++    if (PyType_Ready(&circle_CircleType) < 0)
++         return NULL;
++    m = PyModule_Create(&circlemodule);
++    if (m == NULL)
++        return NULL;
++    Py_INCREF(&circle_CircleType);
++    PyModule_AddObject(m, "Circle", (PyObject *)&circle_CircleType);
++    return m;
++}
+ 
+4  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ9ㅈㅏㅇ/circle/setup.py
+@@ -0,0 +1,4 @@
++from distutils.core import setup, Extension
++setup(name="circle",
++      version="1.0",
++      ext_modules=[Extension("circle", ["circle.c"])])  
+ 
+54  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ9ㅈㅏㅇ/circle_prototype/circle_prototype.c
+@@ -0,0 +1,54 @@
++#include <python.h>
++
++typedef struct {
++   PyObject_HEAD
++} circle_CircleObject;
++
++static PyTypeObject circle_CircleType = {
++    PyObject_HEAD_INIT(NULL)
++    "circle.Circle",             /* tp_name */
++    sizeof(circle_CircleObject), /* tp_basicsize */
++    0,                         /* tp_itemsize */
++    0,                         /* tp_dealloc */
++    0,                         /* tp_print */
++    0,                         /* tp_getattr */
++    0,                         /* tp_setattr */
++    0,                         /* tp_reserved */
++    0,                         /* tp_repr */
++    0,                         /* tp_as_number */
++    0,                         /* tp_as_sequence */
++    0,                         /* tp_as_mapping */
++    0,                         /* tp_hash  */
++    0,                         /* tp_call */
++    0,                         /* tp_str */
++    0,                         /* tp_getattro */
++    0,                         /* tp_setattro */
++    0,                         /* tp_as_buffer */
++    Py_TPFLAGS_DEFAULT,        /* tp_flags */
++    "Circle objects",           /* tp_doc */
++};
++
++static PyModuleDef circlemodule = {
++    PyModuleDef_HEAD_INIT,
++    "circle",
++    "Example module that creates an extension type.",
++    -1,
++    NULL, NULL, NULL, NULL, NULL
++};
++
++PyMODINIT_FUNC
++PyInit_circle(void)
++{
++    PyObject* m;
++    circle_CircleType.tp_new = PyType_GenericNew;
++    if (PyType_Ready(&circle_CircleType) < 0)
++        return NULL;
++
++    m = PyModule_Create(&circlemodule);
++    if (m == NULL)
++        return NULL;
++
++    Py_INCREF(&circle_CircleType);
++    PyModule_AddObject(m, "Circle", (PyObject *)&circle_CircleType);
++    return m;
++} 
+ 
+4  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ9ㅈㅏㅇ/circle_prototype/setup.py
+@@ -0,0 +1,4 @@
++from distutils.core import setup, Extension
++setup(name="circle",
++      version="1.0",
++      ext_modules=[Extension("circle", ["circle_prototype.c"])]) 
+ 
+BIN  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ9ㅈㅏㅇ/spam/spam.ncb
+Binary file not shown.
+ 
+20  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ9ㅈㅏㅇ/spam/spam.sln
+@@ -0,0 +1,20 @@
++?
++Microsoft Visual Studio Solution File, Format Version 10.00
++# Visual Studio 2008
++Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "spam", "spam\spam.vcproj", "{30A33CC4-2DFE-42A7-85C2-7364B3C73B67}"
++EndProject
++Global
++	GlobalSection(SolutionConfigurationPlatforms) = preSolution
++		Debug|Win32 = Debug|Win32
++		Release|Win32 = Release|Win32
++	EndGlobalSection
++	GlobalSection(ProjectConfigurationPlatforms) = postSolution
++		{30A33CC4-2DFE-42A7-85C2-7364B3C73B67}.Debug|Win32.ActiveCfg = Debug|Win32
++		{30A33CC4-2DFE-42A7-85C2-7364B3C73B67}.Debug|Win32.Build.0 = Debug|Win32
++		{30A33CC4-2DFE-42A7-85C2-7364B3C73B67}.Release|Win32.ActiveCfg = Release|Win32
++		{30A33CC4-2DFE-42A7-85C2-7364B3C73B67}.Release|Win32.Build.0 = Release|Win32
++	EndGlobalSection
++	GlobalSection(SolutionProperties) = preSolution
++		HideSolutionNode = FALSE
++	EndGlobalSection
++EndGlobal
+ 
+11  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ9ㅈㅏㅇ/spam/spam/setup.py
+@@ -0,0 +1,11 @@
++# -*- coding: cp949 -*-
++# 파이썬
++# 사용방법 : 'setup.py install' 빌드와 설치가 동시에 진행됩니다. 
++# 'setup.py --help'처럼 실행하시면 자세한 사용방법을 볼 수 있습니다.
++from distutils.core import setup, Extension
++spam_mod = Extension('spam', sources = ['spammodule.c'])
++setup(name = "spam",
++    version = "1.0",
++    description = "A sample extension module",
++    ext_modules = [spam_mod],
++)
+ 
+199  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ9ㅈㅏㅇ/spam/spam/spam.vcproj
+@@ -0,0 +1,199 @@
++<?xml version="1.0" encoding="ks_c_5601-1987"?>
++<VisualStudioProject
++	ProjectType="Visual C++"
++	Version="9.00"
++	Name="spam"
++	ProjectGUID="{30A33CC4-2DFE-42A7-85C2-7364B3C73B67}"
++	RootNamespace="spam"
++	Keyword="Win32Proj"
++	TargetFrameworkVersion="196613"
++	>
++	<Platforms>
++		<Platform
++			Name="Win32"
++		/>
++	</Platforms>
++	<ToolFiles>
++	</ToolFiles>
++	<Configurations>
++		<Configuration
++			Name="Debug|Win32"
++			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
++			IntermediateDirectory="$(ConfigurationName)"
++			ConfigurationType="2"
++			CharacterSet="1"
++			>
++			<Tool
++				Name="VCPreBuildEventTool"
++			/>
++			<Tool
++				Name="VCCustomBuildTool"
++			/>
++			<Tool
++				Name="VCXMLDataGeneratorTool"
++			/>
++			<Tool
++				Name="VCWebServiceProxyGeneratorTool"
++			/>
++			<Tool
++				Name="VCMIDLTool"
++			/>
++			<Tool
++				Name="VCCLCompilerTool"
++				Optimization="0"
++				AdditionalIncludeDirectories="C:\Python30\include"
++				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;SPAM_EXPORTS"
++				MinimalRebuild="true"
++				BasicRuntimeChecks="3"
++				RuntimeLibrary="3"
++				UsePrecompiledHeader="0"
++				WarningLevel="3"
++				DebugInformationFormat="4"
++			/>
++			<Tool
++				Name="VCManagedResourceCompilerTool"
++			/>
++			<Tool
++				Name="VCResourceCompilerTool"
++			/>
++			<Tool
++				Name="VCPreLinkEventTool"
++			/>
++			<Tool
++				Name="VCLinkerTool"
++				LinkIncremental="2"
++				AdditionalLibraryDirectories="C:\Python30\libs"
++				GenerateDebugInformation="true"
++				SubSystem="2"
++				TargetMachine="1"
++			/>
++			<Tool
++				Name="VCALinkTool"
++			/>
++			<Tool
++				Name="VCManifestTool"
++			/>
++			<Tool
++				Name="VCXDCMakeTool"
++			/>
++			<Tool
++				Name="VCBscMakeTool"
++			/>
++			<Tool
++				Name="VCFxCopTool"
++			/>
++			<Tool
++				Name="VCAppVerifierTool"
++			/>
++			<Tool
++				Name="VCPostBuildEventTool"
++			/>
++		</Configuration>
++		<Configuration
++			Name="Release|Win32"
++			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
++			IntermediateDirectory="$(ConfigurationName)"
++			ConfigurationType="2"
++			CharacterSet="1"
++			WholeProgramOptimization="1"
++			>
++			<Tool
++				Name="VCPreBuildEventTool"
++			/>
++			<Tool
++				Name="VCCustomBuildTool"
++			/>
++			<Tool
++				Name="VCXMLDataGeneratorTool"
++			/>
++			<Tool
++				Name="VCWebServiceProxyGeneratorTool"
++			/>
++			<Tool
++				Name="VCMIDLTool"
++			/>
++			<Tool
++				Name="VCCLCompilerTool"
++				Optimization="2"
++				EnableIntrinsicFunctions="true"
++				AdditionalIncludeDirectories="C:\Python30\include"
++				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;SPAM_EXPORTS"
++				RuntimeLibrary="2"
++				EnableFunctionLevelLinking="true"
++				UsePrecompiledHeader="0"
++				WarningLevel="3"
++				DebugInformationFormat="3"
++			/>
++			<Tool
++				Name="VCManagedResourceCompilerTool"
++			/>
++			<Tool
++				Name="VCResourceCompilerTool"
++			/>
++			<Tool
++				Name="VCPreLinkEventTool"
++			/>
++			<Tool
++				Name="VCLinkerTool"
++				AdditionalOptions="/export:PyInit_spam"
++				OutputFile="$(OutDir)\spam.pyd"
++				LinkIncremental="1"
++				AdditionalLibraryDirectories="C:\Python30\libs"
++				GenerateDebugInformation="true"
++				SubSystem="2"
++				OptimizeReferences="2"
++				EnableCOMDATFolding="2"
++				TargetMachine="1"
++			/>
++			<Tool
++				Name="VCALinkTool"
++			/>
++			<Tool
++				Name="VCManifestTool"
++			/>
++			<Tool
++				Name="VCXDCMakeTool"
++			/>
++			<Tool
++				Name="VCBscMakeTool"
++			/>
++			<Tool
++				Name="VCFxCopTool"
++			/>
++			<Tool
++				Name="VCAppVerifierTool"
++			/>
++			<Tool
++				Name="VCPostBuildEventTool"
++			/>
++		</Configuration>
++	</Configurations>
++	<References>
++	</References>
++	<Files>
++		<Filter
++			Name="??? ????"
++			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
++			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
++			>
++			<File
++				RelativePath=".\spammodule.c"
++				>
++			</File>
++		</Filter>
++		<Filter
++			Name="??? ????"
++			Filter="h;hpp;hxx;hm;inl;inc;xsd"
++			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
++			>
++		</Filter>
++		<Filter
++			Name="????? ????"
++			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
++			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
++			>
++		</Filter>
++	</Files>
++	<Globals>
++	</Globals>
++</VisualStudioProject>
+ 
+35  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ9ㅈㅏㅇ/spam/spam/spammodule.c
+@@ -0,0 +1,35 @@
++#include "python.h" 
++
++static PyObject * 
++
++spam_strlen(PyObject *self, PyObject *args)
++{
++    const char* str=NULL;
++    int len; 
++
++    if (!PyArg_ParseTuple(args, "s", &str)) // 매개변수 값을 분석하고 지역변수에 할당 시킵니다.
++         return NULL; 
++
++    len = strlen(str); 
++
++    return Py_BuildValue("i", len);
++}
++
++static PyMethodDef SpamMethods[] = {
++{"strlen", spam_strlen, METH_VARARGS,
++ "count a string length."},
++ {NULL, NULL, 0, NULL} // 배열의 끝을 나타냅니다.
++}; 
++
++static struct PyModuleDef spammodule = {
++    PyModuleDef_HEAD_INIT,
++    "spam",            // 모듈 이름
++    "It is test module.", // 모듈 설명을 적는 부분, 모듈의 __doc__에 저장됩니다.
++    -1,SpamMethods
++};
++
++PyMODINIT_FUNC
++PyInit_spam(void)
++{
++    return PyModule_Create(&spammodule);
++}
+ 
+11  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ9ㅈㅏㅇ/spam2/setup.py
+@@ -0,0 +1,11 @@
++# -*- coding: cp949 -*-
++# 파이썬
++# 사용방법 : 'setup.py install' 빌드와 설치가 동시에 진행됩니다. 
++# 'setup.py --help'처럼 실행하시면 자세한 사용방법을 볼 수 있습니다.
++from distutils.core import setup, Extension
++spam_mod = Extension('spam', sources = ['spammodule.c'])
++setup(name = "spam",
++    version = "1.0",
++    description = "A sample extension module",
++    ext_modules = [spam_mod],
++)
+ 
+60  1ㅂㅜ ㅁㅜㄴㅂㅓㅂ/1ㅂㅜ9ㅈㅏㅇ/spam2/spammodule.c
+@@ -0,0 +1,60 @@
++#include "python.h" 
++
++static PyObject * 
++
++spam_strlen(PyObject *self, PyObject *args)
++{
++    const char* str=NULL;
++    int len; 
++
++    if (!PyArg_ParseTuple(args, "s", &str)) // 매개변수 값을 분석하고 지역변수에 할당 시킵니다.
++         return NULL; 
++
++    len = strlen(str); 
++
++    return Py_BuildValue("i", len);
++}
++
++static PyObject *
++spam_division(PyObject *self, PyObject *args)
++{
++    int quotient=0;
++    int dividend,divisor=0; 
++           
++    if (!PyArg_ParseTuple(args, "ii", &dividend,&divisor)) //피제수와 제수 할당
++          return NULL;
++   
++    if (divisor){
++         quotient = dividend/divisor;
++    } else {  // 제수가 0일 때 예외 처리를 합니다.
++         // 예외 처리를 할 때는 반드시 NULL을 리턴 해줍니다. PyErr_SetString함수는 항상 NULL을 리턴합니다.
++         //PyExc_ZeroDivisionError는 0으로 나누려고 할 때 쓰는 예외입니다.
++         PyErr_SetString(PyExc_ZeroDivisionError, "divisor must not be zero");
++         return  NULL;
++    }
++    
++    return Py_BuildValue("i",quotient);
++}
++
++
++static PyMethodDef SpamMethods[] = {
++    {"strlen", spam_strlen, METH_VARARGS,
++    "count a string length."},
++    {"division", spam_division, METH_VARARGS,
++    "division function \n return quotient, quotient is dividend / divisor"},
++    {NULL, NULL, 0, NULL}    //배열의 끝을 나타낸다.
++};
++
++
++static struct PyModuleDef spammodule = {
++    PyModuleDef_HEAD_INIT,
++    "spam",            // 모듈 이름
++    "It is test module.", // 모듈 설명을 적는 부분, 모듈의 __doc__에 저장됩니다.
++    -1,SpamMethods
++};
++
++PyMODINIT_FUNC
++PyInit_spam(void)
++{
++    return PyModule_Create(&spammodule);
++}
+ 
+21  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ10ㅈㅏㅇ/caesar.py
+@@ -0,0 +1,21 @@
++SHIFT=1
++
++def encrypt( raw ):
++    ret = ''
++    for char in raw:
++        ret+=chr( ord(char)+SHIFT )
++    return ret
++
++def decrypt( raw ):
++    ret = ''
++    for char in raw:
++        ret+=chr( ord(char)-SHIFT )
++    return ret
++   
++if __name__=="__main__":
++    raw = input("input : ")
++    encrypted = encrypt( raw )
++    print("encrypted : " + encrypted)
++   
++    decrypted = decrypt( encrypted )
++    print("decrypted : " + decrypted) 
+ 
+10  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ11ㅈㅏㅇ/sleep.py
+@@ -0,0 +1,10 @@
++# -*- coding: cp949 -*-
++import time
++t = time.time()
++time.sleep(10)		# 10 AE°￡ sleep
++t2 = time.time()
++
++spendtime = t2 - t
++print("Before timestemp: ", t)
++print("After timestemp: ", t2)
++print("Wait {0} seconds".format(spendtime))
+ 
+25  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ13ㅈㅏㅇ/tree.py
+@@ -0,0 +1,25 @@
++import glob
++import os.path
++ndir = nfile = 0
++
++def traverse( dir, depth ):
++  global ndir, nfile
++  for obj in glob.glob( dir+'/*'):
++    if depth==0:
++      prefix = '|--'
++    else:
++      prefix = '|' + '   '*depth + '|--'
++    if os.path.isdir( obj ):
++      ndir+=1
++      print( prefix + os.path.basename(obj) )
++      traverse( obj, depth+1 )
++    elif os.path.isfile( obj ):
++      nfile+=1
++      print( prefix + os.path.basename( obj ) )
++    else:
++      print( prefix + 'unknown object :', obj )
++
++if __name__=='__main__':
++  traverse( '.', 0 )
++  print( '\n', ndir, 'directories,', nfile,'files' )
++  input() 
+
+---------------------------------------------------
+sqlite3
+---------------------------------------------------
+11  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ14ㅈㅏㅇ/14-10-1.py
+@@ -0,0 +1,11 @@
+import sqlite3
+con = sqlite3.connect(":memory:")
+cur = con.cursor()
+
+cur.execute("CREATE TABLE PhoneBook(Name text, PhoneNum text);")
+cur.execute("INSERT INTO PhoneBook VALUES('Derick', '010-1234-5678');")
+list = (('Tom', '010-543-5432'), ('DSP', '010-123-1234'))
+cur.executemany("INSERT INTO PhoneBook VALUES(?, ?);", list)
+
+for l in con.iterdump():
+    print(l)
+
+-------------------------------------------------- 
+10  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ14ㅈㅏㅇ/14-2-1.py
+@@ -0,0 +1,10 @@
++# -*- coding: cp949 -*-
++import sqlite3
++
++con = sqlite3.connect(":memory:")
++
++with open('script.txt') as f:	# script.txt¿¡¼­ SQL ±¸¹®A≫ AÐA½
++	SQLScript = f.read()
++
++cur = con.cursor()
++cur.executescript(SQLScript)
+ 
+-------------------------------------------------- 
+7  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ14ㅈㅏㅇ/14-4-1.py
+@@ -0,0 +1,7 @@
+import sqlite3
+con = sqlite3.connect("./test.db")
+cur = con.cursor()
+cur.execute("CREATE TABLE PhoneBook(Name text, PhoneNum text);")
+cur.execute("INSERT INTO PhoneBook VALUES('Derick', '010-1234-5678');")
+cur.execute("SELECT * FROM PhoneBook;")
+print(cur.fetchall())
+ 
+-------------------------------------------------- 
+5  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ14ㅈㅏㅇ/14-4-2.py
+@@ -0,0 +1,5 @@
++import sqlite3
++con = sqlite3.connect("./test.db")
++cur = con.cursor()
++cur.execute("SELECT * FROM PhoneBook;")
++print(cur.fetchall())
+
+-------------------------------------------------- 
+con.commit()
+
+6  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ14ㅈㅏㅇ/14-4-3.py
+@@ -0,0 +1,6 @@
+import sqlite3
+con = sqlite3.connect("./commit.db")
+cur = con.cursor()
+cur.execute("CREATE TABLE PhoneBook(Name text, PhoneNum text);")
+cur.execute("INSERT INTO PhoneBook VALUES('Derick', '010-1234-5678');")
+con.commit()
+ 
+5  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ14ㅈㅏㅇ/14-4-4.py
+@@ -0,0 +1,5 @@
++import sqlite3
++con = sqlite3.connect("./commit.db")
++cur = con.cursor()
++cur.execute("SELECT * FROM PhoneBook;")
++print(cur.fetchall())
+ 
+20  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ14ㅈㅏㅇ/14-6-1.py
+@@ -0,0 +1,20 @@
++# -*- coding: cp949 -*-
++import sqlite3
++con = sqlite3.connect(":memory:")
++cur = con.cursor()
++
++cur.execute("CREATE TABLE PhoneBook(Name text, Age integer);")
++list = (('Tom', 24),('Derick',30), ('Peter',53), ('Jane',29))
++cur.executemany("INSERT INTO PhoneBook VALUES(?, ?);", list)
++
++cur.execute("SELECT length(Name), upper(Name), lower(Name) FROM PhoneBook")    # 문자열 길이, 대문자, 소문자
++print("== length(), upper(), lower() ==")
++print([r for r in cur])
++
++cur.execute("SELECT max(Age), min(Age), sum(Age) FROM PhoneBook")     # 최대값, 최소값, 총합
++print("== max(), min(), sum() ==")
++print([r for r in cur])
++
++cur.execute("SELECT count(*), random(*) FROM PhoneBook")              # 레코드 갯수, 임의의 값
++print("== count(*), random(*) ==")
++print([r for r in cur])
+ 
+27  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ14ㅈㅏㅇ/14-7-1.py
+@@ -0,0 +1,27 @@
++# -*- coding: cp949 -*-
++class Average:
++    def __init__(self):
++        self.sum = 0          # sum, cnt의 초기화
++        self.cnt = 0
++
++    def step(self, value):
++        self.sum += value     # 입력된 값을 sum에 더하고, 카운트(cnt)를 증가 
++        self.cnt += 1
++
++    def finalize(self):
++        return self.sum / self.cnt    # 평균을 반환
++
++import sqlite3
++con = sqlite3.connect(":memory:")
++cur = con.cursor()
++
++cur.execute("CREATE TABLE User(Name text, Age int);")
++list = (('Tom', '16'),
++ ('DSP', '33'),
++('Derick', '25'))
++cur.executemany("INSERT INTO User VALUES(?, ?);", list)   
++
++con.create_aggregate("avg", 1, Average)        # Average 클래스를 사용자 정의 집계함수로 등록
++
++cur.execute("SELECT avg(Age) FROM User")       # 질의시 생성한 사용자 정의 집계 함수를 사용
++print(cur.fetchone()[0])                       # 출력 결과: 24.6666666667 
+ 
+34  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ14ㅈㅏㅇ/14-9-1.py
+@@ -0,0 +1,34 @@
++# -*- coding: cp949 -*-
++class Point(object):   
++    def __init__(self, x, y):
++        self.x, self.y = x, y
++
++    def __repr__(self):             # Point 객체의 내용 출력     
++        return "Point(%f, %f)" % (self.x, self.y)
++
++import sqlite3
++def PointAdapter(point):                # 클래스 객체에서 SQLite3 입력 가능한 자료형으로 변환      
++    return "%f:%f" % (point.x, point.y)
++
++def PointConverter(s):                  # SQLite3에서 조회한 결과를 클래스 객체로 변환 
++    x, y = list(map(float, s.decode().split(":")))
++    return Point(x, y)
++
++sqlite3.register_adapter(Point, PointAdapter)          # 클래스 이름과 변환 함수 등록
++sqlite3.register_converter("point", PointConverter)    # SQL 구문에서 사용할 자료형 이름과 변환함수 등록
++
++p = Point(4, -3.2)           # 입력할 데이터(파이썬 클래스 객체)
++p2 = Point(-1.4, 6.2)
++
++# 암묵적으로 선언된 자료형으로 조회하도록 설정  
++con = sqlite3.connect(":memory:", detect_types=sqlite3.PARSE_DECLTYPES)
++cur = con.cursor()
++cur.execute("create table test(p point)")             # point 자료형을 이용하여 테이블 생성
++
++cur.execute("insert into test values (?)", (p, ))     # point 레코드 입력
++cur.execute("insert into test(p) values (?)", (p2,))
++
++cur.execute("select p from test")    # 테이블 조회 
++print([r[0] for r in cur])           
++cur.close()
++con.close()
+ 
+BIN  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ14ㅈㅏㅇ/commit.db
+Binary file not shown.
+
+---------------------------------- 
+/2ㅂㅜ14ㅈㅏㅇ/pysqlite_command.py
+@@ -0,0 +1,74 @@
+# -*- coding: cp949 -*-
+import sqlite3
+import sys
+import re
+
+# 데이터베이스 경로 설정 
+if len(sys.argv) == 2:
+	path = sys.argv[1]
+else:
+	path = ":memory:"
+
+con = sqlite3.connect(path)
+con.isolation_level = None	# 트랜잭션없이 자동 커밋이 되도록 설정
+cur = con.cursor()
+
+buffer = ""			# 쿼리 버퍼 
+
+def PrintIntro():
+	"프로그램 인트로 메세지"
+	print("pysqlite의 command 프로그램입니다.")
+	print("특수 명령어를 알고 싶으시면 '.help;'를 입력하세요.")
+	print("SQL 구문은 ';'으로 끝나야 합니다.")
+
+def PrintHelp():
+	"도움말"
+	print(".dump\t\t데이터베이스의 내용을 덤프합니다.")
+
+def SQLDump(con, file=None):
+	"데이터베이스 내용 덤프"
+	if file != None:
+		f = open(file, "w")
+	else:
+		f = sys.stdout
+
+	for l in con.iterdump():
+		f.write("{0}\n".format(l))
+
+	if f != sys.stdout:
+		f.close()
+
+PrintIntro()		# 인트로 메세지 출력
+
+while True:
+	line = input("pysqlite>> ")		# 명령어 입력
+	if buffer == "" and line == "":
+		break;
+	buffer = line
+	
+	if sqlite3.complete_statement(buffer):		# ';'으로 구문이 끝나는지 검사
+		buffer = buffer.strip()
+
+		if buffer[0]==".":		# 특수 명령어인 경우
+			cmd = re.sub('[ ;]', ' ', buffer).split()
+			if cmd[0] == '.help':
+				PrintHelp()
+			elif cmd[0] == '.dump':
+				if len(cmd) == 2:
+					SQLDump(con, cmd[1])
+				else:
+					SQLDump(con)
+		else:					# 일반 SQL 구문인 경우
+			try:
+				buffer = buffer.strip()
+				cur.execute(buffer)
+
+				if buffer.lstrip().upper().startswith("SELECT"):	# SELECT 질의인 경우
+					print(cur.fetchall())
+			except sqlite3.Error as e:
+				print("Error: ", e.args[0])
+			else:
+				print("구문이 성공적으로 수행되었습니다.") 
+		buffer=""		# 입력 버퍼 초기화
+con.close()
+print("프로그램을 종료합니다. 야옹~")
+
+
+---------------------------------- 
+3  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ14ㅈㅏㅇ/script.txt
+@@ -0,0 +1,3 @@
++CREATE TABLE PhoneBook(Name text, PhoneNum text);
++INSERT INTO PhoneBook VALUES('Derick', '010-1234-5678');
++INSERT INTO PhoneBook VALUES('Sangjung', '010-5670-2343');
+ 
+BIN  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ14ㅈㅏㅇ/test.db
+Binary file not shown.
+ 
+16  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ15ㅈㅏㅇ/ObjectManager.py
+@@ -0,0 +1,16 @@
++# -*- coding: cp949 -*-
++import weakref
++class ObjectManager:
++    def __init__(self):
++        self.weakDict = weakref.WeakValueDictionary()
++
++    def InputObject(self, obj):
++        objectID = id(obj)                # 입력받은 객체의 ID 생성
++        self.weakDict[objectID] = obj     # 약한 딕셔너리의 값으로 입력 
++        return objectID
++
++    def GetObject(self, objectID):
++        try:
++            return self.weakDict[objectID]    # 객체가 존재하는 경우 반환
++        except:
++            return None                       # 객체가 소멸된 경우 None 반환
+ 
+4  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ15ㅈㅏㅇ/test_argv.py
+@@ -0,0 +1,4 @@
++import sys
++print( "argv size :", len(sys.argv) )
++for i,arg in enumerate(sys.argv):
++	print( i, arg ) 
+ 
+34  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ15ㅈㅏㅇ/thread.py
+@@ -0,0 +1,34 @@
++from threading import Thread, Lock
++import time
++
++count = 10
++lock = Lock()
++
++class developer( Thread ):
++  def __init__(self, name):
++    Thread.__init__(self)
++    self.name = name
++    self.fixed = 0
++  def run(self):
++    global count
++    while 1:
++      lock.acquire()
++      if count>0:
++        count -= 1
++        lock.release()
++        self.fixed +=1
++        time.sleep(0.1)
++      else:
++        lock.release()
++        break
++    
++dev_list = []
++for name in ['Shin', 'Woo','Choi']:
++  dev = developer(name)
++  dev_list.append( dev )
++  dev.start()
++
++for dev in dev_list:
++  dev.join()
++  print(dev.name, 'fixed', dev.fixed)
++
+ 
+208  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ16ㅈㅏㅇ/book.py
+@@ -0,0 +1,208 @@
++# -*- coding: cp949 -*-
++from xml.dom.minidom import parse, parseString # minidom 모듈의 파싱 함수를 임포트합니다.
++from xml.etree import ElementTree
++
++##### global
++loopFlag = 1
++xmlFD = -1
++BooksDoc = None
++
++#### Menu  implementation
++def printMenu():
++    print("\nWelcome! Book Manager Program (xml version)") 
++    print("========Menu==========")
++    print("Load xml:  l")
++    print("Print dom to xml: p")
++    print("Quit program:   q")
++    print("print Book list: b")
++    print("Add new book: a")
++    print("sEarch Book Title: e")
++    print("Make html: m")
++    print("==================")
++    
++def launcherFunction(menu):
++    global BooksDoc
++    if menu ==  'l':
++        BooksDoc = LoadXMLFromFile()
++    elif menu == 'q':
++        QuitBookMgr()
++    elif menu == 'p':
++        PrintDOMtoXML()
++    elif menu == 'b':
++        PrintBookList(["title",])
++    elif menu == 'a':
++        ISBN = str(input ('insert ISBN :'))
++        title = str(input ('insert Title :'))
++        AddBook({'ISBN':ISBN, 'title':title})
++    elif menu == 'e':
++        keyword = str(input ('input keyword to search :'))
++        printBookList(SearchBookTitle(keyword))
++    elif menu == 'm':
++        keyword = str(input ('input keyword code to the html  :'))
++        html = MakeHtmlDoc(SearchBookTitle(keyword))
++        print("-----------------------")
++        print(html)
++        print("-----------------------")
++    else:
++        print ("error : unknow menu key")
++
++#### xml function implementation
++def LoadXMLFromFile():
++    fileName = str(input ("please input file name to load :"))  # 읽어올 파일경로를 입력 받습니다.
++    global xmlFD
++ 
++    try:
++        xmlFD = open(fileName)   # xml 문서를 open합니다.
++    except IOError:
++        print ("invalid file name or path")
++        return None
++    else:
++        try:
++            dom = parse(xmlFD)   # XML 문서를 파싱합니다.
++        except Exception:
++            print ("loading fail!!!")
++        else:
++            print ("XML Document loading complete")
++            return dom
++    return None
++
++def BooksFree():
++    if checkDocument():
++        BooksDoc.unlink()   # minidom 객체 해제합니다.
++     
++def QuitBookMgr():
++    global loopFlag
++    loopFlag = 0
++    BooksFree()
++
++def PrintDOMtoXML():
++    if checkDocument():
++        print(BooksDoc.toxml())
++
++def PrintBookList(tags):
++    global BooksDoc
++    if not checkDocument():  # DOM이 None인지 검사합니다.
++        return None
++        
++    booklist = BooksDoc.childNodes
++    book = booklist[0].childNodes
++    for item in book:
++        if item.nodeName == "book":  # 엘리먼트를 중 book인 것을 골라 냅니다.
++            subitems = item.childNodes  # book에 들어 있는 노드들을 가져옵니다.
++            for atom in subitems:
++                if atom.nodeName in tags:
++                    print("title=",atom.firstChild.nodeValue)  # 책 목록을 출력 합니다.
++                
++def AddBook(bookdata):
++    global BooksDoc
++    if not checkDocument() :
++        return None
++     
++    # Book 엘리먼트를 만듭니다.
++    newBook = BooksDoc.createElement('book')
++    newBook.setAttribute('ISBN',bookdata['ISBN'])
++    # Title 엘리먼트를 만듭니다.
++    titleEle = BooksDoc.createElement('title')
++    # 텍스트 에릴먼트를 만듭니다.
++    titleNode = BooksDoc.createTextNode(bookdata['title'])
++    # 텍스트 노드와 Title 엘리먼트를 연결 시킵니다.
++    try:
++        titleEle.appendChild(titleNode)
++    except Exception:
++        print ("append child fail- please,check the parent element & node!!!")
++        return None
++    else:
++        titleEle.appendChild(titleNode)
++
++    # Title를 book 엘리먼트와 연결 시킵니다.
++    try:
++        newBook.appendChild(titleEle)
++        booklist = BooksDoc.firstChild
++    except Exception:
++        print ("append child fail- please,check the parent element & node!!!")
++        return None
++    else:
++        if booklist != None:
++            booklist.appendChild(newBook)
++
++def SearchBookTitle(keyword):
++    global BooksDoc
++    retlist = []
++    if not checkDocument():
++        return None
++        
++    try:
++        tree = ElementTree.fromstring(str(BooksDoc.toxml()))
++    except Exception:
++        print ("Element Tree parsing Error : maybe the xml document is not corrected.")
++        return None
++        
++    # Book 엘리먼트 리스트를 가져 옵니다.
++    bookElements = tree.getiterator("book") 
++    for item in bookElements:
++        strTitle = item.find("title")
++        if (strTitle.text.find(keyword) >=0 ):
++            retlist.append((item.attrib["ISBN"], strTitle.text))
++    
++    return retlist    
++
++def MakeHtmlDoc(BookList):
++    from xml.dom.minidom import getDOMImplementation
++    # DOM 개체를 생성합니다.
++    impl = getDOMImplementation()
++    
++    newdoc = impl.createDocument(None, "html", None)  # HTML 최상위 엘리먼트를 생성합니다.
++    top_element = newdoc.documentElement
++    header = newdoc.createElement('header')
++    top_element.appendChild(header)
++
++    # Body 엘리먼트 생성
++    body = newdoc.createElement('body')
++
++    for bookitem in BookList:
++        # Bold 엘리먼트를 생성합니다.
++        b = newdoc.createElement('b')
++        # 텍스트 노드를 만듭니다.
++        ibsnText = newdoc.createTextNode("ISBN:" + bookitem[0])
++        b.appendChild(ibsnText)
++
++        body.appendChild(b)
++    
++        # <br> 부분을 생성합니다.
++        br = newdoc.createElement('br')
++
++        body.appendChild(br)
++
++        # title 부분을 생성합니다.
++        p = newdoc.createElement('p')
++        # 텍스트 노드를 만듭니다.
++        titleText= newdoc.createTextNode("Title:" + bookitem[1])
++        p.appendChild(titleText)
++
++        body.appendChild(p)
++        body.appendChild(br)  # <br> 부분을 부모 에릴먼트에 추가합니다.
++         
++    # Body 엘리먼트를 최상위 엘리먼트에 추가시킵니다.
++    top_element.appendChild(body)
++    
++    return newdoc.toxml()
++    
++def printBookList(blist):
++    for res in blist:
++        print (res)
++    
++def checkDocument():
++    global BooksDoc
++    if BooksDoc == None:
++        print("Error : Document is empty")
++        return False
++    return True
++  
++
++##### run #####
++while(loopFlag > 0):
++    printMenu()
++    menuKey = str(input ('select menu :'))
++    launcherFunction(menuKey)
++else:
++    print ("Thank you! Good Bye")
+ 
+18  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ16ㅈㅏㅇ/book.xml
+@@ -0,0 +1,18 @@
++<?xml version="1.0" ?>
++<booklist cnt="3">
++ <book ISBN="0399250395">
++       <title>The Very Hungry Caterpillar Pop-Up Book</title>
++       <author name="Eric Carle"/>
++ <author name="Keith Finch"/>
++ <publisher> Philomel Books</publisher>
++ <description> Celebrating the 40th anniverary of one of the most popular children's books ever created</description>
++ </book>
++ <book ISBN="0964729237">
++    <title lang="english">The Shack</title>
++ </book>
++ <book ISBN="0553281097">
++    <title>You Can Negotiate Anything</title>
++    <author name="Herb Cohen"/>
++    <category cid="12">Negotiate and narrative skill</category>
++ </book>
++</booklist> 
+ 
+49  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ17ㅈㅏㅇ/MixedType.py
+@@ -0,0 +1,49 @@
++# -*- coding: cp949 -*-
++import smtplib
++import mimetypes
++
++from email.mime.base import MIMEBase
++from email.mime.text import MIMEText
++from email.mime.image import MIMEImage
++
++#global value
++host = "smtp.test.com" #your smtp address
++htmlFileName = "logo.html"
++imageFileName = "logo.gif"
++
++senderAddr = "test@send.com"     #보내는 사람 email 주소.
++recipientAddr = "test@rec.com"   #받는 사람 email 주소.
++
++#create MMIMEBase 
++msg = MIMEBase("multipart", "mixed")
++
++msg['Subject'] = "Test email in Python 3.0"
++msg['From'] = senderAddr
++msg['To'] = recipientAddr
++
++#Make MIMEType
++htmlFD = open(htmlFileName, 'rb')
++HtmlPart = MIMEText(htmlFD.read(), _charset = 'UTF-8' )
++htmlFD.close()
++
++imageFD = open(imageFileName, 'rb')
++ImagePart = MIMEImage(imageFD.read())
++imageFD.close()
++
++# 만들었던 mime을 MIMEBase에 첨부 시킨다.
++msg.attach(ImagePart)
++msg.attach(HtmlPart)
++
++#헤더에 첨부 파일에 대한 정보를 추가 시킨다.
++msg.add_header('Content-Disposition','attachment',filename=imageFileName)
++
++msg['Subject'] = "test python email"
++msg['From'] = senderAddr
++msg['To'] = recipientAddr
++
++
++#메일을 발송한다.
++s = smtplib.SMTP(host)
++s.connect()
++s.sendmail(senderAddr , [recipientAddr], msg.as_string())
++s.close()
+ 
+18  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ17ㅈㅏㅇ/book.xml
+@@ -0,0 +1,18 @@
++<?xml version="1.0" ?>
++<booklist cnt="3">
++ <book ISBN="0399250395">
++       <title>The Very Hungry Caterpillar Pop-Up Book</title>
++       <author name="Eric Carle"/>
++ <author name="Keith Finch"/>
++ <publisher> Philomel Books</publisher>
++ <description> Celebrating the 40th anniverary of one of the most popular children's books ever created</description>
++ </book>
++ <book ISBN="0964729237">
++    <title lang="english">The Shack</title>
++ </book>
++ <book ISBN="0553281097">
++    <title>You Can Negotiate Anything</title>
++    <author name="Herb Cohen"/>
++    <category cid="12">Negotiate and narrative skill</category>
++ </book>
++</booklist> 
+ 
+76  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ17ㅈㅏㅇ/gmail.py
+@@ -0,0 +1,76 @@
++# -*- coding: cp949 -*-
++import mimetypes
++import mysmtplib
++from email.mime.base import MIMEBase
++from email.mime.text import MIMEText
++
++#global value
++host = "smtp.gmail.com" # Gmail STMP 서버 주소.
++port = "587"
++htmlFileName = "logo.html"
++
++senderAddr = "mil*****@gmail.com"     # 보내는 사람 email 주소.
++recipientAddr = "mi****@naver.com"   # 받는 사람 email 주소.
++
++msg = MIMEBase("multipart", "alternative")
++msg['Subject'] = "Test email in Python 3.0"
++msg['From'] = senderAddr
++msg['To'] = recipientAddr
++
++# MIME 문서를 생성합니다.
++htmlFD = open(htmlFileName, 'rb')
++HtmlPart = MIMEText(htmlFD.read(),'html', _charset = 'UTF-8' )
++htmlFD.close()
++
++# 만들었던 mime을 MIMEBase에 첨부 시킨다.
++msg.attach(HtmlPart)
++
++# 메일을 발송한다.
++s = mysmtplib.MySMTP(host,port)
++#s.set_debuglevel(1)        # 디버깅이 필요할 경우 주석을 푼다.
++s.ehlo()
++s.starttls()
++s.ehlo()
++s.login("milkelf.choi@gmail.com","**********")
++s.sendmail(senderAddr , [recipientAddr], msg.as_string())
++s.close()
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
+ 
+136  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ17ㅈㅏㅇ/internetbook.py
+@@ -0,0 +1,136 @@
++# -*- coding: cp949 -*-
++from xmlbook import *
++from http.client import HTTPConnection
++from http.server import BaseHTTPRequestHandler, HTTPServer
++
++##global
++conn = None
++#regKey = '73ee2bc65b*******8b927fc6cd79a97'
++
++# 네이버 OpenAPI 접속 정보 information
++server = "openapi.naver.com"
++
++# smtp 정보
++host = "smtp.gmail.com" # Gmail SMTP 서버 주소.
++port = "587"
++
++def userURIBuilder(server,**user):
++    str = "http://" + server + "/search" + "?"
++    for key in user.keys():
++        str += key + "=" + user[key] + "&"
++    return str
++
++def connectOpenAPIServer():
++    global conn, server
++    conn = HTTPConnection(server)
++        
++def getBookDataFromISBN(isbn):
++    global server, regKey, conn
++    if conn == None :
++        connectOpenAPIServer()
++    uri = userURIBuilder(server, key=regKey, query='%20', display="1", start="1", target="book_adv", d_isbn=isbn)
++    conn.request("GET", uri)
++    
++    req = conn.getresponse()
++    print (req.status)
++    if int(req.status) == 200 :
++        print("Book data downloading complete!")
++        return extractBookData(req.read())
++    else:
++        print ("OpenAPI request has been failed!! please retry")
++        return None
++
++def extractBookData(strXml):
++    from xml.etree import ElementTree
++    tree = ElementTree.fromstring(strXml)
++    print (strXml)
++    # Book 엘리먼트를 가져옵니다.
++    itemElements = tree.getiterator("item")  # return list type
++    print(itemElements)
++    for item in itemElements:
++        isbn = item.find("isbn")
++        strTitle = item.find("title")
++        print (strTitle)
++        if len(strTitle.text) > 0 :
++           return {"ISBN":isbn.text,"title":strTitle.text}
++
++def sendMain():
++    global host, port
++    html = ""
++    title = str(input ('Title :'))
++    senderAddr = str(input ('sender email address :'))
++    recipientAddr = str(input ('recipient email address :'))
++    msgtext = str(input ('write message :'))
++    passwd = str(input (' input your password of gmail account :'))
++    msgtext = str(input ('Do you want to include book data (y/n):'))
++    if msgtext == 'y' :
++        keyword = str(input ('input keyword to search:'))
++        html = MakeHtmlDoc(SearchBookTitle(keyword))
++    
++    import mysmtplib
++    # MIMEMultipart의 MIME을 생성합니다.
++    from email.mime.multipart import MIMEMultipart
++    from email.mime.text import MIMEText
++    
++    #Message container를 생성합니다.
++    msg = MIMEMultipart('alternative')
++
++    #set message
++    msg['Subject'] = title
++    msg['From'] = senderAddr
++    msg['To'] = recipientAddr
++    
++    msgPart = MIMEText(msgtext, 'plain')
++    bookPart = MIMEText(html, 'html', _charset = 'UTF-8')
++    
++    # 메세지에 생성한 MIME 문서를 첨부합니다.
++    msg.attach(msgPart)
++    msg.attach(bookPart)
++    
++    print ("connect smtp server ... ")
++    s = mysmtplib.MySMTP(host,port)
++    #s.set_debuglevel(1)
++    s.ehlo()
++    s.starttls()
++    s.ehlo()
++    s.login(senderAddr, passwd)    # 로긴을 합니다. 
++    s.sendmail(senderAddr , [recipientAddr], msg.as_string())
++    s.close()
++    
++    print ("Mail sending complete!!!")
++
++class MyHandler(BaseHTTPRequestHandler):
++    
++    def do_GET(self):
++        from urllib.parse import urlparse
++        import sys
++      
++        parts = urlparse(self.path)
++        keyword, value = parts.query.split('=',1)
++
++        if keyword == "title" :
++            html = MakeHtmlDoc(SearchBookTitle(value)) # keyword에 해당하는 책을 검색해서 HTML로 전환합니다.
++            ##헤더 부분을 작성.
++            self.send_response(200)
++            self.send_header('Content-type', 'text/html')
++            self.end_headers()
++            self.wfile.write(html.encode('utf-8')) #  본분( body ) 부분을 출력 합니다.
++        else:
++            self.send_error(400,' bad requst : please check the your url') # 잘 못된 요청라는 에러를 응답한다.
++        
++def startWebService():
++    try:
++        server = HTTPServer( ('localhost',8080), MyHandler)
++        print("started http server....")
++        server.serve_forever()
++        
++    except KeyboardInterrupt:
++        print ("shutdown web server")
++        server.socket.close()  # server 종료합니다.
++
++def checkConnection():
++    global conn
++    if conn == None:
++        print("Error : connection is fail")
++        return False
++    return True
+ 
+67  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ17ㅈㅏㅇ/launcher.py
+@@ -0,0 +1,67 @@
++# -*- coding: cp949 -*-
++loopFlag = 1
++from internetbook import *
++
++#### Menu  implementation
++def printMenu():
++    print("\nWelcome! Book Manager Program (xml version)")
++    print("========Menu==========")
++    print("Load xml:  l")
++    print("Print dom to xml: p")
++    print("Quit program:   q")
++    print("print Book list: b")
++    print("Add new book: a")
++    print("sEarch Book Title: e")
++    print("Make html: m")
++    print("----------------------------------------")
++    print("Get book data from isbn: g")
++    print("send maIl : i")
++    print("sTart Web Service: t")
++    print("========Menu==========")
++    
++def launcherFunction(menu):
++    if menu ==  'l':
++        LoadXMLFromFile()
++    elif menu == 'q':
++        QuitBookMgr()
++    elif menu == 'p':
++        PrintDOMtoXML()
++    elif menu == 'b':
++        PrintBookList(["title",])
++    elif menu == 'a':
++        ISBN = str(input ('insert ISBN :'))
++        title = str(input ('insert Title :'))
++        AddBook({'ISBN':ISBN, 'title':title})
++    elif menu == 'e':
++        keyword = str(input ('input keyword to search :'))
++        printBookList(SearchBookTitle(keyword))
++    elif menu == 'g': 
++        isbn = str(input ('input isbn to get :'))
++        #isbn = '0596513984'
++        ret = getBookDataFromISBN(isbn)
++        AddBook(ret)
++    elif menu == 'm':
++        keyword = str(input ('input keyword code to the html  :'))
++        html = MakeHtmlDoc(SearchBookTitle(keyword))
++        print("-----------------------")
++        print(html)
++        print("-----------------------")
++    elif menu == 'i':
++        sendMain()
++    elif menu == "t":
++        startWebService()
++    else:
++        print ("error : unknow menu key")
++
++def QuitBookMgr():
++    global loopFlag
++    loopFlag = 0
++    BooksFree()
++    
++##### run #####
++while(loopFlag > 0):
++    printMenu()
++    menuKey = str(input ('select menu :'))
++    launcherFunction(menuKey)
++else:
++    print ("Thank you! Good Bye")
+ 
+BIN  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ17ㅈㅏㅇ/logo.gif
+Sorry, something went wrong. Reload?
+
+8  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ17ㅈㅏㅇ/logo.html
+@@ -0,0 +1,8 @@
++<html>
++<header></header>
++<body>
++<b>welcome to the python world</b><br>
++<img src="http://www.python.org/images/python-logo.gif"/>
++<p>test mail</p>
++</body>
++</html>
+ 
+54  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ17ㅈㅏㅇ/mysmtplib.py
+@@ -0,0 +1,54 @@
++# -*- coding: cp949 -*-
++import smtplib
++from email.base64mime import body_encode as encode_base64
++
++class MySMTP(smtplib.SMTP):
++    def login(self, user, password):
++        def encode_cram_md5(challenge, user, password):
++            challenge = base64.decodestring(challenge)
++            response = user + " " + hmac.HMAC(password, challenge).hexdigest()
++            return encode_base64(response)
++
++        def encode_plain(user, password):    
++            s = "\0%s\0%s" % (user, password)    
++            return encode_base64(s.encode('ascii'), eol='')
++            
++        AUTH_PLAIN = "PLAIN"
++        AUTH_CRAM_MD5 = "CRAM-MD5"
++        AUTH_LOGIN = "LOGIN"
++
++        self.ehlo_or_helo_if_needed()
++
++        if not self.has_extn("auth"):
++            raise SMTPException("SMTP AUTH extension not supported by server.")
++
++        authlist = self.esmtp_features["auth"].split()
++        preferred_auths = [AUTH_CRAM_MD5, AUTH_PLAIN, AUTH_LOGIN]
++
++        authmethod = None
++        for method in preferred_auths:
++            if method in authlist:
++                authmethod = method
++                break
++                
++        if authmethod == AUTH_LOGIN:
++            (code, resp) = self.docmd("AUTH",
++                "%s %s" % (AUTH_LOGIN, encode_base64(user)))
++            if code != 334:
++                raise SMTPAuthenticationError(code, resp)
++            (code, resp) = self.docmd(encode_base64(password))           
++        elif authmethod == AUTH_PLAIN:
++            temp_encode_plain = str(encode_plain(user, password))
++            temp_encode_plain = temp_encode_plain.replace("\n","")
++            (code, resp) = self.docmd("AUTH",
++                AUTH_PLAIN + " " + temp_encode_plain)
++        elif authmethod == AUTH_CRAM_MD5:
++            (code, resp) = self.docmd("AUTH", AUTH_CRAM_MD5)
++            if code == 503:
++                return (code, resp)
++            (code, resp) = self.docmd(encode_cram_md5(resp, user, password))     
++        elif authmethod is None:
++            raise SMTPException("No suitable authentication method found.")
++        if code not in (235, 503):
++            raise SMTPAuthenticationError(code, resp)
++        return (code, resp) 
+ 
+22  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ17ㅈㅏㅇ/simpleEmail.py
+@@ -0,0 +1,22 @@
++# -*- coding: cp949 -*-
++import smtplib #Import smtplib for the actual sending function
++
++from email.mime.text import MIMEText
++
++smtpHost = "smtp.test.com"   #smtp 서버 주소
++
++text = "hello world"
++msg = MIMEText(text)  #텍스트가 기본인 메일을 하나 생성합니다. text는 반듯이 ASCII코드여야만 합니다. 만약 unicode가 들어 있다면 받는 쪽에서 문자가 깨져있는 메일을 받게 될 것 입니다.
++
++senderAddr = "test@send.com"     #보내는 사람 email 주소.
++recipientAddr = "test@rec.com"   #받는 사람 email 주소.
++
++msg['Subject'] = "test email"
++msg['From'] = senderAddr
++msg['To'] = recipientAddr
++
++#SMTP 서버를 이용해 메일 보냅니다.
++s = smtplib.SMTP(smtpHost)
++s.connect()
++s.sendmail(senderAddr , [recipientAddr], msg.as_string())
++s.close()
+ 
+155  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ17ㅈㅏㅇ/xmlbook.py
+@@ -0,0 +1,155 @@
++# -*- coding: cp949 -*-
++from xml.dom.minidom import parse, parseString
++from xml.etree import ElementTree
++
++##### global
++xmlFD = -1
++BooksDoc = None
++
++#### xml 관련 함수 구현
++def LoadXMLFromFile():
++    fileName = str(input ("please input file name to load :"))
++    global xmlFD, BooksDoc
++    try:
++        xmlFD = open(fileName)
++    except IOError:
++        print ("invalid file name or path")
++    else:
++        try:
++            dom = parse(xmlFD)
++        except Exception:
++            print ("loading fail!!!")
++        else:
++            print ("XML Document loading complete")
++            BooksDoc = dom
++            return dom
++    return None
++
++def BooksFree():
++    if checkDocument():
++        BooksDoc.unlink()
++        
++def PrintDOMtoXML():
++    if checkDocument():
++        print(BooksDoc.toxml())
++
++def PrintBookList(tags):
++    global BooksDoc
++    if not checkDocument():
++       return None
++        
++    booklist = BooksDoc.childNodes
++    book = booklist[0].childNodes
++    for item in book:
++        if item.nodeName == "book":
++            subitems = item.childNodes
++            for atom in subitems:
++               if atom.nodeName in tags:
++                   print("title=",atom.firstChild.nodeValue)
++                
++def AddBook(bookdata):
++     global BooksDoc
++     if not checkDocument() :
++        return None
++     
++     # book 엘리먼트 생성
++     newBook = BooksDoc.createElement('book')
++     newBook.setAttribute('ISBN',bookdata['ISBN'])
++     # Title 엘리먼트 생성
++     titleEle = BooksDoc.createElement('title')
++     # 텍스트 노드 생성
++     titleNode = BooksDoc.createTextNode(bookdata['title'])
++     # 텍스트 노드를 Title 엘리먼트와 연결
++     try:
++         titleEle.appendChild(titleNode)
++     except Exception:
++         print ("append child fail- please,check the parent element & node!!!")
++         return None
++     else:
++         titleEle.appendChild(titleNode)
++
++     # Title 엘리먼트를 Book 엘리먼트와 연결.
++     try:
++         newBook.appendChild(titleEle)
++         booklist = BooksDoc.firstChild
++     except Exception:
++         print ("append child fail- please,check the parent element & node!!!")
++         return None
++     else:
++         if booklist != None:
++             booklist.appendChild(newBook)
++
++def SearchBookTitle(keyword):
++    global BooksDoc
++    retlist = []
++    if not checkDocument():
++        return None
++        
++    try:
++        tree = ElementTree.fromstring(str(BooksDoc.toxml()))
++    except Exception:
++        print ("Element Tree parsing Error : maybe the xml document is not corrected.")
++        return None
++    
++    #get Book Element
++    bookElements = tree.getiterator("book")  # return list type
++    for item in bookElements:
++        strTitle = item.find("title")
++        if (strTitle.text.find(keyword) >=0 ):
++            retlist.append((item.attrib["ISBN"], strTitle.text))
++    
++    return retlist
++
++def MakeHtmlDoc(BookList):
++    from xml.dom.minidom import getDOMImplementation
++    #get Dom Implementation
++    impl = getDOMImplementation()
++    
++    newdoc = impl.createDocument(None, "html", None)  #DOM 객체 생성
++    top_element = newdoc.documentElement
++    header = newdoc.createElement('header')
++    top_element.appendChild(header)
++
++    # Body 엘리먼트 생성.
++    body = newdoc.createElement('body')
++
++    for bookitem in BookList:
++        #create bold element
++        b = newdoc.createElement('b')
++        #create text node
++        ibsnText = newdoc.createTextNode("ISBN:" + bookitem[0])
++        b.appendChild(ibsnText)
++
++        body.appendChild(b)
++    
++        # BR 태그 (엘리먼트) 생성.
++        br = newdoc.createElement('br')
++
++        body.appendChild(br)
++
++        #create title Element
++        p = newdoc.createElement('p')
++        #create text node
++        titleText= newdoc.createTextNode("Title:" + bookitem[1])
++        p.appendChild(titleText)
++
++        body.appendChild(p)
++        body.appendChild(br)  #line end
++         
++    #append Body
++    top_element.appendChild(body)
++    
++    return newdoc.toxml()
++
++
++def printBookList(blist):
++    for res in blist:
++        print (res)
++    
++def checkDocument():
++    global BooksDoc
++    if BooksDoc == None:
++        print("Error : Document is empty")
++        return False
++    return True
++   
+ 
+13  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ18ㅈㅏㅇ/18-1-1.py
+@@ -0,0 +1,13 @@
++import unittest
++
++def sum(a,b):
++	return a+b
++
++class Module1Test(unittest.TestCase):
++	def testSum1(self):
++		self.assertEqual( sum(1,2), 3 )
++	def testSum2(self):
++		self.assertEqual( sum(1,-1), 0 )
++		
++if __name__=="__main__":
++	unittest.main() 
+ 
+13  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ18ㅈㅏㅇ/18-1-2.py
+@@ -0,0 +1,13 @@
++import unittest
++
++class Module2Test(unittest.TestCase):
++	def setUp(self):
++		self.bag = [ True, True ]
++	def tearDown(self):
++		del self.bag
++	def test_true(self):
++		for element in self.bag:
++			self.assertTrue( element )
++		
++if __name__=="__main__":
++	unittest.main() 
+ 
+29  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ18ㅈㅏㅇ/18-1-3.py
+@@ -0,0 +1,29 @@
++import unittest
++
++def sum(a,b):
++	return a+b
++
++class Module1Test(unittest.TestCase):
++	def testSum1(self):
++		self.assertEqual( sum(1,2), 3 )
++	def testSum2(self):
++		self.assertEqual( sum(1,-1), 0 )
++		
++class Module2Test(unittest.TestCase):
++	def setUp(self):
++		self.bag = [ True, True ]
++	def tearDown(self):
++		del self.bag
++	def test_true(self):
++		for element in self.bag:
++			self.assertTrue( element )
++		
++def makeSuite( testcase, tests ):
++	return unittest.TestSuite( map(testcase, tests) )
++
++if __name__=="__main__":
++	suite1 = makeSuite( Module1Test, ['testSum1', 'testSum2'] )
++	suite2 = makeSuite( Module2Test, ['test_true'] )
++	
++	allsuites = unittest.TestSuite( [suite1, suite2] )
++	unittest.TextTestRunner( verbosity=2 ).run( allsuites ) 
+ 
+16  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ18ㅈㅏㅇ/18-1-4.py
+@@ -0,0 +1,16 @@
++import unittest
++
++def test():
++	print("\tthis function is to test old functions")
++	assert 1 is not None
++	
++def init():
++	print("\n\tinitialized")
++	
++def fin():
++	print("\tfinalized")
++		
++if __name__=="__main__":
++	testcase = unittest.FunctionTestCase( test, setUp=init, tearDown=fin )
++	suite = unittest.TestSuite( [ testcase ] )
++	unittest.TextTestRunner( verbosity=2 ).run( suite ) 
+ 
+26  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ18ㅈㅏㅇ/18-3-1.py
+@@ -0,0 +1,26 @@
++
++def div(x,y):
++	"""
++	This function is to divide x into y.
++	[examples]
++	
++	>>> div(1,2)
++	0.5
++	
++	>>> div(4,3)
++	1.3333333333333333
++	
++	>>> div(-1,4)
++	-0.25
++	
++	>>> div(5,0)
++	Traceback (most recent call last):
++	  File "<pyshell#3>", line 1, in <module>
++	    5/0
++	ZeroDivisionError: int division or modulo by zero
++	"""
++	return x/y
++
++if __name__=="__main__":
++	import doctest
++	doctest.testmod() 
+ 
+25  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ18ㅈㅏㅇ/18-3-2.py
+@@ -0,0 +1,25 @@
++
++def div(x,y):
++	"""
++	This function is to divide x into y.
++	[examples]
++	
++	>>> div(1,2)
++	0.5
++	
++	>>> div(4,3)
++	1.3333333333333333
++	
++	>>> div(-1,4)
++	-0.25
++	
++	>>> div(5,0)
++	Traceback (most recent call last):
++	  File "<pyshell#3>", line 1, in <module>
++	    5/0
++	ZeroDivisionError: int division or modulo by zero
++	"""
++	return x/y
++
++if __name__=="__main__":
++	pass 
+ 
+18  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ18ㅈㅏㅇ/18-3-3.txt
+@@ -0,0 +1,18 @@
++This function is to divide x into y.
++
++[examples]
++>>> from div import *
++>>> div(1,2)
++0.5
++
++>>> div(4,3)
++1.3333333333333333
++
++>>> div(-1,4)
++-0.25
++
++>>> div(5,0)
++Traceback (most recent call last):
++  File "<pyshell#3>", line 1, in <module>
++    5/0
++ZeroDivisionError: int division or modulo by zero
+ 
+7  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ18ㅈㅏㅇ/div.py
+@@ -0,0 +1,7 @@
++
++def div(x,y):
++	return x/y
++
++if __name__=="__main__":
++	import doctest
++	doctest.testfile('9-7.txt') 
+ 
+BIN  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ18ㅈㅏㅇ/div.pyc
+Binary file not shown.
+ 
+1  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/book/book/__init__.py
+@@ -0,0 +1 @@
++__all__ = ["book_xml", "book_internet","bookDataBase"]
+ 
+3  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/book/book/bookDataBase/__init__.py
+@@ -0,0 +1,3 @@
++__all__ = [
++    'booksql',
++    ] 
+ 
+1  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/book/book/bookDataBase/booksql.py
+@@ -0,0 +1 @@
++print ("booksql") 
+ 
+1  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/book/book/book_internet.py
+@@ -0,0 +1 @@
++print("book internet")
+ 
+1  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/book/book/book_xml.py
+@@ -0,0 +1 @@
++print("book xml")
+ 
+9  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/book/setup.py
+@@ -0,0 +1,9 @@
++
++from distutils.core import setup, Extension
++setup(name='book',
++version='1.0',
++classifiers = [ 'book','book.bookDataBase'],
++packages=['book','book.bookDataBase'],
++package_dir={'bookDataBase': 'book'},
++)
++
+ 
+3  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/ext_book/MANIFEST
+@@ -0,0 +1,3 @@
++book.c
++page.c
++setup.py
+ 
+34  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/ext_book/book.c
+@@ -0,0 +1,34 @@
++#include "Python.h"
++
++static PyObject *
++book_print(PyObject *self, PyObject *args)
++{
++    const char* str="module name is book";
++    
++    return Py_BuildValue("s", str);
++}
++
++static PyMethodDef BookMethods[] = {
++	 {"print", book_print, METH_VARARGS,
++     "print book module information."},
++     {NULL, NULL, 0, NULL}    //배열의 끝을 나타냅니다.
++};
++
++static struct PyModuleDef bookmodule = {
++   PyModuleDef_HEAD_INIT,
++   "book.page",               // 모듈 이름
++   "It is test module.", 
++   -1,BookMethods
++};
++
++PyMODINIT_FUNC
++PyInit_book(void)
++{
++    return PyModule_Create(&bookmodule);
++}
++
++PyMODINIT_FUNC
++PyInit_page(void)
++{
++    return PyModule_Create(&bookmodule);
++}
+ 
+28  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/ext_book/page.c
+@@ -0,0 +1,28 @@
++#include "Python.h"
++
++static PyObject *
++page_print(PyObject *self, PyObject *args)
++{
++    const char* str="module name is page";
++    
++    return Py_BuildValue("s", str);
++}
++
++static PyMethodDef PageMethods[] = {
++	 {"print", page_print, METH_VARARGS,
++     "print page module information."},
++     {NULL, NULL, 0, NULL}    //배열의 끝을 나타냅니다.
++};
++
++static struct PyModuleDef pagemodule = {
++   PyModuleDef_HEAD_INIT,
++   "page",               // 모듈 이름
++   "It is test module.", 
++   -1,PageMethods
++};
++
++PyMODINIT_FUNC
++PyInit_page(void)
++{
++    return PyModule_Create(&pagemodule);
++}
+ 
+5  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/ext_book/setup.cfg
+@@ -0,0 +1,5 @@
++[sdist] 
++dist_dir=sdist_pkg
++
++[bdist]
++dist_dir=bdist_pkg 
+ 
+7  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/ext_book/setup.py
+@@ -0,0 +1,7 @@
++from distutils.core import setup, Extension
++setup(name='book',
++version='1.0',
++ext_package='pkg',
++ext_modules=[ Extension('book', ['book.c']),
++Extension('book.page', ['page.c'])],
++)
+ 
+1  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/package/animal/__init__.py
+@@ -0,0 +1 @@
++__all__ = ["bird", "mammal","etc"]
+ 
+1  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/package/animal/bird/__init__.py
+@@ -0,0 +1 @@
++__all__ = ["penguin", "sparrow"]
+ 
+1  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/package/animal/bird/penguin.py
+@@ -0,0 +1 @@
++print ("penguin...") 
+ 
+1  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/package/animal/bird/sparrow.py
+@@ -0,0 +1 @@
++print ("sparrow...") 
+ 
+1  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/package/animal/etc.py
+@@ -0,0 +1 @@
++print ("etc...") 
+ 
+1  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/package/animal/mammal/__init__.py
+@@ -0,0 +1 @@
++__all__ = ["human", "monkey"]
+ 
+1  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/package/animal/mammal/human.py
+@@ -0,0 +1 @@
++print('human...') 
+ 
+1  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/package/animal/mammal/monkey.py
+@@ -0,0 +1 @@
++print('monkey...') 
+ 
+11  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/package/setup.py
+@@ -0,0 +1,11 @@
++from distutils.core import setup, Extension
++
++classifierList = [ 'animal', 'animal::etc', 'animal::bird::penguin','animal::bird::sparrow',
++'animal::mammal::human','animal::mammal::monkey']
++
++setup(name='animal',
++version='1.0',
++classifiers = classifierList,
++packages=['animal', 'animal.bird', 'animal.mammal'],
++
++) 
+ 
+2  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/py_book/MANIFEST
+@@ -0,0 +1,2 @@
++setup.py
++c:\python30\test.py
+ 
+209  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/py_book/book.py
+@@ -0,0 +1,209 @@
++# *-* coding: cp949 -*- 
++from xml.dom.minidom import parse, parseString # minidom 모듈의 파싱 함수를 임포트합니다.
++from xml.etree import ElementTree
++
++##### global
++loopFlag = 1
++xmlFD = -1
++BooksDoc = None
++
++#### Menu  implementation
++def printMenu():
++    print("\nWelcome! Book Manager Program (xml version)") 
++    print("========Menu==========")
++    print("Load xml:  l")
++    print("Print dom to xml: p")
++    print("Quit program:   q")
++    print("print Book list: b")
++    print("Add new book: a")
++    print("sEarch Book Title: e")
++    print("Make html: m")
++    print("==================")
++    
++def launcherFunction(menu):
++    global BooksDoc
++    if menu ==  'l':
++        BooksDoc = LoadXMLFromFile()
++    elif menu == 'q':
++        QuitBookMgr()
++    elif menu == 'p':
++        PrintDOMtoXML()
++    elif menu == 'b':
++        PrintBookList(["title",])
++    elif menu == 'a':
++        ISBN = str(input ('insert ISBN :'))
++        title = str(input ('insert Title :'))
++        AddBook({'ISBN':ISBN, 'title':title})
++    elif menu == 'e':
++        keyword = str(input ('input keyword to search :'))
++        printBookList(SearchBookTitle(keyword))
++    elif menu == 'm':
++        keyword = str(input ('input keyword code to the html  :'))
++        html = MakeHtmlDoc(SearchBookTitle(keyword))
++        print("-----------------------")
++        print(html)
++        print("-----------------------")
++    else:
++        print ("error : unknow menu key")
++
++#### xml function implementation
++def LoadXMLFromFile():
++    fileName = str(input ("please input file name to load :"))  # 읽어올 파일경로를 입력 받습니다.
++    global xmlFD
++ 
++    try:
++        xmlFD = open(fileName)   # xml 문서를 open합니다.
++    except IOError:
++        print ("invalid file name or path")
++        return None
++    else:
++        try:
++            dom = parse(xmlFD)   # XML 문서를 파싱합니다.
++        except Exception:
++            print ("loading fail!!!")
++        else:
++            print ("XML Document loading complete")
++            return dom
++    return None
++
++def BooksFree():
++    if checkDocument():
++        BooksDoc.unlink()   # minidom 객체 메모리를 해제합니다.
++     
++def QuitBookMgr():
++    global loopFlag
++    loopFlag = 0
++    BooksFree()
++
++def PrintDOMtoXML():
++    if checkDocument():
++        print(BooksDoc.toxml())
++
++def PrintBookList(tags):
++    global BooksDoc
++    if not checkDocument():
++       return None
++        
++    booklist = BooksDoc.childNodes
++    book = booklist[0].childNodes
++    for item in book:
++        if item.nodeName == "book":
++            subitems = item.childNodes
++            for atom in subitems:
++               if atom.nodeName in tags:
++                   print("title=",atom.firstChild.nodeValue)
++                
++def AddBook(bookdata):
++     global BooksDoc
++     if not checkDocument() :
++        return None
++     
++     #create Book element
++     newBook = BooksDoc.createElement('book')
++     newBook.setAttribute('ISBN',bookdata['ISBN'])
++     #create Title Element
++     titleEle = BooksDoc.createElement('title')
++     #create title text element
++     titleNode = BooksDoc.createTextNode(bookdata['title'])
++     # connect to title node
++     try:
++         titleEle.appendChild(titleNode)
++     except Exception:
++         print ("append child fail- please,check the parent element & node!!!")
++         return None
++     else:
++         titleEle.appendChild(titleNode)
++
++     # connect to book node
++     try:
++         newBook.appendChild(titleEle)
++         booklist = BooksDoc.firstChild
++     except Exception:
++         print ("append child fail- please,check the parent element & node!!!")
++         return None
++     else:
++         if booklist != None:
++             booklist.appendChild(newBook)
++
++def SearchBookTitle(keyword):
++    global BooksDoc
++    retlist = []
++    if not checkDocument():
++        return None
++        
++    try:
++        tree = ElementTree.fromstring(str(BooksDoc.toxml()))
++    except Exception:
++        print ("Element Tree parsing Error : maybe the xml document is not corrected.")
++        return None
++        
++    #get Book Element
++    bookElements = tree.getiterator("book")  # return list type
++    for item in bookElements:
++        strTitle = item.find("title")
++        if (strTitle.text.find(keyword) >=0 ):
++            retlist.append((item.attrib["ISBN"], strTitle.text))
++    
++    return retlist    
++
++def MakeHtmlDoc(BookList):
++    from xml.dom.minidom import getDOMImplementation
++    #get Dom Implementation
++    impl = getDOMImplementation()
++    
++    newdoc = impl.createDocument(None, "html", None)  #create DOM
++    top_element = newdoc.documentElement
++    header = newdoc.createElement('header')
++    top_element.appendChild(header)
++
++    #create body
++    body = newdoc.createElement('body')
++
++    for bookitem in BookList:
++        #create bold element
++        b = newdoc.createElement('b')
++        #create text node
++        ibsnText = newdoc.createTextNode("ISBN:" + bookitem[0])
++        b.appendChild(ibsnText)
++
++        body.appendChild(b)
++    
++        #create br tag
++        br = newdoc.createElement('br')
++
++        body.appendChild(br)
++
++        #create title Element
++        p = newdoc.createElement('p')
++        #create text node
++        titleText= newdoc.createTextNode("Title:" + bookitem[1])
++        p.appendChild(titleText)
++
++        body.appendChild(p)
++        body.appendChild(br)  #line end
++         
++    #append Body
++    top_element.appendChild(body)
++    
++    return newdoc.toxml()
++    
++def printBookList(blist):
++    for res in blist:
++        print (res)
++    
++def checkDocument():
++    global BooksDoc
++    if BooksDoc == None:
++        print("Error : Document is empty")
++        return False
++    return True
++  
++
++##### run #####
++while(loopFlag > 0):
++    printMenu()
++    menuKey = str(input ('select menu :'))
++    launcherFunction(menuKey)
++else:
++    print ("Thank you! Good Bye")
++
+ 
+6  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/py_book/setup.py
+@@ -0,0 +1,6 @@
++from distutils.core import setup
++
++setup(name='book',
++    version='1.0',
++    py_modules=['c:\\python30\\test'],
++   ) 
+ 
+3  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/setup configurate/MANIFEST
+@@ -0,0 +1,3 @@
++book.py
++setup.cfg
++setup.py
+ 
+160  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/setup configurate/book.py
+@@ -0,0 +1,160 @@
++from xml.dom.minidom import parse, parseString
++from xml.etree import ElementTree
++
++##### global
++loopFlag = 1
++xmlFD = -1
++BooksDoc = None
++
++#### Menu  implementation
++def printMenu():
++    print("\nWelcome! Book Manager Program (xml version)")
++    print("========Menu==========")
++    print("Load xml:  l")
++    print("Print dom to xml: p")
++    print("Quit program:   q")
++    print("print Book list: b")
++    print("Add new book: a")
++    print("sEarch Book Title: e")
++    print("==================")
++    
++def launcherFunction(menu):
++    global BooksDoc
++    if menu ==  'l':
++        BooksDoc = LoadXMLFromFile()
++    elif menu == 'q':
++        QuitBookMgr()
++    elif menu == 'p':
++        PrintDOMtoXML()
++    elif menu == 'b':
++        PrintBookList(["title",])
++    elif menu == 'a':
++        AddBook()
++    elif menu == 'e':
++        printBookList(SearchBookTitle())
++    else:
++        print ("error : unknow menu key")
++
++#### xml function implementation
++def LoadXMLFromFile():
++    #fileName = str(input ("please input file name to load :"))
++    fileName = "C:\\xml\\book.xml"
++    global xmlFD
++    try:
++        xmlFD = open(fileName)
++    except IOError:
++        print ("invalid file name or path")
++    else:
++        try:
++            dom = parse(xmlFD)
++        except Exception:
++            print ("loading fail!!!")
++        else:
++            print ("XML Document loading complete")
++            return dom
++    return None
++
++def BooksFree():
++    if checkDocument():
++        BooksDoc.unlink()
++     
++def QuitBookMgr():
++    global loopFlag
++    loopFlag = 0
++    BooksFree()
++
++def PrintDOMtoXML():
++    if checkDocument():
++        print(BooksDoc.toxml())
++
++def PrintBookList(tags):
++    global BooksDoc
++    if not checkDocument():
++       return None
++        
++    booklist = BooksDoc.childNodes
++    book = booklist[0].childNodes
++    for item in book:
++        if item.nodeName == "book":
++            subitems = item.childNodes
++            for atom in subitems:
++               if atom.nodeName in tags:
++                   print("title=",atom.firstChild.nodeValue)
++                
++def AddBook():
++     global BooksDoc
++     if not checkDocument() :
++        return None
++     
++     ISBN = str(input ('insert ISBN :'))
++     title = str(input ('insert Title :'))
++     #create Book element
++     newBook = BooksDoc.createElement('book')
++     newBook.setAttribute('ISBN',ISBN)
++     #create Title Element
++     titleEle = BooksDoc.createElement('title')
++     #create title text element
++     titleNode = BooksDoc.createTextNode(title)
++     print(type(titleNode))
++     # connect to title node
++     try:
++         titleEle.appendChild(titleNode)
++     except Exception:
++         print ("append child fail- please,check the parent element & node!!!")
++         return None
++     else:
++         titleEle.appendChild(titleNode)
++
++     # connect to book node
++     try:
++         newBook.appendChild(titleEle)
++         booklist = BooksDoc.firstChild
++     except Exception:
++         print ("append child fail- please,check the parent element & node!!!")
++         return None
++     else:
++         if booklist != None:
++             booklist.appendChild(newBook)
++
++def SearchBookTitle():
++    global BooksDoc
++    retlist = []
++    if not checkDocument():
++        return None
++    
++    keyword = str(input ('input keyword to search :'))
++    
++    try:
++        tree = ElementTree.fromstring(str(BooksDoc.toxml()))
++    except Exception:
++        print ("Element Tree parsing Error : maybe the xml document is not corrected.")
++        return None
++        
++    #get Book Element
++    bookElements = tree.getiterator("book")  # return list type
++    for item in bookElements:
++        strTitle = item.find("title")
++        if (strTitle.text.find(keyword) >=0 ):
++            retlist.append((item.attrib["ISBN"], strTitle.text))
++    
++    return retlist    
++
++def printBookList(blist):
++    for res in blist:
++        print (res)
++    
++def checkDocument():
++    global BooksDoc
++    if BooksDoc == None:
++        print("Error : Document is empty")
++        return False
++    return True
++  
++
++##### run #####
++while(loopFlag > 0):
++    printMenu()
++    menuKey = str(input ('select menu :'))
++    launcherFunction(menuKey)
++else:
++    print ("Thank you! Good Bye")
+ 
+5  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/setup configurate/setup.cfg
+@@ -0,0 +1,5 @@
++[sdist]
++home=sdist_pkg
++
++[bdist]
++dist_dir=bdist_pkg 
+ 
+6  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/setup configurate/setup.py
+@@ -0,0 +1,6 @@
++from distutils.core import setup
++
++setup(name='book',
++      version='1.0',
++      py_modules=['book']
++      )
+ 
+2  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/MANIFEST
+@@ -0,0 +1,2 @@
++book.py
++setup.py
+ 
+160  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/book.py
+@@ -0,0 +1,160 @@
++from xml.dom.minidom import parse, parseString
++from xml.etree import ElementTree
++
++##### global
++loopFlag = 1
++xmlFD = -1
++BooksDoc = None
++
++#### Menu  implementation
++def printMenu():
++    print("\nWelcome! Book Manager Program (xml version)")
++    print("========Menu==========")
++    print("Load xml:  l")
++    print("Print dom to xml: p")
++    print("Quit program:   q")
++    print("print Book list: b")
++    print("Add new book: a")
++    print("sEarch Book Title: e")
++    print("==================")
++    
++def launcherFunction(menu):
++    global BooksDoc
++    if menu ==  'l':
++        BooksDoc = LoadXMLFromFile()
++    elif menu == 'q':
++        QuitBookMgr()
++    elif menu == 'p':
++        PrintDOMtoXML()
++    elif menu == 'b':
++        PrintBookList(["title",])
++    elif menu == 'a':
++        AddBook()
++    elif menu == 'e':
++        printBookList(SearchBookTitle())
++    else:
++        print ("error : unknow menu key")
++
++#### xml function implementation
++def LoadXMLFromFile():
++    #fileName = str(input ("please input file name to load :"))
++    fileName = "C:\\xml\\book.xml"
++    global xmlFD
++    try:
++        xmlFD = open(fileName)
++    except IOError:
++        print ("invalid file name or path")
++    else:
++        try:
++            dom = parse(xmlFD)
++        except Exception:
++            print ("loading fail!!!")
++        else:
++            print ("XML Document loading complete")
++            return dom
++    return None
++
++def BooksFree():
++    if checkDocument():
++        BooksDoc.unlink()
++     
++def QuitBookMgr():
++    global loopFlag
++    loopFlag = 0
++    BooksFree()
++
++def PrintDOMtoXML():
++    if checkDocument():
++        print(BooksDoc.toxml())
++
++def PrintBookList(tags):
++    global BooksDoc
++    if not checkDocument():
++       return None
++        
++    booklist = BooksDoc.childNodes
++    book = booklist[0].childNodes
++    for item in book:
++        if item.nodeName == "book":
++            subitems = item.childNodes
++            for atom in subitems:
++               if atom.nodeName in tags:
++                   print("title=",atom.firstChild.nodeValue)
++                
++def AddBook():
++     global BooksDoc
++     if not checkDocument() :
++        return None
++     
++     ISBN = str(input ('insert ISBN :'))
++     title = str(input ('insert Title :'))
++     #create Book element
++     newBook = BooksDoc.createElement('book')
++     newBook.setAttribute('ISBN',ISBN)
++     #create Title Element
++     titleEle = BooksDoc.createElement('title')
++     #create title text element
++     titleNode = BooksDoc.createTextNode(title)
++     print(type(titleNode))
++     # connect to title node
++     try:
++         titleEle.appendChild(titleNode)
++     except Exception:
++         print ("append child fail- please,check the parent element & node!!!")
++         return None
++     else:
++         titleEle.appendChild(titleNode)
++
++     # connect to book node
++     try:
++         newBook.appendChild(titleEle)
++         booklist = BooksDoc.firstChild
++     except Exception:
++         print ("append child fail- please,check the parent element & node!!!")
++         return None
++     else:
++         if booklist != None:
++             booklist.appendChild(newBook)
++
++def SearchBookTitle():
++    global BooksDoc
++    retlist = []
++    if not checkDocument():
++        return None
++    
++    keyword = str(input ('input keyword to search :'))
++    
++    try:
++        tree = ElementTree.fromstring(str(BooksDoc.toxml()))
++    except Exception:
++        print ("Element Tree parsing Error : maybe the xml document is not corrected.")
++        return None
++        
++    #get Book Element
++    bookElements = tree.getiterator("book")  # return list type
++    for item in bookElements:
++        strTitle = item.find("title")
++        if (strTitle.text.find(keyword) >=0 ):
++            retlist.append((item.attrib["ISBN"], strTitle.text))
++    
++    return retlist    
++
++def printBookList(blist):
++    for res in blist:
++        print (res)
++    
++def checkDocument():
++    global BooksDoc
++    if BooksDoc == None:
++        print("Error : Document is empty")
++        return False
++    return True
++  
++
++##### run #####
++while(loopFlag > 0):
++    printMenu()
++    menuKey = str(input ('select menu :'))
++    launcherFunction(menuKey)
++else:
++    print ("Thank you! Good Bye")
+ 
+6  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/setup.py
+@@ -0,0 +1,6 @@
++from distutils.core import setup
++
++setup(name='book',
++      version='1.0',
++      py_modules=['book']
++      )
+ 
+47  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/__init__.py
+@@ -0,0 +1,47 @@
++"""Core XML support for Python.
++
++This package contains four sub-packages:
++
++dom -- The W3C Document Object Model.  This supports DOM Level 1 +
++       Namespaces.
++
++parsers -- Python wrappers for XML parsers (currently only supports Expat).
++
++sax -- The Simple API for XML, developed by XML-Dev, led by David
++       Megginson and ported to Python by Lars Marius Garshol.  This
++       supports the SAX 2 API.
++
++etree -- The ElementTree XML library.  This is a subset of the full
++       ElementTree XML release.
++
++"""
++
++
++__all__ = ["dom", "parsers", "sax", "etree"]
++
++# When being checked-out without options, this has the form
++# "<dollar>Revision: x.y </dollar>"
++# When exported using -kv, it is "x.y".
++__version__ = "$Revision: 41660 $".split()[-2:][0]
++
++
++_MINIMUM_XMLPLUS_VERSION = (0, 8, 4)
++
++
++try:
++    import _xmlplus
++except ImportError:
++    pass
++else:
++    try:
++        v = _xmlplus.version_info
++    except AttributeError:
++        # _xmlplus is too old; ignore it
++        pass
++    else:
++        if v >= _MINIMUM_XMLPLUS_VERSION:
++            import sys
++            _xmlplus.__path__.extend(__path__)
++            sys.modules[__name__] = _xmlplus
++        else:
++            del v
+ 
+BIN  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/__init__.pyc
+Binary file not shown.
+ 
+27  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/dom/NodeFilter.py
+@@ -0,0 +1,27 @@
++# This is the Python mapping for interface NodeFilter from
++# DOM2-Traversal-Range. It contains only constants.
++
++class NodeFilter:
++    """
++    This is the DOM2 NodeFilter interface. It contains only constants.
++    """
++    FILTER_ACCEPT = 1
++    FILTER_REJECT = 2
++    FILTER_SKIP   = 3
++
++    SHOW_ALL                    = 0xFFFFFFFF
++    SHOW_ELEMENT                = 0x00000001
++    SHOW_ATTRIBUTE              = 0x00000002
++    SHOW_TEXT                   = 0x00000004
++    SHOW_CDATA_SECTION          = 0x00000008
++    SHOW_ENTITY_REFERENCE       = 0x00000010
++    SHOW_ENTITY                 = 0x00000020
++    SHOW_PROCESSING_INSTRUCTION = 0x00000040
++    SHOW_COMMENT                = 0x00000080
++    SHOW_DOCUMENT               = 0x00000100
++    SHOW_DOCUMENT_TYPE          = 0x00000200
++    SHOW_DOCUMENT_FRAGMENT      = 0x00000400
++    SHOW_NOTATION               = 0x00000800
++
++    def acceptNode(self, node):
++        raise NotImplementedError
+ 
+BIN  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/dom/NodeFilter.pyc
+Binary file not shown.
+ 
+139  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/dom/__init__.py
+@@ -0,0 +1,139 @@
++"""W3C Document Object Model implementation for Python.
++
++The Python mapping of the Document Object Model is documented in the
++Python Library Reference in the section on the xml.dom package.
++
++This package contains the following modules:
++
++minidom -- A simple implementation of the Level 1 DOM with namespace
++           support added (based on the Level 2 specification) and other
++           minor Level 2 functionality.
++
++pulldom -- DOM builder supporting on-demand tree-building for selected
++           subtrees of the document.
++
++"""
++
++
++class Node:
++    """Class giving the NodeType constants."""
++
++    # DOM implementations may use this as a base class for their own
++    # Node implementations.  If they don't, the constants defined here
++    # should still be used as the canonical definitions as they match
++    # the values given in the W3C recommendation.  Client code can
++    # safely refer to these values in all tests of Node.nodeType
++    # values.
++
++    ELEMENT_NODE                = 1
++    ATTRIBUTE_NODE              = 2
++    TEXT_NODE                   = 3
++    CDATA_SECTION_NODE          = 4
++    ENTITY_REFERENCE_NODE       = 5
++    ENTITY_NODE                 = 6
++    PROCESSING_INSTRUCTION_NODE = 7
++    COMMENT_NODE                = 8
++    DOCUMENT_NODE               = 9
++    DOCUMENT_TYPE_NODE          = 10
++    DOCUMENT_FRAGMENT_NODE      = 11
++    NOTATION_NODE               = 12
++
++
++#ExceptionCode
++INDEX_SIZE_ERR                 = 1
++DOMSTRING_SIZE_ERR             = 2
++HIERARCHY_REQUEST_ERR          = 3
++WRONG_DOCUMENT_ERR             = 4
++INVALID_CHARACTER_ERR          = 5
++NO_DATA_ALLOWED_ERR            = 6
++NO_MODIFICATION_ALLOWED_ERR    = 7
++NOT_FOUND_ERR                  = 8
++NOT_SUPPORTED_ERR              = 9
++INUSE_ATTRIBUTE_ERR            = 10
++INVALID_STATE_ERR              = 11
++SYNTAX_ERR                     = 12
++INVALID_MODIFICATION_ERR       = 13
++NAMESPACE_ERR                  = 14
++INVALID_ACCESS_ERR             = 15
++VALIDATION_ERR                 = 16
++
++
++class DOMException(Exception):
++    """Abstract base class for DOM exceptions.
++    Exceptions with specific codes are specializations of this class."""
++
++    def __init__(self, *args, **kw):
++        if self.__class__ is DOMException:
++            raise RuntimeError(
++                "DOMException should not be instantiated directly")
++        Exception.__init__(self, *args, **kw)
++
++    def _get_code(self):
++        return self.code
++
++
++class IndexSizeErr(DOMException):
++    code = INDEX_SIZE_ERR
++
++class DomstringSizeErr(DOMException):
++    code = DOMSTRING_SIZE_ERR
++
++class HierarchyRequestErr(DOMException):
++    code = HIERARCHY_REQUEST_ERR
++
++class WrongDocumentErr(DOMException):
++    code = WRONG_DOCUMENT_ERR
++
++class InvalidCharacterErr(DOMException):
++    code = INVALID_CHARACTER_ERR
++
++class NoDataAllowedErr(DOMException):
++    code = NO_DATA_ALLOWED_ERR
++
++class NoModificationAllowedErr(DOMException):
++    code = NO_MODIFICATION_ALLOWED_ERR
++
++class NotFoundErr(DOMException):
++    code = NOT_FOUND_ERR
++
++class NotSupportedErr(DOMException):
++    code = NOT_SUPPORTED_ERR
++
++class InuseAttributeErr(DOMException):
++    code = INUSE_ATTRIBUTE_ERR
++
++class InvalidStateErr(DOMException):
++    code = INVALID_STATE_ERR
++
++class SyntaxErr(DOMException):
++    code = SYNTAX_ERR
++
++class InvalidModificationErr(DOMException):
++    code = INVALID_MODIFICATION_ERR
++
++class NamespaceErr(DOMException):
++    code = NAMESPACE_ERR
++
++class InvalidAccessErr(DOMException):
++    code = INVALID_ACCESS_ERR
++
++class ValidationErr(DOMException):
++    code = VALIDATION_ERR
++
++class UserDataHandler:
++    """Class giving the operation constants for UserDataHandler.handle()."""
++
++    # Based on DOM Level 3 (WD 9 April 2002)
++
++    NODE_CLONED   = 1
++    NODE_IMPORTED = 2
++    NODE_DELETED  = 3
++    NODE_RENAMED  = 4
++
++XML_NAMESPACE = "http://www.w3.org/XML/1998/namespace"
++XMLNS_NAMESPACE = "http://www.w3.org/2000/xmlns/"
++XHTML_NAMESPACE = "http://www.w3.org/1999/xhtml"
++EMPTY_NAMESPACE = None
++EMPTY_PREFIX = None
++
++from .domreg import getDOMImplementation, registerDOMImplementation
+ 
+BIN  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/dom/__init__.pyc
+Binary file not shown.
+ 
+99  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/dom/domreg.py
+@@ -0,0 +1,99 @@
++"""Registration facilities for DOM. This module should not be used
++directly. Instead, the functions getDOMImplementation and
++registerDOMImplementation should be imported from xml.dom."""
++
++from xml.dom.minicompat import *  # isinstance, StringTypes
++
++# This is a list of well-known implementations.  Well-known names
++# should be published by posting to xml-sig@python.org, and are
++# subsequently recorded in this file.
++
++well_known_implementations = {
++    'minidom':'xml.dom.minidom',
++    '4DOM': 'xml.dom.DOMImplementation',
++    }
++
++# DOM implementations not officially registered should register
++# themselves with their
++
++registered = {}
++
++def registerDOMImplementation(name, factory):
++    """registerDOMImplementation(name, factory)
++
++    Register the factory function with the name. The factory function
++    should return an object which implements the DOMImplementation
++    interface. The factory function can either return the same object,
++    or a new one (e.g. if that implementation supports some
++    customization)."""
++
++    registered[name] = factory
++
++def _good_enough(dom, features):
++    "_good_enough(dom, features) -> Return 1 if the dom offers the features"
++    for f,v in features:
++        if not dom.hasFeature(f,v):
++            return 0
++    return 1
++
++def getDOMImplementation(name = None, features = ()):
++    """getDOMImplementation(name = None, features = ()) -> DOM implementation.
++
++    Return a suitable DOM implementation. The name is either
++    well-known, the module name of a DOM implementation, or None. If
++    it is not None, imports the corresponding module and returns
++    DOMImplementation object if the import succeeds.
++
++    If name is not given, consider the available implementations to
++    find one with the required feature set. If no implementation can
++    be found, raise an ImportError. The features list must be a sequence
++    of (feature, version) pairs which are passed to hasFeature."""
++
++    import os
++    creator = None
++    mod = well_known_implementations.get(name)
++    if mod:
++        mod = __import__(mod, {}, {}, ['getDOMImplementation'])
++        return mod.getDOMImplementation()
++    elif name:
++        return registered[name]()
++    elif "PYTHON_DOM" in os.environ:
++        return getDOMImplementation(name = os.environ["PYTHON_DOM"])
++
++    # User did not specify a name, try implementations in arbitrary
++    # order, returning the one that has the required features
++    if isinstance(features, str):
++        features = _parse_feature_string(features)
++    for creator in registered.values():
++        dom = creator()
++        if _good_enough(dom, features):
++            return dom
++
++    for creator in well_known_implementations.keys():
++        try:
++            dom = getDOMImplementation(name = creator)
++        except Exception: # typically ImportError, or AttributeError
++            continue
++        if _good_enough(dom, features):
++            return dom
++
++    raise ImportError("no suitable DOM implementation found")
++
++def _parse_feature_string(s):
++    features = []
++    parts = s.split()
++    i = 0
++    length = len(parts)
++    while i < length:
++        feature = parts[i]
++        if feature[0] in "0123456789":
++            raise ValueError("bad feature name: %r" % (feature,))
++        i = i + 1
++        version = None
++        if i < length:
++            v = parts[i]
++            if v[0] in "0123456789":
++                i = i + 1
++                version = v
++        features.append((feature, version))
++    return tuple(features)
+ 
+BIN  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/dom/domreg.pyc
+Binary file not shown.
+ 
+983  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/dom/expatbuilder.py
+Large diffs are not rendered by default.
+
+ 
+BIN  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/dom/expatbuilder.pyc
+Binary file not shown.
+ 
+105  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/dom/minicompat.py
+@@ -0,0 +1,105 @@
++"""Python version compatibility support for minidom."""
++
++# This module should only be imported using "import *".
++#
++# The following names are defined:
++#
++#   NodeList      -- lightest possible NodeList implementation
++#
++#   EmptyNodeList -- lightest possible NodeList that is guarateed to
++#                    remain empty (immutable)
++#
++#   StringTypes   -- tuple of defined string types
++#
++#   defproperty   -- function used in conjunction with GetattrMagic;
++#                    using these together is needed to make them work
++#                    as efficiently as possible in both Python 2.2+
++#                    and older versions.  For example:
++#
++#                        class MyClass(GetattrMagic):
++#                            def _get_myattr(self):
++#                                return something
++#
++#                        defproperty(MyClass, "myattr",
++#                                    "return some value")
++#
++#                    For Python 2.2 and newer, this will construct a
++#                    property object on the class, which avoids
++#                    needing to override __getattr__().  It will only
++#                    work for read-only attributes.
++#
++#                    For older versions of Python, inheriting from
++#                    GetattrMagic will use the traditional
++#                    __getattr__() hackery to achieve the same effect,
++#                    but less efficiently.
++#
++#                    defproperty() should be used for each version of
++#                    the relevant _get_<property>() function.
++
++__all__ = ["NodeList", "EmptyNodeList", "StringTypes", "defproperty"]
++
++import xml.dom
++
++StringTypes = (str,)
++
++
++class NodeList(list):
++    __slots__ = ()
++
++    def item(self, index):
++        if 0 <= index < len(self):
++            return self[index]
++
++    def _get_length(self):
++        return len(self)
++
++    def _set_length(self, value):
++        raise xml.dom.NoModificationAllowedErr(
++            "attempt to modify read-only attribute 'length'")
++
++    length = property(_get_length, _set_length,
++                      doc="The number of nodes in the NodeList.")
++
++    def __getstate__(self):
++        return list(self)
++
++    def __setstate__(self, state):
++        self[:] = state
++
++
++class EmptyNodeList(tuple):
++    __slots__ = ()
++
++    def __add__(self, other):
++        NL = NodeList()
++        NL.extend(other)
++        return NL
++
++    def __radd__(self, other):
++        NL = NodeList()
++        NL.extend(other)
++        return NL
++
++    def item(self, index):
++        return None
++
++    def _get_length(self):
++        return 0
++
++    def _set_length(self, value):
++        raise xml.dom.NoModificationAllowedErr(
++            "attempt to modify read-only attribute 'length'")
++
++    length = property(_get_length, _set_length,
++                      doc="The number of nodes in the NodeList.")
++
++
++def defproperty(klass, name, doc):
++    get = getattr(klass, ("_get_" + name))
++    def set(self, value, name=name):
++        raise xml.dom.NoModificationAllowedErr(
++            "attempt to modify read-only attribute " + repr(name))
++    assert not hasattr(klass, "_set_" + name), \
++           "expected not to find _set_" + name
++    prop = property(get, set, doc=doc)
++    setattr(klass, name, prop)
+ 
+BIN  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/dom/minicompat.pyc
+Binary file not shown.
+ 
+1,940  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/dom/minidom.py
+Large diffs are not rendered by default.
+
+ 
+BIN  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/dom/minidom.pyc
+Binary file not shown.
+ 
+ 
+---------------------------------- 
+/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/dom/pulldom.py
+@@ -0,0 +1,346 @@
++import xml.sax
++import xml.sax.handler
++import types
++
++START_ELEMENT = "START_ELEMENT"
++END_ELEMENT = "END_ELEMENT"
++COMMENT = "COMMENT"
++START_DOCUMENT = "START_DOCUMENT"
++END_DOCUMENT = "END_DOCUMENT"
++PROCESSING_INSTRUCTION = "PROCESSING_INSTRUCTION"
++IGNORABLE_WHITESPACE = "IGNORABLE_WHITESPACE"
++CHARACTERS = "CHARACTERS"
++
++class PullDOM(xml.sax.ContentHandler):
++    _locator = None
++    document = None
++
++    def __init__(self, documentFactory=None):
++        from xml.dom import XML_NAMESPACE
++        self.documentFactory = documentFactory
++        self.firstEvent = [None, None]
++        self.lastEvent = self.firstEvent
++        self.elementStack = []
++        self.push = self.elementStack.append
++        try:
++            self.pop = self.elementStack.pop
++        except AttributeError:
++            # use class' pop instead
++            pass
++        self._ns_contexts = [{XML_NAMESPACE:'xml'}] # contains uri -> prefix dicts
++        self._current_context = self._ns_contexts[-1]
++        self.pending_events = []
++
++    def pop(self):
++        result = self.elementStack[-1]
++        del self.elementStack[-1]
++        return result
++
++    def setDocumentLocator(self, locator):
++        self._locator = locator
++
++    def startPrefixMapping(self, prefix, uri):
++        if not hasattr(self, '_xmlns_attrs'):
++            self._xmlns_attrs = []
++        self._xmlns_attrs.append((prefix or 'xmlns', uri))
++        self._ns_contexts.append(self._current_context.copy())
++        self._current_context[uri] = prefix or None
++
++    def endPrefixMapping(self, prefix):
++        self._current_context = self._ns_contexts.pop()
++
++    def startElementNS(self, name, tagName , attrs):
++        # Retrieve xml namespace declaration attributes.
++        xmlns_uri = 'http://www.w3.org/2000/xmlns/'
++        xmlns_attrs = getattr(self, '_xmlns_attrs', None)
++        if xmlns_attrs is not None:
++            for aname, value in xmlns_attrs:
++                attrs._attrs[(xmlns_uri, aname)] = value
++            self._xmlns_attrs = []
++        uri, localname = name
++        if uri:
++            # When using namespaces, the reader may or may not
++            # provide us with the original name. If not, create
++            # *a* valid tagName from the current context.
++            if tagName is None:
++                prefix = self._current_context[uri]
++                if prefix:
++                    tagName = prefix + ":" + localname
++                else:
++                    tagName = localname
++            if self.document:
++                node = self.document.createElementNS(uri, tagName)
++            else:
++                node = self.buildDocument(uri, tagName)
++        else:
++            # When the tagname is not prefixed, it just appears as
++            # localname
++            if self.document:
++                node = self.document.createElement(localname)
++            else:
++                node = self.buildDocument(None, localname)
++
++        for aname,value in attrs.items():
++            a_uri, a_localname = aname
++            if a_uri == xmlns_uri:
++                if a_localname == 'xmlns':
++                    qname = a_localname
++                else:
++                    qname = 'xmlns:' + a_localname
++                attr = self.document.createAttributeNS(a_uri, qname)
++                node.setAttributeNodeNS(attr)
++            elif a_uri:
++                prefix = self._current_context[a_uri]
++                if prefix:
++                    qname = prefix + ":" + a_localname
++                else:
++                    qname = a_localname
++                attr = self.document.createAttributeNS(a_uri, qname)
++                node.setAttributeNodeNS(attr)
++            else:
++                attr = self.document.createAttribute(a_localname)
++                node.setAttributeNode(attr)
++            attr.value = value
++
++        self.lastEvent[1] = [(START_ELEMENT, node), None]
++        self.lastEvent = self.lastEvent[1]
++        self.push(node)
++
++    def endElementNS(self, name, tagName):
++        self.lastEvent[1] = [(END_ELEMENT, self.pop()), None]
++        self.lastEvent = self.lastEvent[1]
++
++    def startElement(self, name, attrs):
++        if self.document:
++            node = self.document.createElement(name)
++        else:
++            node = self.buildDocument(None, name)
++
++        for aname,value in attrs.items():
++            attr = self.document.createAttribute(aname)
++            attr.value = value
++            node.setAttributeNode(attr)
++
++        self.lastEvent[1] = [(START_ELEMENT, node), None]
++        self.lastEvent = self.lastEvent[1]
++        self.push(node)
++
++    def endElement(self, name):
++        self.lastEvent[1] = [(END_ELEMENT, self.pop()), None]
++        self.lastEvent = self.lastEvent[1]
++
++    def comment(self, s):
++        if self.document:
++            node = self.document.createComment(s)
++            self.lastEvent[1] = [(COMMENT, node), None]
++            self.lastEvent = self.lastEvent[1]
++        else:
++            event = [(COMMENT, s), None]
++            self.pending_events.append(event)
++
++    def processingInstruction(self, target, data):
++        if self.document:
++            node = self.document.createProcessingInstruction(target, data)
++            self.lastEvent[1] = [(PROCESSING_INSTRUCTION, node), None]
++            self.lastEvent = self.lastEvent[1]
++        else:
++            event = [(PROCESSING_INSTRUCTION, target, data), None]
++            self.pending_events.append(event)
++
++    def ignorableWhitespace(self, chars):
++        node = self.document.createTextNode(chars)
++        self.lastEvent[1] = [(IGNORABLE_WHITESPACE, node), None]
++        self.lastEvent = self.lastEvent[1]
++
++    def characters(self, chars):
++        node = self.document.createTextNode(chars)
++        self.lastEvent[1] = [(CHARACTERS, node), None]
++        self.lastEvent = self.lastEvent[1]
++
++    def startDocument(self):
++        if self.documentFactory is None:
++            import xml.dom.minidom
++            self.documentFactory = xml.dom.minidom.Document.implementation
++
++    def buildDocument(self, uri, tagname):
++        # Can't do that in startDocument, since we need the tagname
++        # XXX: obtain DocumentType
++        node = self.documentFactory.createDocument(uri, tagname, None)
++        self.document = node
++        self.lastEvent[1] = [(START_DOCUMENT, node), None]
++        self.lastEvent = self.lastEvent[1]
++        self.push(node)
++        # Put everything we have seen so far into the document
++        for e in self.pending_events:
++            if e[0][0] == PROCESSING_INSTRUCTION:
++                _,target,data = e[0]
++                n = self.document.createProcessingInstruction(target, data)
++                e[0] = (PROCESSING_INSTRUCTION, n)
++            elif e[0][0] == COMMENT:
++                n = self.document.createComment(e[0][1])
++                e[0] = (COMMENT, n)
++            else:
++                raise AssertionError("Unknown pending event ",e[0][0])
++            self.lastEvent[1] = e
++            self.lastEvent = e
++        self.pending_events = None
++        return node.firstChild
++
++    def endDocument(self):
++        self.lastEvent[1] = [(END_DOCUMENT, self.document), None]
++        self.pop()
++
++    def clear(self):
++        "clear(): Explicitly release parsing structures"
++        self.document = None
++
++class ErrorHandler:
++    def warning(self, exception):
++        print(exception)
++    def error(self, exception):
++        raise exception
++    def fatalError(self, exception):
++        raise exception
++
++class DOMEventStream:
++    def __init__(self, stream, parser, bufsize):
++        self.stream = stream
++        self.parser = parser
++        self.bufsize = bufsize
++        if not hasattr(self.parser, 'feed'):
++            self.getEvent = self._slurp
++        self.reset()
++
++    def reset(self):
++        self.pulldom = PullDOM()
++        # This content handler relies on namespace support
++        self.parser.setFeature(xml.sax.handler.feature_namespaces, 1)
++        self.parser.setContentHandler(self.pulldom)
++
++    def __getitem__(self, pos):
++        rc = self.getEvent()
++        if rc:
++            return rc
++        raise IndexError
++
++    def __next__(self):
++        rc = self.getEvent()
++        if rc:
++            return rc
++        raise StopIteration
++
++    def __iter__(self):
++        return self
++
++    def expandNode(self, node):
++        event = self.getEvent()
++        parents = [node]
++        while event:
++            token, cur_node = event
++            if cur_node is node:
++                return
++            if token != END_ELEMENT:
++                parents[-1].appendChild(cur_node)
++            if token == START_ELEMENT:
++                parents.append(cur_node)
++            elif token == END_ELEMENT:
++                del parents[-1]
++            event = self.getEvent()
++
++    def getEvent(self):
++        # use IncrementalParser interface, so we get the desired
++        # pull effect
++        if not self.pulldom.firstEvent[1]:
++            self.pulldom.lastEvent = self.pulldom.firstEvent
++        while not self.pulldom.firstEvent[1]:
++            buf = self.stream.read(self.bufsize)
++            if not buf:
++                self.parser.close()
++                return None
++            self.parser.feed(buf)
++        rc = self.pulldom.firstEvent[1][0]
++        self.pulldom.firstEvent[1] = self.pulldom.firstEvent[1][1]
++        return rc
++
++    def _slurp(self):
++        """ Fallback replacement for getEvent() using the
++            standard SAX2 interface, which means we slurp the
++            SAX events into memory (no performance gain, but
++            we are compatible to all SAX parsers).
++        """
++        self.parser.parse(self.stream)
++        self.getEvent = self._emit
++        return self._emit()
++
++    def _emit(self):
++        """ Fallback replacement for getEvent() that emits
++            the events that _slurp() read previously.
++        """
++        rc = self.pulldom.firstEvent[1][0]
++        self.pulldom.firstEvent[1] = self.pulldom.firstEvent[1][1]
++        return rc
++
++    def clear(self):
++        """clear(): Explicitly release parsing objects"""
++        self.pulldom.clear()
++        del self.pulldom
++        self.parser = None
++        self.stream = None
++
++class SAX2DOM(PullDOM):
++
++    def startElementNS(self, name, tagName , attrs):
++        PullDOM.startElementNS(self, name, tagName, attrs)
++        curNode = self.elementStack[-1]
++        parentNode = self.elementStack[-2]
++        parentNode.appendChild(curNode)
++
++    def startElement(self, name, attrs):
++        PullDOM.startElement(self, name, attrs)
++        curNode = self.elementStack[-1]
++        parentNode = self.elementStack[-2]
++        parentNode.appendChild(curNode)
++
++    def processingInstruction(self, target, data):
++        PullDOM.processingInstruction(self, target, data)
++        node = self.lastEvent[0][1]
++        parentNode = self.elementStack[-1]
++        parentNode.appendChild(node)
++
++    def ignorableWhitespace(self, chars):
++        PullDOM.ignorableWhitespace(self, chars)
++        node = self.lastEvent[0][1]
++        parentNode = self.elementStack[-1]
++        parentNode.appendChild(node)
++
++    def characters(self, chars):
++        PullDOM.characters(self, chars)
++        node = self.lastEvent[0][1]
++        parentNode = self.elementStack[-1]
++        parentNode.appendChild(node)
++
++
++default_bufsize = (2 ** 14) - 20
++
++def parse(stream_or_string, parser=None, bufsize=None):
++    if bufsize is None:
++        bufsize = default_bufsize
++    if isinstance(stream_or_string, str):
++        stream = open(stream_or_string)
++    else:
++        stream = stream_or_string
++    if not parser:
++        parser = xml.sax.make_parser()
++    return DOMEventStream(stream, parser, bufsize)
++
++def parseString(string, parser=None):
++    try:
++        from io import StringIO
++    except ImportError:
++        from io import StringIO
++
++    bufsize = len(string)
++    buf = StringIO(string)
++    if not parser:
++        parser = xml.sax.make_parser()
++    return DOMEventStream(buf, parser, bufsize)
+ 
+386  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/dom/xmlbuilder.py
+@@ -0,0 +1,386 @@
++"""Implementation of the DOM Level 3 'LS-Load' feature."""
++
++import copy
++import xml.dom
++
++from xml.dom.NodeFilter import NodeFilter
++
++
++__all__ = ["DOMBuilder", "DOMEntityResolver", "DOMInputSource"]
++
++
++class Options:
++    """Features object that has variables set for each DOMBuilder feature.
++
++    The DOMBuilder class uses an instance of this class to pass settings to
++    the ExpatBuilder class.
++    """
++
++    # Note that the DOMBuilder class in LoadSave constrains which of these
++    # values can be set using the DOM Level 3 LoadSave feature.
++
++    namespaces = 1
++    namespace_declarations = True
++    validation = False
++    external_parameter_entities = True
++    external_general_entities = True
++    external_dtd_subset = True
++    validate_if_schema = False
++    validate = False
++    datatype_normalization = False
++    create_entity_ref_nodes = True
++    entities = True
++    whitespace_in_element_content = True
++    cdata_sections = True
++    comments = True
++    charset_overrides_xml_encoding = True
++    infoset = False
++    supported_mediatypes_only = False
++
++    errorHandler = None
++    filter = None
++
++
++class DOMBuilder:
++    entityResolver = None
++    errorHandler = None
++    filter = None
++
++    ACTION_REPLACE = 1
++    ACTION_APPEND_AS_CHILDREN = 2
++    ACTION_INSERT_AFTER = 3
++    ACTION_INSERT_BEFORE = 4
++
++    _legal_actions = (ACTION_REPLACE, ACTION_APPEND_AS_CHILDREN,
++                      ACTION_INSERT_AFTER, ACTION_INSERT_BEFORE)
++
++    def __init__(self):
++        self._options = Options()
++
++    def _get_entityResolver(self):
++        return self.entityResolver
++    def _set_entityResolver(self, entityResolver):
++        self.entityResolver = entityResolver
++
++    def _get_errorHandler(self):
++        return self.errorHandler
++    def _set_errorHandler(self, errorHandler):
++        self.errorHandler = errorHandler
++
++    def _get_filter(self):
++        return self.filter
++    def _set_filter(self, filter):
++        self.filter = filter
++
++    def setFeature(self, name, state):
++        if self.supportsFeature(name):
++            state = state and 1 or 0
++            try:
++                settings = self._settings[(_name_xform(name), state)]
++            except KeyError:
++                raise xml.dom.NotSupportedErr(
++                    "unsupported feature: %r" % (name,))
++            else:
++                for name, value in settings:
++                    setattr(self._options, name, value)
++        else:
++            raise xml.dom.NotFoundErr("unknown feature: " + repr(name))
++
++    def supportsFeature(self, name):
++        return hasattr(self._options, _name_xform(name))
++
++    def canSetFeature(self, name, state):
++        key = (_name_xform(name), state and 1 or 0)
++        return key in self._settings
++
++    # This dictionary maps from (feature,value) to a list of
++    # (option,value) pairs that should be set on the Options object.
++    # If a (feature,value) setting is not in this dictionary, it is
++    # not supported by the DOMBuilder.
++    #
++    _settings = {
++        ("namespace_declarations", 0): [
++            ("namespace_declarations", 0)],
++        ("namespace_declarations", 1): [
++            ("namespace_declarations", 1)],
++        ("validation", 0): [
++            ("validation", 0)],
++        ("external_general_entities", 0): [
++            ("external_general_entities", 0)],
++        ("external_general_entities", 1): [
++            ("external_general_entities", 1)],
++        ("external_parameter_entities", 0): [
++            ("external_parameter_entities", 0)],
++        ("external_parameter_entities", 1): [
++            ("external_parameter_entities", 1)],
++        ("validate_if_schema", 0): [
++            ("validate_if_schema", 0)],
++        ("create_entity_ref_nodes", 0): [
++            ("create_entity_ref_nodes", 0)],
++        ("create_entity_ref_nodes", 1): [
++            ("create_entity_ref_nodes", 1)],
++        ("entities", 0): [
++            ("create_entity_ref_nodes", 0),
++            ("entities", 0)],
++        ("entities", 1): [
++            ("entities", 1)],
++        ("whitespace_in_element_content", 0): [
++            ("whitespace_in_element_content", 0)],
++        ("whitespace_in_element_content", 1): [
++            ("whitespace_in_element_content", 1)],
++        ("cdata_sections", 0): [
++            ("cdata_sections", 0)],
++        ("cdata_sections", 1): [
++            ("cdata_sections", 1)],
++        ("comments", 0): [
++            ("comments", 0)],
++        ("comments", 1): [
++            ("comments", 1)],
++        ("charset_overrides_xml_encoding", 0): [
++            ("charset_overrides_xml_encoding", 0)],
++        ("charset_overrides_xml_encoding", 1): [
++            ("charset_overrides_xml_encoding", 1)],
++        ("infoset", 0): [],
++        ("infoset", 1): [
++            ("namespace_declarations", 0),
++            ("validate_if_schema", 0),
++            ("create_entity_ref_nodes", 0),
++            ("entities", 0),
++            ("cdata_sections", 0),
++            ("datatype_normalization", 1),
++            ("whitespace_in_element_content", 1),
++            ("comments", 1),
++            ("charset_overrides_xml_encoding", 1)],
++        ("supported_mediatypes_only", 0): [
++            ("supported_mediatypes_only", 0)],
++        ("namespaces", 0): [
++            ("namespaces", 0)],
++        ("namespaces", 1): [
++            ("namespaces", 1)],
++    }
++
++    def getFeature(self, name):
++        xname = _name_xform(name)
++        try:
++            return getattr(self._options, xname)
++        except AttributeError:
++            if name == "infoset":
++                options = self._options
++                return (options.datatype_normalization
++                        and options.whitespace_in_element_content
++                        and options.comments
++                        and options.charset_overrides_xml_encoding
++                        and not (options.namespace_declarations
++                                 or options.validate_if_schema
++                                 or options.create_entity_ref_nodes
++                                 or options.entities
++                                 or options.cdata_sections))
++            raise xml.dom.NotFoundErr("feature %s not known" % repr(name))
++
++    def parseURI(self, uri):
++        if self.entityResolver:
++            input = self.entityResolver.resolveEntity(None, uri)
++        else:
++            input = DOMEntityResolver().resolveEntity(None, uri)
++        return self.parse(input)
++
++    def parse(self, input):
++        options = copy.copy(self._options)
++        options.filter = self.filter
++        options.errorHandler = self.errorHandler
++        fp = input.byteStream
++        if fp is None and options.systemId:
++            import urllib.request
++            fp = urllib.request.urlopen(input.systemId)
++        return self._parse_bytestream(fp, options)
++
++    def parseWithContext(self, input, cnode, action):
++        if action not in self._legal_actions:
++            raise ValueError("not a legal action")
++        raise NotImplementedError("Haven't written this yet...")
++
++    def _parse_bytestream(self, stream, options):
++        import xml.dom.expatbuilder
++        builder = xml.dom.expatbuilder.makeBuilder(options)
++        return builder.parseFile(stream)
++
++
++def _name_xform(name):
++    return name.lower().replace('-', '_')
++
++
++class DOMEntityResolver(object):
++    __slots__ = '_opener',
++
++    def resolveEntity(self, publicId, systemId):
++        assert systemId is not None
++        source = DOMInputSource()
++        source.publicId = publicId
++        source.systemId = systemId
++        source.byteStream = self._get_opener().open(systemId)
++
++        # determine the encoding if the transport provided it
++        source.encoding = self._guess_media_encoding(source)
++
++        # determine the base URI is we can
++        import posixpath, urllib.parse
++        parts = urllib.parse.urlparse(systemId)
++        scheme, netloc, path, params, query, fragment = parts
++        # XXX should we check the scheme here as well?
++        if path and not path.endswith("/"):
++            path = posixpath.dirname(path) + "/"
++            parts = scheme, netloc, path, params, query, fragment
++            source.baseURI = urllib.parse.urlunparse(parts)
++
++        return source
++
++    def _get_opener(self):
++        try:
++            return self._opener
++        except AttributeError:
++            self._opener = self._create_opener()
++            return self._opener
++
++    def _create_opener(self):
++        import urllib.request
++        return urllib.request.build_opener()
++
++    def _guess_media_encoding(self, source):
++        info = source.byteStream.info()
++        if "Content-Type" in info:
++            for param in info.getplist():
++                if param.startswith("charset="):
++                    return param.split("=", 1)[1].lower()
++
++
++class DOMInputSource(object):
++    __slots__ = ('byteStream', 'characterStream', 'stringData',
++                 'encoding', 'publicId', 'systemId', 'baseURI')
++
++    def __init__(self):
++        self.byteStream = None
++        self.characterStream = None
++        self.stringData = None
++        self.encoding = None
++        self.publicId = None
++        self.systemId = None
++        self.baseURI = None
++
++    def _get_byteStream(self):
++        return self.byteStream
++    def _set_byteStream(self, byteStream):
++        self.byteStream = byteStream
++
++    def _get_characterStream(self):
++        return self.characterStream
++    def _set_characterStream(self, characterStream):
++        self.characterStream = characterStream
++
++    def _get_stringData(self):
++        return self.stringData
++    def _set_stringData(self, data):
++        self.stringData = data
++
++    def _get_encoding(self):
++        return self.encoding
++    def _set_encoding(self, encoding):
++        self.encoding = encoding
++
++    def _get_publicId(self):
++        return self.publicId
++    def _set_publicId(self, publicId):
++        self.publicId = publicId
++
++    def _get_systemId(self):
++        return self.systemId
++    def _set_systemId(self, systemId):
++        self.systemId = systemId
++
++    def _get_baseURI(self):
++        return self.baseURI
++    def _set_baseURI(self, uri):
++        self.baseURI = uri
++
++
++class DOMBuilderFilter:
++    """Element filter which can be used to tailor construction of
++    a DOM instance.
++    """
++
++    # There's really no need for this class; concrete implementations
++    # should just implement the endElement() and startElement()
++    # methods as appropriate.  Using this makes it easy to only
++    # implement one of them.
++
++    FILTER_ACCEPT = 1
++    FILTER_REJECT = 2
++    FILTER_SKIP = 3
++    FILTER_INTERRUPT = 4
++
++    whatToShow = NodeFilter.SHOW_ALL
++
++    def _get_whatToShow(self):
++        return self.whatToShow
++
++    def acceptNode(self, element):
++        return self.FILTER_ACCEPT
++
++    def startContainer(self, element):
++        return self.FILTER_ACCEPT
++
++del NodeFilter
++
++
++class DocumentLS:
++    """Mixin to create documents that conform to the load/save spec."""
++
++    async = False
++
++    def _get_async(self):
++        return False
++    def _set_async(self, async):
++        if async:
++            raise xml.dom.NotSupportedErr(
++                "asynchronous document loading is not supported")
++
++    def abort(self):
++        # What does it mean to "clear" a document?  Does the
++        # documentElement disappear?
++        raise NotImplementedError(
++            "haven't figured out what this means yet")
++
++    def load(self, uri):
++        raise NotImplementedError("haven't written this yet")
++
++    def loadXML(self, source):
++        raise NotImplementedError("haven't written this yet")
++
++    def saveXML(self, snode):
++        if snode is None:
++            snode = self
++        elif snode.ownerDocument is not self:
++            raise xml.dom.WrongDocumentErr()
++        return snode.toxml()
++
++
++class DOMImplementationLS:
++    MODE_SYNCHRONOUS = 1
++    MODE_ASYNCHRONOUS = 2
++
++    def createDOMBuilder(self, mode, schemaType):
++        if schemaType is not None:
++            raise xml.dom.NotSupportedErr(
++                "schemaType not yet supported")
++        if mode == self.MODE_SYNCHRONOUS:
++            return DOMBuilder()
++        if mode == self.MODE_ASYNCHRONOUS:
++            raise xml.dom.NotSupportedErr(
++                "asynchronous builders are not supported")
++        raise ValueError("unknown value for mode")
++
++    def createDOMWriter(self):
++        raise NotImplementedError(
++            "the writer interface hasn't been written yet!")
++
++    def createDOMInputSource(self):
++        return DOMInputSource()
+ 
+BIN  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/dom/xmlbuilder.pyc
+Binary file not shown.
+ 
+143  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/etree/ElementInclude.py
+@@ -0,0 +1,143 @@
++#
++# ElementTree
++# $Id: ElementInclude.py 1862 2004-06-18 07:31:02Z Fredrik $
++#
++# limited xinclude support for element trees
++#
++# history:
++# 2003-08-15 fl   created
++# 2003-11-14 fl   fixed default loader
++#
++# Copyright (c) 2003-2004 by Fredrik Lundh.  All rights reserved.
++#
++# fredrik@pythonware.com
++# http://www.pythonware.com
++#
++# --------------------------------------------------------------------
++# The ElementTree toolkit is
++#
++# Copyright (c) 1999-2004 by Fredrik Lundh
++#
++# By obtaining, using, and/or copying this software and/or its
++# associated documentation, you agree that you have read, understood,
++# and will comply with the following terms and conditions:
++#
++# Permission to use, copy, modify, and distribute this software and
++# its associated documentation for any purpose and without fee is
++# hereby granted, provided that the above copyright notice appears in
++# all copies, and that both that copyright notice and this permission
++# notice appear in supporting documentation, and that the name of
++# Secret Labs AB or the author not be used in advertising or publicity
++# pertaining to distribution of the software without specific, written
++# prior permission.
++#
++# SECRET LABS AB AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD
++# TO THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANT-
++# ABILITY AND FITNESS.  IN NO EVENT SHALL SECRET LABS AB OR THE AUTHOR
++# BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY
++# DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
++# WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
++# ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE
++# OF THIS SOFTWARE.
++# --------------------------------------------------------------------
++
++# Licensed to PSF under a Contributor Agreement.
++# See http://www.python.org/2.4/license for licensing details.
++
++##
++# Limited XInclude support for the ElementTree package.
++##
++
++import copy
++from . import ElementTree
++
++XINCLUDE = "{http://www.w3.org/2001/XInclude}"
++
++XINCLUDE_INCLUDE = XINCLUDE + "include"
++XINCLUDE_FALLBACK = XINCLUDE + "fallback"
++
++##
++# Fatal include error.
++
++class FatalIncludeError(SyntaxError):
++    pass
++
++##
++# Default loader.  This loader reads an included resource from disk.
++#
++# @param href Resource reference.
++# @param parse Parse mode.  Either "xml" or "text".
++# @param encoding Optional text encoding.
++# @return The expanded resource.  If the parse mode is "xml", this
++#    is an ElementTree instance.  If the parse mode is "text", this
++#    is a Unicode string.  If the loader fails, it can return None
++#    or raise an IOError exception.
++# @throws IOError If the loader fails to load the resource.
++
++def default_loader(href, parse, encoding=None):
++    file = open(href)
++    if parse == "xml":
++        data = ElementTree.parse(file).getroot()
++    else:
++        data = file.read()
++        if encoding:
++            data = data.decode(encoding)
++    file.close()
++    return data
++
++##
++# Expand XInclude directives.
++#
++# @param elem Root element.
++# @param loader Optional resource loader.  If omitted, it defaults
++#     to {@link default_loader}.  If given, it should be a callable
++#     that implements the same interface as <b>default_loader</b>.
++# @throws FatalIncludeError If the function fails to include a given
++#     resource, or if the tree contains malformed XInclude elements.
++# @throws IOError If the function fails to load a given resource.
++
++def include(elem, loader=None):
++    if loader is None:
++        loader = default_loader
++    # look for xinclude elements
++    i = 0
++    while i < len(elem):
++        e = elem[i]
++        if e.tag == XINCLUDE_INCLUDE:
++            # process xinclude directive
++            href = e.get("href")
++            parse = e.get("parse", "xml")
++            if parse == "xml":
++                node = loader(href, parse)
++                if node is None:
++                    raise FatalIncludeError(
++                        "cannot load %r as %r" % (href, parse)
++                        )
++                node = copy.copy(node)
++                if e.tail:
++                    node.tail = (node.tail or "") + e.tail
++                elem[i] = node
++            elif parse == "text":
++                text = loader(href, parse, e.get("encoding"))
++                if text is None:
++                    raise FatalIncludeError(
++                        "cannot load %r as %r" % (href, parse)
++                        )
++                if i:
++                    node = elem[i-1]
++                    node.tail = (node.tail or "") + text
++                else:
++                    elem.text = (elem.text or "") + text + (e.tail or "")
++                del elem[i]
++                continue
++            else:
++                raise FatalIncludeError(
++                    "unknown parse type in xi:include tag (%r)" % parse
++                )
++        elif e.tag == XINCLUDE_FALLBACK:
++            raise FatalIncludeError(
++                "xi:fallback tag must be child of xi:include (%r)" % e.tag
++                )
++        else:
++            include(e, loader)
++        i = i + 1
+ 
+198  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/etree/ElementPath.py
+@@ -0,0 +1,198 @@
++#
++# ElementTree
++# $Id: ElementPath.py 1858 2004-06-17 21:31:41Z Fredrik $
++#
++# limited xpath support for element trees
++#
++# history:
++# 2003-05-23 fl   created
++# 2003-05-28 fl   added support for // etc
++# 2003-08-27 fl   fixed parsing of periods in element names
++#
++# Copyright (c) 2003-2004 by Fredrik Lundh.  All rights reserved.
++#
++# fredrik@pythonware.com
++# http://www.pythonware.com
++#
++# --------------------------------------------------------------------
++# The ElementTree toolkit is
++#
++# Copyright (c) 1999-2004 by Fredrik Lundh
++#
++# By obtaining, using, and/or copying this software and/or its
++# associated documentation, you agree that you have read, understood,
++# and will comply with the following terms and conditions:
++#
++# Permission to use, copy, modify, and distribute this software and
++# its associated documentation for any purpose and without fee is
++# hereby granted, provided that the above copyright notice appears in
++# all copies, and that both that copyright notice and this permission
++# notice appear in supporting documentation, and that the name of
++# Secret Labs AB or the author not be used in advertising or publicity
++# pertaining to distribution of the software without specific, written
++# prior permission.
++#
++# SECRET LABS AB AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD
++# TO THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANT-
++# ABILITY AND FITNESS.  IN NO EVENT SHALL SECRET LABS AB OR THE AUTHOR
++# BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY
++# DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
++# WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
++# ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE
++# OF THIS SOFTWARE.
++# --------------------------------------------------------------------
++
++# Licensed to PSF under a Contributor Agreement.
++# See http://www.python.org/2.4/license for licensing details.
++
++##
++# Implementation module for XPath support.  There's usually no reason
++# to import this module directly; the <b>ElementTree</b> does this for
++# you, if needed.
++##
++
++import re
++
++xpath_tokenizer = re.compile(
++    "(::|\.\.|\(\)|[/.*:\[\]\(\)@=])|((?:\{[^}]+\})?[^/:\[\]\(\)@=\s]+)|\s+"
++    ).findall
++
++class xpath_descendant_or_self:
++    pass
++
++##
++# Wrapper for a compiled XPath.
++
++class Path:
++
++    ##
++    # Create an Path instance from an XPath expression.
++
++    def __init__(self, path):
++        tokens = xpath_tokenizer(path)
++        # the current version supports 'path/path'-style expressions only
++        self.path = []
++        self.tag = None
++        if tokens and tokens[0][0] == "/":
++            raise SyntaxError("cannot use absolute path on element")
++        while tokens:
++            op, tag = tokens.pop(0)
++            if tag or op == "*":
++                self.path.append(tag or op)
++            elif op == ".":
++                pass
++            elif op == "/":
++                self.path.append(xpath_descendant_or_self())
++                continue
++            else:
++                raise SyntaxError("unsupported path syntax (%s)" % op)
++            if tokens:
++                op, tag = tokens.pop(0)
++                if op != "/":
++                    raise SyntaxError(
++                        "expected path separator (%s)" % (op or tag)
++                        )
++        if self.path and isinstance(self.path[-1], xpath_descendant_or_self):
++            raise SyntaxError("path cannot end with //")
++        if len(self.path) == 1 and isinstance(self.path[0], type("")):
++            self.tag = self.path[0]
++
++    ##
++    # Find first matching object.
++
++    def find(self, element):
++        tag = self.tag
++        if tag is None:
++            nodeset = self.findall(element)
++            if not nodeset:
++                return None
++            return nodeset[0]
++        for elem in element:
++            if elem.tag == tag:
++                return elem
++        return None
++
++    ##
++    # Find text for first matching object.
++
++    def findtext(self, element, default=None):
++        tag = self.tag
++        if tag is None:
++            nodeset = self.findall(element)
++            if not nodeset:
++                return default
++            return nodeset[0].text or ""
++        for elem in element:
++            if elem.tag == tag:
++                return elem.text or ""
++        return default
++
++    ##
++    # Find all matching objects.
++
++    def findall(self, element):
++        nodeset = [element]
++        index = 0
++        while 1:
++            try:
++                path = self.path[index]
++                index = index + 1
++            except IndexError:
++                return nodeset
++            set = []
++            if isinstance(path, xpath_descendant_or_self):
++                try:
++                    tag = self.path[index]
++                    if not isinstance(tag, type("")):
++                        tag = None
++                    else:
++                        index = index + 1
++                except IndexError:
++                    tag = None # invalid path
++                for node in nodeset:
++                    new = list(node.getiterator(tag))
++                    if new and new[0] is node:
++                        set.extend(new[1:])
++                    else:
++                        set.extend(new)
++            else:
++                for node in nodeset:
++                    for node in node:
++                        if path == "*" or node.tag == path:
++                            set.append(node)
++            if not set:
++                return []
++            nodeset = set
++
++_cache = {}
++
++##
++# (Internal) Compile path.
++
++def _compile(path):
++    p = _cache.get(path)
++    if p is not None:
++        return p
++    p = Path(path)
++    if len(_cache) >= 100:
++        _cache.clear()
++    _cache[path] = p
++    return p
++
++##
++# Find first matching object.
++
++def find(element, path):
++    return _compile(path).find(element)
++
++##
++# Find text for first matching object.
++
++def findtext(element, path, default=None):
++    return _compile(path).findtext(element, default)
++
++##
++# Find all matching objects.
++
++def findall(element, path):
++    return _compile(path).findall(element)
+ 
+BIN  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/etree/ElementPath.pyc
+Binary file not shown.
+ 
+1,216  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/etree/ElementTree.py
+Large diffs are not rendered by default.
+
+ 
+BIN  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/etree/ElementTree.pyc
+Binary file not shown.
+ 
+33  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/etree/__init__.py
+@@ -0,0 +1,33 @@
++# $Id: __init__.py 1821 2004-06-03 16:57:49Z fredrik $
++# elementtree package
++
++# --------------------------------------------------------------------
++# The ElementTree toolkit is
++#
++# Copyright (c) 1999-2004 by Fredrik Lundh
++#
++# By obtaining, using, and/or copying this software and/or its
++# associated documentation, you agree that you have read, understood,
++# and will comply with the following terms and conditions:
++#
++# Permission to use, copy, modify, and distribute this software and
++# its associated documentation for any purpose and without fee is
++# hereby granted, provided that the above copyright notice appears in
++# all copies, and that both that copyright notice and this permission
++# notice appear in supporting documentation, and that the name of
++# Secret Labs AB or the author not be used in advertising or publicity
++# pertaining to distribution of the software without specific, written
++# prior permission.
++#
++# SECRET LABS AB AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD
++# TO THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANT-
++# ABILITY AND FITNESS.  IN NO EVENT SHALL SECRET LABS AB OR THE AUTHOR
++# BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY
++# DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
++# WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
++# ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE
++# OF THIS SOFTWARE.
++# --------------------------------------------------------------------
++
++# Licensed to PSF under a Contributor Agreement.
++# See http://www.python.org/2.4/license for licensing details.
+ 
+BIN  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/etree/__init__.pyc
+Binary file not shown.
+ 
+3  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/etree/cElementTree.py
+@@ -0,0 +1,3 @@
++# Wrapper module for _elementtree
++
++from _elementtree import *
+ 
+8  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/parsers/__init__.py
+@@ -0,0 +1,8 @@
++"""Python interfaces to XML parsers.
++
++This package contains one module:
++
++expat -- Python wrapper for James Clark's Expat parser, with namespace
++         support.
++
++"""
+ 
+BIN  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/parsers/__init__.pyc
+Binary file not shown.
+ 
+4  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/parsers/expat.py
+@@ -0,0 +1,4 @@
++"""Interface to the Expat non-validating XML parser."""
++__version__ = '$Revision: 17640 $'
++
++from pyexpat import *
+ 
+BIN  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/parsers/expat.pyc
+Binary file not shown.
+ 
+105  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/sax/__init__.py
+@@ -0,0 +1,105 @@
++"""Simple API for XML (SAX) implementation for Python.
++
++This module provides an implementation of the SAX 2 interface;
++information about the Java version of the interface can be found at
++http://www.megginson.com/SAX/.  The Python version of the interface is
++documented at <...>.
++
++This package contains the following modules:
++
++handler -- Base classes and constants which define the SAX 2 API for
++           the 'client-side' of SAX for Python.
++
++saxutils -- Implementation of the convenience classes commonly used to
++            work with SAX.
++
++xmlreader -- Base classes and constants which define the SAX 2 API for
++             the parsers used with SAX for Python.
++
++expatreader -- Driver that allows use of the Expat parser with SAX.
++"""
++
++from .xmlreader import InputSource
++from .handler import ContentHandler, ErrorHandler
++from ._exceptions import SAXException, SAXNotRecognizedException, \
++                        SAXParseException, SAXNotSupportedException, \
++                        SAXReaderNotAvailable
++
++
++def parse(source, handler, errorHandler=ErrorHandler()):
++    parser = make_parser()
++    parser.setContentHandler(handler)
++    parser.setErrorHandler(errorHandler)
++    parser.parse(source)
++
++def parseString(string, handler, errorHandler=ErrorHandler()):
++    from io import BytesIO
++
++    if errorHandler is None:
++        errorHandler = ErrorHandler()
++    parser = make_parser()
++    parser.setContentHandler(handler)
++    parser.setErrorHandler(errorHandler)
++
++    inpsrc = InputSource()
++    inpsrc.setByteStream(BytesIO(string))
++    parser.parse(inpsrc)
++
++# this is the parser list used by the make_parser function if no
++# alternatives are given as parameters to the function
++
++default_parser_list = ["xml.sax.expatreader"]
++
++# tell modulefinder that importing sax potentially imports expatreader
++_false = 0
++if _false:
++    import xml.sax.expatreader
++
++import os, sys
++if "PY_SAX_PARSER" in os.environ:
++    default_parser_list = os.environ["PY_SAX_PARSER"].split(",")
++del os
++
++_key = "python.xml.sax.parser"
++if sys.platform[:4] == "java" and sys.registry.containsKey(_key):
++    default_parser_list = sys.registry.getProperty(_key).split(",")
++
++
++def make_parser(parser_list = []):
++    """Creates and returns a SAX parser.
++
++    Creates the first parser it is able to instantiate of the ones
++    given in the list created by doing parser_list +
++    default_parser_list.  The lists must contain the names of Python
++    modules containing both a SAX parser and a create_parser function."""
++
++    for parser_name in parser_list + default_parser_list:
++        try:
++            return _create_parser(parser_name)
++        except ImportError as e:
++            import sys
++            if parser_name in sys.modules:
++                # The parser module was found, but importing it
++                # failed unexpectedly, pass this exception through
++                raise
++        except SAXReaderNotAvailable:
++            # The parser module detected that it won't work properly,
++            # so try the next one
++            pass
++
++    raise SAXReaderNotAvailable("No parsers found", None)
++
++# --- Internal utility methods used by make_parser
++
++if sys.platform[ : 4] == "java":
++    def _create_parser(parser_name):
++        from org.python.core import imp
++        drv_module = imp.importName(parser_name, 0, globals())
++        return drv_module.create_parser()
++
++else:
++    def _create_parser(parser_name):
++        drv_module = __import__(parser_name,{},{},['create_parser'])
++        return drv_module.create_parser()
++
++del sys
+ 
+BIN  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/sax/__init__.pyc
+Binary file not shown.
+ 
+131  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/sax/_exceptions.py
+@@ -0,0 +1,131 @@
++"""Different kinds of SAX Exceptions"""
++import sys
++if sys.platform[:4] == "java":
++    from java.lang import Exception
++del sys
++
++# ===== SAXEXCEPTION =====
++
++class SAXException(Exception):
++    """Encapsulate an XML error or warning. This class can contain
++    basic error or warning information from either the XML parser or
++    the application: you can subclass it to provide additional
++    functionality, or to add localization. Note that although you will
++    receive a SAXException as the argument to the handlers in the
++    ErrorHandler interface, you are not actually required to throw
++    the exception; instead, you can simply read the information in
++    it."""
++
++    def __init__(self, msg, exception=None):
++        """Creates an exception. The message is required, but the exception
++        is optional."""
++        self._msg = msg
++        self._exception = exception
++        Exception.__init__(self, msg)
++
++    def getMessage(self):
++        "Return a message for this exception."
++        return self._msg
++
++    def getException(self):
++        "Return the embedded exception, or None if there was none."
++        return self._exception
++
++    def __str__(self):
++        "Create a string representation of the exception."
++        return self._msg
++
++    def __getitem__(self, ix):
++        """Avoids weird error messages if someone does exception[ix] by
++        mistake, since Exception has __getitem__ defined."""
++        raise AttributeError("__getitem__")
++
++
++# ===== SAXPARSEEXCEPTION =====
++
++class SAXParseException(SAXException):
++    """Encapsulate an XML parse error or warning.
++
++    This exception will include information for locating the error in
++    the original XML document. Note that although the application will
++    receive a SAXParseException as the argument to the handlers in the
++    ErrorHandler interface, the application is not actually required
++    to throw the exception; instead, it can simply read the
++    information in it and take a different action.
++
++    Since this exception is a subclass of SAXException, it inherits
++    the ability to wrap another exception."""
++
++    def __init__(self, msg, exception, locator):
++        "Creates the exception. The exception parameter is allowed to be None."
++        SAXException.__init__(self, msg, exception)
++        self._locator = locator
++
++        # We need to cache this stuff at construction time.
++        # If this exception is thrown, the objects through which we must
++        # traverse to get this information may be deleted by the time
++        # it gets caught.
++        self._systemId = self._locator.getSystemId()
++        self._colnum = self._locator.getColumnNumber()
++        self._linenum = self._locator.getLineNumber()
++
++    def getColumnNumber(self):
++        """The column number of the end of the text where the exception
++        occurred."""
++        return self._colnum
++
++    def getLineNumber(self):
++        "The line number of the end of the text where the exception occurred."
++        return self._linenum
++
++    def getPublicId(self):
++        "Get the public identifier of the entity where the exception occurred."
++        return self._locator.getPublicId()
++
++    def getSystemId(self):
++        "Get the system identifier of the entity where the exception occurred."
++        return self._systemId
++
++    def __str__(self):
++        "Create a string representation of the exception."
++        sysid = self.getSystemId()
++        if sysid is None:
++            sysid = "<unknown>"
++        linenum = self.getLineNumber()
++        if linenum is None:
++            linenum = "?"
++        colnum = self.getColumnNumber()
++        if colnum is None:
++            colnum = "?"
++        return "%s:%s:%s: %s" % (sysid, linenum, colnum, self._msg)
++
++
++# ===== SAXNOTRECOGNIZEDEXCEPTION =====
++
++class SAXNotRecognizedException(SAXException):
++    """Exception class for an unrecognized identifier.
++
++    An XMLReader will raise this exception when it is confronted with an
++    unrecognized feature or property. SAX applications and extensions may
++    use this class for similar purposes."""
++
++
++# ===== SAXNOTSUPPORTEDEXCEPTION =====
++
++class SAXNotSupportedException(SAXException):
++    """Exception class for an unsupported operation.
++
++    An XMLReader will raise this exception when a service it cannot
++    perform is requested (specifically setting a state or value). SAX
++    applications and extensions may use this class for similar
++    purposes."""
++
++# ===== SAXNOTSUPPORTEDEXCEPTION =====
++
++class SAXReaderNotAvailable(SAXNotSupportedException):
++    """Exception class for a missing driver.
++
++    An XMLReader module (driver) should raise this exception when it
++    is first imported, e.g. when a support module cannot be imported.
++    It also may be raised during parsing, e.g. if executing an external
++    program is not permitted."""
+ 
+BIN  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/sax/_exceptions.pyc
+Binary file not shown.
+ 
+414  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/sax/expatreader.py
+Large diffs are not rendered by default.
+
+ 
+342  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/sax/handler.py
+@@ -0,0 +1,342 @@
++"""
++This module contains the core classes of version 2.0 of SAX for Python.
++This file provides only default classes with absolutely minimum
++functionality, from which drivers and applications can be subclassed.
++
++Many of these classes are empty and are included only as documentation
++of the interfaces.
++
++$Id: handler.py 53686 2007-02-09 05:37:30Z guido.van.rossum $
++"""
++
++version = '2.0beta'
++
++#============================================================================
++#
++# HANDLER INTERFACES
++#
++#============================================================================
++
++# ===== ERRORHANDLER =====
++
++class ErrorHandler:
++    """Basic interface for SAX error handlers.
++
++    If you create an object that implements this interface, then
++    register the object with your XMLReader, the parser will call the
++    methods in your object to report all warnings and errors. There
++    are three levels of errors available: warnings, (possibly)
++    recoverable errors, and unrecoverable errors. All methods take a
++    SAXParseException as the only parameter."""
++
++    def error(self, exception):
++        "Handle a recoverable error."
++        raise exception
++
++    def fatalError(self, exception):
++        "Handle a non-recoverable error."
++        raise exception
++
++    def warning(self, exception):
++        "Handle a warning."
++        print(exception)
++
++
++# ===== CONTENTHANDLER =====
++
++class ContentHandler:
++    """Interface for receiving logical document content events.
++
++    This is the main callback interface in SAX, and the one most
++    important to applications. The order of events in this interface
++    mirrors the order of the information in the document."""
++
++    def __init__(self):
++        self._locator = None
++
++    def setDocumentLocator(self, locator):
++        """Called by the parser to give the application a locator for
++        locating the origin of document events.
++
++        SAX parsers are strongly encouraged (though not absolutely
++        required) to supply a locator: if it does so, it must supply
++        the locator to the application by invoking this method before
++        invoking any of the other methods in the DocumentHandler
++        interface.
++
++        The locator allows the application to determine the end
++        position of any document-related event, even if the parser is
++        not reporting an error. Typically, the application will use
++        this information for reporting its own errors (such as
++        character content that does not match an application's
++        business rules). The information returned by the locator is
++        probably not sufficient for use with a search engine.
++
++        Note that the locator will return correct information only
++        during the invocation of the events in this interface. The
++        application should not attempt to use it at any other time."""
++        self._locator = locator
++
++    def startDocument(self):
++        """Receive notification of the beginning of a document.
++
++        The SAX parser will invoke this method only once, before any
++        other methods in this interface or in DTDHandler (except for
++        setDocumentLocator)."""
++
++    def endDocument(self):
++        """Receive notification of the end of a document.
++
++        The SAX parser will invoke this method only once, and it will
++        be the last method invoked during the parse. The parser shall
++        not invoke this method until it has either abandoned parsing
++        (because of an unrecoverable error) or reached the end of
++        input."""
++
++    def startPrefixMapping(self, prefix, uri):
++        """Begin the scope of a prefix-URI Namespace mapping.
++
++        The information from this event is not necessary for normal
++        Namespace processing: the SAX XML reader will automatically
++        replace prefixes for element and attribute names when the
++        http://xml.org/sax/features/namespaces feature is true (the
++        default).
++
++        There are cases, however, when applications need to use
++        prefixes in character data or in attribute values, where they
++        cannot safely be expanded automatically; the
++        start/endPrefixMapping event supplies the information to the
++        application to expand prefixes in those contexts itself, if
++        necessary.
++
++        Note that start/endPrefixMapping events are not guaranteed to
++        be properly nested relative to each-other: all
++        startPrefixMapping events will occur before the corresponding
++        startElement event, and all endPrefixMapping events will occur
++        after the corresponding endElement event, but their order is
++        not guaranteed."""
++
++    def endPrefixMapping(self, prefix):
++        """End the scope of a prefix-URI mapping.
++
++        See startPrefixMapping for details. This event will always
++        occur after the corresponding endElement event, but the order
++        of endPrefixMapping events is not otherwise guaranteed."""
++
++    def startElement(self, name, attrs):
++        """Signals the start of an element in non-namespace mode.
++
++        The name parameter contains the raw XML 1.0 name of the
++        element type as a string and the attrs parameter holds an
++        instance of the Attributes class containing the attributes of
++        the element."""
++
++    def endElement(self, name):
++        """Signals the end of an element in non-namespace mode.
++
++        The name parameter contains the name of the element type, just
++        as with the startElement event."""
++
++    def startElementNS(self, name, qname, attrs):
++        """Signals the start of an element in namespace mode.
++
++        The name parameter contains the name of the element type as a
++        (uri, localname) tuple, the qname parameter the raw XML 1.0
++        name used in the source document, and the attrs parameter
++        holds an instance of the Attributes class containing the
++        attributes of the element.
++
++        The uri part of the name tuple is None for elements which have
++        no namespace."""
++
++    def endElementNS(self, name, qname):
++        """Signals the end of an element in namespace mode.
++
++        The name parameter contains the name of the element type, just
++        as with the startElementNS event."""
++
++    def characters(self, content):
++        """Receive notification of character data.
++
++        The Parser will call this method to report each chunk of
++        character data. SAX parsers may return all contiguous
++        character data in a single chunk, or they may split it into
++        several chunks; however, all of the characters in any single
++        event must come from the same external entity so that the
++        Locator provides useful information."""
++
++    def ignorableWhitespace(self, whitespace):
++        """Receive notification of ignorable whitespace in element content.
++
++        Validating Parsers must use this method to report each chunk
++        of ignorable whitespace (see the W3C XML 1.0 recommendation,
++        section 2.10): non-validating parsers may also use this method
++        if they are capable of parsing and using content models.
++
++        SAX parsers may return all contiguous whitespace in a single
++        chunk, or they may split it into several chunks; however, all
++        of the characters in any single event must come from the same
++        external entity, so that the Locator provides useful
++        information."""
++
++    def processingInstruction(self, target, data):
++        """Receive notification of a processing instruction.
++
++        The Parser will invoke this method once for each processing
++        instruction found: note that processing instructions may occur
++        before or after the main document element.
++
++        A SAX parser should never report an XML declaration (XML 1.0,
++        section 2.8) or a text declaration (XML 1.0, section 4.3.1)
++        using this method."""
++
++    def skippedEntity(self, name):
++        """Receive notification of a skipped entity.
++
++        The Parser will invoke this method once for each entity
++        skipped. Non-validating processors may skip entities if they
++        have not seen the declarations (because, for example, the
++        entity was declared in an external DTD subset). All processors
++        may skip external entities, depending on the values of the
++        http://xml.org/sax/features/external-general-entities and the
++        http://xml.org/sax/features/external-parameter-entities
++        properties."""
++
++
++# ===== DTDHandler =====
++
++class DTDHandler:
++    """Handle DTD events.
++
++    This interface specifies only those DTD events required for basic
++    parsing (unparsed entities and attributes)."""
++
++    def notationDecl(self, name, publicId, systemId):
++        "Handle a notation declaration event."
++
++    def unparsedEntityDecl(self, name, publicId, systemId, ndata):
++        "Handle an unparsed entity declaration event."
++
++
++# ===== ENTITYRESOLVER =====
++
++class EntityResolver:
++    """Basic interface for resolving entities. If you create an object
++    implementing this interface, then register the object with your
++    Parser, the parser will call the method in your object to
++    resolve all external entities. Note that DefaultHandler implements
++    this interface with the default behaviour."""
++
++    def resolveEntity(self, publicId, systemId):
++        """Resolve the system identifier of an entity and return either
++        the system identifier to read from as a string, or an InputSource
++        to read from."""
++        return systemId
++
++
++#============================================================================
++#
++# CORE FEATURES
++#
++#============================================================================
++
++feature_namespaces = "http://xml.org/sax/features/namespaces"
++# true: Perform Namespace processing (default).
++# false: Optionally do not perform Namespace processing
++#        (implies namespace-prefixes).
++# access: (parsing) read-only; (not parsing) read/write
++
++feature_namespace_prefixes = "http://xml.org/sax/features/namespace-prefixes"
++# true: Report the original prefixed names and attributes used for Namespace
++#       declarations.
++# false: Do not report attributes used for Namespace declarations, and
++#        optionally do not report original prefixed names (default).
++# access: (parsing) read-only; (not parsing) read/write
++
++feature_string_interning = "http://xml.org/sax/features/string-interning"
++# true: All element names, prefixes, attribute names, Namespace URIs, and
++#       local names are interned using the built-in intern function.
++# false: Names are not necessarily interned, although they may be (default).
++# access: (parsing) read-only; (not parsing) read/write
++
++feature_validation = "http://xml.org/sax/features/validation"
++# true: Report all validation errors (implies external-general-entities and
++#       external-parameter-entities).
++# false: Do not report validation errors.
++# access: (parsing) read-only; (not parsing) read/write
++
++feature_external_ges = "http://xml.org/sax/features/external-general-entities"
++# true: Include all external general (text) entities.
++# false: Do not include external general entities.
++# access: (parsing) read-only; (not parsing) read/write
++
++feature_external_pes = "http://xml.org/sax/features/external-parameter-entities"
++# true: Include all external parameter entities, including the external
++#       DTD subset.
++# false: Do not include any external parameter entities, even the external
++#        DTD subset.
++# access: (parsing) read-only; (not parsing) read/write
++
++all_features = [feature_namespaces,
++                feature_namespace_prefixes,
++                feature_string_interning,
++                feature_validation,
++                feature_external_ges,
++                feature_external_pes]
++
++
++#============================================================================
++#
++# CORE PROPERTIES
++#
++#============================================================================
++
++property_lexical_handler = "http://xml.org/sax/properties/lexical-handler"
++# data type: xml.sax.sax2lib.LexicalHandler
++# description: An optional extension handler for lexical events like comments.
++# access: read/write
++
++property_declaration_handler = "http://xml.org/sax/properties/declaration-handler"
++# data type: xml.sax.sax2lib.DeclHandler
++# description: An optional extension handler for DTD-related events other
++#              than notations and unparsed entities.
++# access: read/write
++
++property_dom_node = "http://xml.org/sax/properties/dom-node"
++# data type: org.w3c.dom.Node
++# description: When parsing, the current DOM node being visited if this is
++#              a DOM iterator; when not parsing, the root DOM node for
++#              iteration.
++# access: (parsing) read-only; (not parsing) read/write
++
++property_xml_string = "http://xml.org/sax/properties/xml-string"
++# data type: String
++# description: The literal string of characters that was the source for
++#              the current event.
++# access: read-only
++
++property_encoding = "http://www.python.org/sax/properties/encoding"
++# data type: String
++# description: The name of the encoding to assume for input data.
++# access: write: set the encoding, e.g. established by a higher-level
++#                protocol. May change during parsing (e.g. after
++#                processing a META tag)
++#         read:  return the current encoding (possibly established through
++#                auto-detection.
++# initial value: UTF-8
++#
++
++property_interning_dict = "http://www.python.org/sax/properties/interning-dict"
++# data type: Dictionary
++# description: The dictionary used to intern common strings in the document
++# access: write: Request that the parser uses a specific dictionary, to
++#                allow interning across different documents
++#         read:  return the current interning dictionary, or None
++#
++
++all_properties = [property_lexical_handler,
++                  property_dom_node,
++                  property_declaration_handler,
++                  property_xml_string,
++                  property_encoding,
++                  property_interning_dict]
+ 
+BIN  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/sax/handler.pyc
+Binary file not shown.
+ 
+297  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/sax/saxutils.py
+@@ -0,0 +1,297 @@
++"""\
++A library of useful helper classes to the SAX classes, for the
++convenience of application and driver writers.
++"""
++
++import os, urllib.parse, urllib.request
++from . import handler
++from . import xmlreader
++
++# See whether the xmlcharrefreplace error handler is
++# supported
++try:
++    from codecs import xmlcharrefreplace_errors
++    _error_handling = "xmlcharrefreplace"
++    del xmlcharrefreplace_errors
++except ImportError:
++    _error_handling = "strict"
++
++def __dict_replace(s, d):
++    """Replace substrings of a string using a dictionary."""
++    for key, value in d.items():
++        s = s.replace(key, value)
++    return s
++
++def escape(data, entities={}):
++    """Escape &, <, and > in a string of data.
++
++    You can escape other strings of data by passing a dictionary as
++    the optional entities parameter.  The keys and values must all be
++    strings; each key will be replaced with its corresponding value.
++    """
++
++    # must do ampersand first
++    data = data.replace("&", "&amp;")
++    data = data.replace(">", "&gt;")
++    data = data.replace("<", "&lt;")
++    if entities:
++        data = __dict_replace(data, entities)
++    return data
++
++def unescape(data, entities={}):
++    """Unescape &amp;, &lt;, and &gt; in a string of data.
++
++    You can unescape other strings of data by passing a dictionary as
++    the optional entities parameter.  The keys and values must all be
++    strings; each key will be replaced with its corresponding value.
++    """
++    data = data.replace("&lt;", "<")
++    data = data.replace("&gt;", ">")
++    if entities:
++        data = __dict_replace(data, entities)
++    # must do ampersand last
++    return data.replace("&amp;", "&")
++
++def quoteattr(data, entities={}):
++    """Escape and quote an attribute value.
++
++    Escape &, <, and > in a string of data, then quote it for use as
++    an attribute value.  The \" character will be escaped as well, if
++    necessary.
++
++    You can escape other strings of data by passing a dictionary as
++    the optional entities parameter.  The keys and values must all be
++    strings; each key will be replaced with its corresponding value.
++    """
++    entities = entities.copy()
++    entities.update({'\n': '&#10;', '\r': '&#13;', '\t':'&#9;'})
++    data = escape(data, entities)
++    if '"' in data:
++        if "'" in data:
++            data = '"%s"' % data.replace('"', "&quot;")
++        else:
++            data = "'%s'" % data
++    else:
++        data = '"%s"' % data
++    return data
++
++
++class XMLGenerator(handler.ContentHandler):
++
++    def __init__(self, out=None, encoding="iso-8859-1"):
++        if out is None:
++            import sys
++            out = sys.stdout
++        handler.ContentHandler.__init__(self)
++        self._out = out
++        self._ns_contexts = [{}] # contains uri -> prefix dicts
++        self._current_context = self._ns_contexts[-1]
++        self._undeclared_ns_maps = []
++        self._encoding = encoding
++
++    def _write(self, text):
++        if isinstance(text, str):
++            self._out.write(text)
++        else:
++            self._out.write(text.encode(self._encoding, _error_handling))
++
++    def _qname(self, name):
++        """Builds a qualified name from a (ns_url, localname) pair"""
++        if name[0]:
++            # The name is in a non-empty namespace
++            prefix = self._current_context[name[0]]
++            if prefix:
++                # If it is not the default namespace, prepend the prefix
++                return prefix + ":" + name[1]
++        # Return the unqualified name
++        return name[1]
++
++    # ContentHandler methods
++
++    def startDocument(self):
++        self._write('<?xml version="1.0" encoding="%s"?>\n' %
++                        self._encoding)
++
++    def startPrefixMapping(self, prefix, uri):
++        self._ns_contexts.append(self._current_context.copy())
++        self._current_context[uri] = prefix
++        self._undeclared_ns_maps.append((prefix, uri))
++
++    def endPrefixMapping(self, prefix):
++        self._current_context = self._ns_contexts[-1]
++        del self._ns_contexts[-1]
++
++    def startElement(self, name, attrs):
++        self._write('<' + name)
++        for (name, value) in attrs.items():
++            self._write(' %s=%s' % (name, quoteattr(value)))
++        self._write('>')
++
++    def endElement(self, name):
++        self._write('</%s>' % name)
++
++    def startElementNS(self, name, qname, attrs):
++        self._write('<' + self._qname(name))
++
++        for prefix, uri in self._undeclared_ns_maps:
++            if prefix:
++                self._out.write(' xmlns:%s="%s"' % (prefix, uri))
++            else:
++                self._out.write(' xmlns="%s"' % uri)
++        self._undeclared_ns_maps = []
++
++        for (name, value) in attrs.items():
++            self._write(' %s=%s' % (self._qname(name), quoteattr(value)))
++        self._write('>')
++
++    def endElementNS(self, name, qname):
++        self._write('</%s>' % self._qname(name))
++
++    def characters(self, content):
++        self._write(escape(content))
++
++    def ignorableWhitespace(self, content):
++        self._write(content)
++
++    def processingInstruction(self, target, data):
++        self._write('<?%s %s?>' % (target, data))
++
++
++class XMLFilterBase(xmlreader.XMLReader):
++    """This class is designed to sit between an XMLReader and the
++    client application's event handlers.  By default, it does nothing
++    but pass requests up to the reader and events on to the handlers
++    unmodified, but subclasses can override specific methods to modify
++    the event stream or the configuration requests as they pass
++    through."""
++
++    def __init__(self, parent = None):
++        xmlreader.XMLReader.__init__(self)
++        self._parent = parent
++
++    # ErrorHandler methods
++
++    def error(self, exception):
++        self._err_handler.error(exception)
++
++    def fatalError(self, exception):
++        self._err_handler.fatalError(exception)
++
++    def warning(self, exception):
++        self._err_handler.warning(exception)
++
++    # ContentHandler methods
++
++    def setDocumentLocator(self, locator):
++        self._cont_handler.setDocumentLocator(locator)
++
++    def startDocument(self):
++        self._cont_handler.startDocument()
++
++    def endDocument(self):
++        self._cont_handler.endDocument()
++
++    def startPrefixMapping(self, prefix, uri):
++        self._cont_handler.startPrefixMapping(prefix, uri)
++
++    def endPrefixMapping(self, prefix):
++        self._cont_handler.endPrefixMapping(prefix)
++
++    def startElement(self, name, attrs):
++        self._cont_handler.startElement(name, attrs)
++
++    def endElement(self, name):
++        self._cont_handler.endElement(name)
++
++    def startElementNS(self, name, qname, attrs):
++        self._cont_handler.startElementNS(name, qname, attrs)
++
++    def endElementNS(self, name, qname):
++        self._cont_handler.endElementNS(name, qname)
++
++    def characters(self, content):
++        self._cont_handler.characters(content)
++
++    def ignorableWhitespace(self, chars):
++        self._cont_handler.ignorableWhitespace(chars)
++
++    def processingInstruction(self, target, data):
++        self._cont_handler.processingInstruction(target, data)
++
++    def skippedEntity(self, name):
++        self._cont_handler.skippedEntity(name)
++
++    # DTDHandler methods
++
++    def notationDecl(self, name, publicId, systemId):
++        self._dtd_handler.notationDecl(name, publicId, systemId)
++
++    def unparsedEntityDecl(self, name, publicId, systemId, ndata):
++        self._dtd_handler.unparsedEntityDecl(name, publicId, systemId, ndata)
++
++    # EntityResolver methods
++
++    def resolveEntity(self, publicId, systemId):
++        return self._ent_handler.resolveEntity(publicId, systemId)
++
++    # XMLReader methods
++
++    def parse(self, source):
++        self._parent.setContentHandler(self)
++        self._parent.setErrorHandler(self)
++        self._parent.setEntityResolver(self)
++        self._parent.setDTDHandler(self)
++        self._parent.parse(source)
++
++    def setLocale(self, locale):
++        self._parent.setLocale(locale)
++
++    def getFeature(self, name):
++        return self._parent.getFeature(name)
++
++    def setFeature(self, name, state):
++        self._parent.setFeature(name, state)
++
++    def getProperty(self, name):
++        return self._parent.getProperty(name)
++
++    def setProperty(self, name, value):
++        self._parent.setProperty(name, value)
++
++    # XMLFilter methods
++
++    def getParent(self):
++        return self._parent
++
++    def setParent(self, parent):
++        self._parent = parent
++
++# --- Utility functions
++
++def prepare_input_source(source, base = ""):
++    """This function takes an InputSource and an optional base URL and
++    returns a fully resolved InputSource object ready for reading."""
++
++    if isinstance(source, str):
++        source = xmlreader.InputSource(source)
++    elif hasattr(source, "read"):
++        f = source
++        source = xmlreader.InputSource()
++        source.setByteStream(f)
++        if hasattr(f, "name"):
++            source.setSystemId(f.name)
++
++    if source.getByteStream() is None:
++        sysid = source.getSystemId()
++        basehead = os.path.dirname(os.path.normpath(base))
++        sysidfilename = os.path.join(basehead, sysid)
++        if os.path.isfile(sysidfilename):
++            source.setSystemId(sysidfilename)
++            f = open(sysidfilename, "rb")
++        else:
++            source.setSystemId(urllib.parse.urljoin(base, sysid))
++            f = urllib.request.urlopen(source.getSystemId())
++
++        source.setByteStream(f)
++
++    return source
+ 
+378  2ㅂㅜ ㅁㅗㄷㅠㄹ/2ㅂㅜ19ㅈㅏㅇ/simple Example/xml/sax/xmlreader.py
+@@ -0,0 +1,378 @@
++"""An XML Reader is the SAX 2 name for an XML parser. XML Parsers
++should be based on this code. """
++
++from . import handler
++
++from ._exceptions import SAXNotSupportedException, SAXNotRecognizedException
++
++
++# ===== XMLREADER =====
++
++class XMLReader:
++    """Interface for reading an XML document using callbacks.
++
++    XMLReader is the interface that an XML parser's SAX2 driver must
++    implement. This interface allows an application to set and query
++    features and properties in the parser, to register event handlers
++    for document processing, and to initiate a document parse.
++
++    All SAX interfaces are assumed to be synchronous: the parse
++    methods must not return until parsing is complete, and readers
++    must wait for an event-handler callback to return before reporting
++    the next event."""
++
++    def __init__(self):
++        self._cont_handler = handler.ContentHandler()
++        self._dtd_handler = handler.DTDHandler()
++        self._ent_handler = handler.EntityResolver()
++        self._err_handler = handler.ErrorHandler()
++
++    def parse(self, source):
++        "Parse an XML document from a system identifier or an InputSource."
++        raise NotImplementedError("This method must be implemented!")
++
++    def getContentHandler(self):
++        "Returns the current ContentHandler."
++        return self._cont_handler
++
++    def setContentHandler(self, handler):
++        "Registers a new object to receive document content events."
++        self._cont_handler = handler
++
++    def getDTDHandler(self):
++        "Returns the current DTD handler."
++        return self._dtd_handler
++
++    def setDTDHandler(self, handler):
++        "Register an object to receive basic DTD-related events."
++        self._dtd_handler = handler
++
++    def getEntityResolver(self):
++        "Returns the current EntityResolver."
++        return self._ent_handler
++
++    def setEntityResolver(self, resolver):
++        "Register an object to resolve external entities."
++        self._ent_handler = resolver
++
++    def getErrorHandler(self):
++        "Returns the current ErrorHandler."
++        return self._err_handler
++
++    def setErrorHandler(self, handler):
++        "Register an object to receive error-message events."
++        self._err_handler = handler
++
++    def setLocale(self, locale):
++        """Allow an application to set the locale for errors and warnings.
++
++        SAX parsers are not required to provide localization for errors
++        and warnings; if they cannot support the requested locale,
++        however, they must throw a SAX exception. Applications may
++        request a locale change in the middle of a parse."""
++        raise SAXNotSupportedException("Locale support not implemented")
++
++    def getFeature(self, name):
++        "Looks up and returns the state of a SAX2 feature."
++        raise SAXNotRecognizedException("Feature '%s' not recognized" % name)
++
++    def setFeature(self, name, state):
++        "Sets the state of a SAX2 feature."
++        raise SAXNotRecognizedException("Feature '%s' not recognized" % name)
++
++    def getProperty(self, name):
++        "Looks up and returns the value of a SAX2 property."
++        raise SAXNotRecognizedException("Property '%s' not recognized" % name)
++
++    def setProperty(self, name, value):
++        "Sets the value of a SAX2 property."
++        raise SAXNotRecognizedException("Property '%s' not recognized" % name)
++
++class IncrementalParser(XMLReader):
++    """This interface adds three extra methods to the XMLReader
++    interface that allow XML parsers to support incremental
++    parsing. Support for this interface is optional, since not all
++    underlying XML parsers support this functionality.
++
++    When the parser is instantiated it is ready to begin accepting
++    data from the feed method immediately. After parsing has been
++    finished with a call to close the reset method must be called to
++    make the parser ready to accept new data, either from feed or
++    using the parse method.
++
++    Note that these methods must _not_ be called during parsing, that
++    is, after parse has been called and before it returns.
++
++    By default, the class also implements the parse method of the XMLReader
++    interface using the feed, close and reset methods of the
++    IncrementalParser interface as a convenience to SAX 2.0 driver
++    writers."""
++
++    def __init__(self, bufsize=2**16):
++        self._bufsize = bufsize
++        XMLReader.__init__(self)
++
++    def parse(self, source):
++        from . import saxutils
++        source = saxutils.prepare_input_source(source)
++
++        self.prepareParser(source)
++        file = source.getByteStream()
++        buffer = file.read(self._bufsize)
++        while buffer:
++            self.feed(buffer)
++            buffer = file.read(self._bufsize)
++        self.close()
++
++    def feed(self, data):
++        """This method gives the raw XML data in the data parameter to
++        the parser and makes it parse the data, emitting the
++        corresponding events. It is allowed for XML constructs to be
++        split across several calls to feed.
++
++        feed may raise SAXException."""
++        raise NotImplementedError("This method must be implemented!")
++
++    def prepareParser(self, source):
++        """This method is called by the parse implementation to allow
++        the SAX 2.0 driver to prepare itself for parsing."""
++        raise NotImplementedError("prepareParser must be overridden!")
++
++    def close(self):
++        """This method is called when the entire XML document has been
++        passed to the parser through the feed method, to notify the
++        parser that there are no more data. This allows the parser to
++        do the final checks on the document and empty the internal
++        data buffer.
++
++        The parser will not be ready to parse another document until
++        the reset method has been called.
++
++        close may raise SAXException."""
++        raise NotImplementedError("This method must be implemented!")
++
++    def reset(self):
++        """This method is called after close has been called to reset
++        the parser so that it is ready to parse new documents. The
++        results of calling parse or feed after close without calling
++        reset are undefined."""
++        raise NotImplementedError("This method must be implemented!")
++
++# ===== LOCATOR =====
++
++class Locator:
++    """Interface for associating a SAX event with a document
++    location. A locator object will return valid results only during
++    calls to DocumentHandler methods; at any other time, the
++    results are unpredictable."""
++
++    def getColumnNumber(self):
++        "Return the column number where the current event ends."
++        return -1
++
++    def getLineNumber(self):
++        "Return the line number where the current event ends."
++        return -1
++
++    def getPublicId(self):
++        "Return the public identifier for the current event."
++        return None
++
++    def getSystemId(self):
++        "Return the system identifier for the current event."
++        return None
++
++# ===== INPUTSOURCE =====
++
++class InputSource:
++    """Encapsulation of the information needed by the XMLReader to
++    read entities.
++
++    This class may include information about the public identifier,
++    system identifier, byte stream (possibly with character encoding
++    information) and/or the character stream of an entity.
++
++    Applications will create objects of this class for use in the
++    XMLReader.parse method and for returning from
++    EntityResolver.resolveEntity.
++
++    An InputSource belongs to the application, the XMLReader is not
++    allowed to modify InputSource objects passed to it from the
++    application, although it may make copies and modify those."""
++
++    def __init__(self, system_id = None):
++        self.__system_id = system_id
++        self.__public_id = None
++        self.__encoding  = None
++        self.__bytefile  = None
++        self.__charfile  = None
++
++    def setPublicId(self, public_id):
++        "Sets the public identifier of this InputSource."
++        self.__public_id = public_id
++
++    def getPublicId(self):
++        "Returns the public identifier of this InputSource."
++        return self.__public_id
++
++    def setSystemId(self, system_id):
++        "Sets the system identifier of this InputSource."
++        self.__system_id = system_id
++
++    def getSystemId(self):
++        "Returns the system identifier of this InputSource."
++        return self.__system_id
++
++    def setEncoding(self, encoding):
++        """Sets the character encoding of this InputSource.
++
++        The encoding must be a string acceptable for an XML encoding
++        declaration (see section 4.3.3 of the XML recommendation).
++
++        The encoding attribute of the InputSource is ignored if the
++        InputSource also contains a character stream."""
++        self.__encoding = encoding
++
++    def getEncoding(self):
++        "Get the character encoding of this InputSource."
++        return self.__encoding
++
++    def setByteStream(self, bytefile):
++        """Set the byte stream (a Python file-like object which does
++        not perform byte-to-character conversion) for this input
++        source.
++
++        The SAX parser will ignore this if there is also a character
++        stream specified, but it will use a byte stream in preference
++        to opening a URI connection itself.
++
++        If the application knows the character encoding of the byte
++        stream, it should set it with the setEncoding method."""
++        self.__bytefile = bytefile
++
++    def getByteStream(self):
++        """Get the byte stream for this input source.
++
++        The getEncoding method will return the character encoding for
++        this byte stream, or None if unknown."""
++        return self.__bytefile
++
++    def setCharacterStream(self, charfile):
++        """Set the character stream for this input source. (The stream
++        must be a Python 2.0 Unicode-wrapped file-like that performs
++        conversion to Unicode strings.)
++
++        If there is a character stream specified, the SAX parser will
++        ignore any byte stream and will not attempt to open a URI
++        connection to the system identifier."""
++        self.__charfile = charfile
++
++    def getCharacterStream(self):
++        "Get the character stream for this input source."
++        return self.__charfile
++
++# ===== ATTRIBUTESIMPL =====
++
++class AttributesImpl:
++
++    def __init__(self, attrs):
++        """Non-NS-aware implementation.
++
++        attrs should be of the form {name : value}."""
++        self._attrs = attrs
++
++    def getLength(self):
++        return len(self._attrs)
++
++    def getType(self, name):
++        return "CDATA"
++
++    def getValue(self, name):
++        return self._attrs[name]
++
++    def getValueByQName(self, name):
++        return self._attrs[name]
++
++    def getNameByQName(self, name):
++        if name not in self._attrs:
++            raise KeyError(name)
++        return name
++
++    def getQNameByName(self, name):
++        if name not in self._attrs:
++            raise KeyError(name)
++        return name
++
++    def getNames(self):
++        return list(self._attrs.keys())
++
++    def getQNames(self):
++        return list(self._attrs.keys())
++
++    def __len__(self):
++        return len(self._attrs)
++
++    def __getitem__(self, name):
++        return self._attrs[name]
++
++    def keys(self):
++        return list(self._attrs.keys())
++
++    def __contains__(self, name):
++        return name in self._attrs
++
++    def get(self, name, alternative=None):
++        return self._attrs.get(name, alternative)
++
++    def copy(self):
++        return self.__class__(self._attrs)
++
++    def items(self):
++        return list(self._attrs.items())
++
++    def values(self):
++        return list(self._attrs.values())
++
++# ===== ATTRIBUTESNSIMPL =====
++
++class AttributesNSImpl(AttributesImpl):
++
++    def __init__(self, attrs, qnames):
++        """NS-aware implementation.
++
++        attrs should be of the form {(ns_uri, lname): value, ...}.
++        qnames of the form {(ns_uri, lname): qname, ...}."""
++        self._attrs = attrs
++        self._qnames = qnames
++
++    def getValueByQName(self, name):
++        for (nsname, qname) in self._qnames.items():
++            if qname == name:
++                return self._attrs[nsname]
++
++        raise KeyError(name)
++
++    def getNameByQName(self, name):
++        for (nsname, qname) in self._qnames.items():
++            if qname == name:
++                return nsname
++
++        raise KeyError(name)
++
++    def getQNameByName(self, name):
++        return self._qnames[name]
++
++    def getQNames(self):
++        return list(self._qnames.values())
++
++    def copy(self):
++        return self.__class__(self._attrs, self._qnames)
++
++
++def _test():
++    XMLReader()
++    IncrementalParser()
++    Locator()
++
++if __name__ == "__main__":
++    _test()
+ 
