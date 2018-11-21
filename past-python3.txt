@@ -1,5 +1,5 @@
-<ºü¸£°Ô È°¿ëÇÏ´Â ÆÄÀÌ½ã 3.2 ÇÁ·Î±×·¡¹Ö> ¼Ò½ºÄÚµå
-
+<ë¹ ë¥´ê²Œ í™œìš©í•˜ëŠ” íŒŒì´ì¬ 3.2 í”„ë¡œê·¸ë˜ë°> ì†ŒìŠ¤ì½”ë“œ
+20181122
  master
 @wikibook
 wikibook committed on 25 Oct 2013
@@ -10,7 +10,7 @@ Showing 634 changed files with 48,527 additions and 0 deletions.
 /4-1-1.py
 @@ -0,0 +1,14 @@
 # -*- coding: cp949 -*-
-score = int(input(('Input Score: ')))       # »ç¿ëÀÚ·ÎºÎÅÍ Á¤¼ö°ªÀ» ÀÔ·Â ¹ŞÀ½
+score = int(input(('Input Score: ')))       # ì‚¬ìš©ìë¡œë¶€í„° ì •ìˆ˜ê°’ì„ ì…ë ¥ ë°›ìŒ
 if 90 <= score <= 100:
     grade = "A"
 elif 80 <= score < 90:
@@ -30,25 +30,25 @@ print ("Grade is " + grade)
 +# -*- coding: cp949 -*-
 +a = 0
 +if a & 10/a:
-+    print ("a¡Æ¢® 0AO¢¥I¢¥U.")
++    print ("aÂ°Â¡ 0AOÂ´IÂ´U.")
 +else:
-+    print ("¢¯¢®¡¤?¨ú©ªAI Ae¡Æu!")
++    print ("Â¿Â¡Â·?Â¾Ã¸AI AeÂ°u!")
  
-6  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì4¤¸¤¿¤·/4-3-2.py
+6  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ4ã…ˆã…ã…‡/4-3-2.py
 @@ -0,0 +1,6 @@
 +# -*- coding: cp949 -*-
 +a = 0
 +if a and 10/a:
-+    print ("a¡Æ¢® 0AO¢¥I¢¥U.")
++    print ("aÂ°Â¡ 0AOÂ´IÂ´U.")
 +else:
-+    print ("¢¯¢®¡¤?¨ú©ªAI Ae¡Æu!")
++    print ("Â¿Â¡Â·?Â¾Ã¸AI AeÂ°u!")
  
 ----------------------------------
 /4-5-1.py
 @@ -0,0 +1,6 @@
 +# -*- coding: cp949 -*-
 +for n in [1, 2]:
-+    print("-- {0} ¢¥U --".format(n))
++    print("-- {0} Â´U --".format(n))
 +    for i in [1, 2, 3, 4, 5, 6, 7, 8, 9]:
 +        print("{0} * {1} = {2}".format(n, i, n*i))
 +
@@ -65,8 +65,8 @@ for i in L:
         continue
     print("Item: {0}".format(i))
 else:
-    print("Exit without break.")      # breakÀ¸·Î ·çÇÁ°¡ Á¾·áµÇÁö ¾ÊÀº °æ¿ì Ãâ·ÂµË´Ï´Ù.
-print("Always this is printed")       # ·çÇÁ ¿ÜºÎ ¹®Àå
+    print("Exit without break.")      # breakìœ¼ë¡œ ë£¨í”„ê°€ ì¢…ë£Œë˜ì§€ ì•Šì€ ê²½ìš° ì¶œë ¥ë©ë‹ˆë‹¤.
+print("Always this is printed")       # ë£¨í”„ ì™¸ë¶€ ë¬¸ì¥
  
 ---------------------------------- 
 /4-6-2.py
@@ -74,11 +74,11 @@ print("Always this is printed")       # ·çÇÁ ¿ÜºÎ ¹®Àå
 +# -*- coding: cp949 -*-
 +L = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 +for i in L:
-+    if i > 5:                       # i°¡ 5º¸´Ù Å« °æ¿ì, ¼øÈ¸ ÁßÀÎ ·çÇÁ°¡ breakÀ¸·Î Á¾·áµË´Ï´Ù.
++    if i > 5:                       # iê°€ 5ë³´ë‹¤ í° ê²½ìš°, ìˆœíšŒ ì¤‘ì¸ ë£¨í”„ê°€ breakìœ¼ë¡œ ì¢…ë£Œë©ë‹ˆë‹¤.
 +        break
 +    print("Item: {0}".format(i))
 +else:
-+    print("Exit without break.")    # break·Î ·çÇÁ°¡ Á¾·áµÇ±â ¶§¹®¿¡, Ãâ·ÂµÇÁö ¾Ê½À´Ï´Ù.
++    print("Exit without break.")    # breakë¡œ ë£¨í”„ê°€ ì¢…ë£Œë˜ê¸° ë•Œë¬¸ì—, ì¶œë ¥ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤.
 +print("Always this is printed")
 
 
@@ -89,184 +89,184 @@ print("Always this is printed")       # ·çÇÁ ¿ÜºÎ ¹®Àå
 +import time
 +l = range(1000)
 +
-+t = time.mktime(time.localtime())      # for¹®À¸·Î °¢ ÀÎÀÚ¸¦ Ãâ·ÂÇÏ´Â °æ¿ì
++t = time.mktime(time.localtime())      # forë¬¸ìœ¼ë¡œ ê° ì¸ìë¥¼ ì¶œë ¥í•˜ëŠ” ê²½ìš°
 +for i in l:
 +    print (i,)
 +t1 = time.mktime(time.localtime()) - t
 +
-+t = time.mktime(time.localtime())      # join() ¸Ş¼Òµå¸¦ ÀÌ¿ëÇÏ¿© Ãâ·ÂÇÏ´Â °æ¿ì
++t = time.mktime(time.localtime())      # join() ë©”ì†Œë“œë¥¼ ì´ìš©í•˜ì—¬ ì¶œë ¥í•˜ëŠ” ê²½ìš°
 +print (", ".join(str(i) for i in l))
 +t2 = time.mktime(time.localtime()) - t
 +
-+print ("for ¹®À¸·Î °¢ ÀÎÀÚ¸¦ Ãâ·Â")          # ÃøÁ¤ÇÑ ½Ã°£ Ãâ·Â 
++print ("for ë¬¸ìœ¼ë¡œ ê° ì¸ìë¥¼ ì¶œë ¥")          # ì¸¡ì •í•œ ì‹œê°„ ì¶œë ¥ 
 +print ("Take {0} seconds".format(t1))
-+print ("join() ¸Ş¼Òµå·Î Ãâ·Â")
++print ("join() ë©”ì†Œë“œë¡œ ì¶œë ¥")
 +print ("Take {0} seconds".format(t2))
 
 
 
 ---------------------------------- 
-13  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì5¤¸¤¿¤·/5-3-1.py
+13  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ5ã…ˆã…ã…‡/5-3-1.py
 @@ -0,0 +1,13 @@
 +# -*- coding: cp949 -*-
-+str = "NOT Class Member" # Àü¿ª º¯¼ö
++str = "NOT Class Member" # ì „ì—­ ë³€ìˆ˜
 +class GString:
-+    str = ""             # Å¬·¡½º °´Ã¼ ¸â¹ö º¯¼ö
++    str = ""             # í´ë˜ìŠ¤ ê°ì²´ ë©¤ë²„ ë³€ìˆ˜
 +    def Set(self, msg):
 +        self.str = msg
 +    def Print(self):  
-+        print(str)       # self¸¦ ÀÌ¿ëÇÏ¿© Class ¸â¹ö¸¦ Á¢±ÙÇÏÁö ¾Ê´Â °æ¿ì 
-+                         # ÀÌ¸§ÀÌ µ¿ÀÏÇÑ Àü¿ª º¯¼ö¿¡ Á¢±ÙÇÏ¿© Ãâ·Â
++        print(str)       # selfë¥¼ ì´ìš©í•˜ì—¬ Class ë©¤ë²„ë¥¼ ì ‘ê·¼í•˜ì§€ ì•ŠëŠ” ê²½ìš° 
++                         # ì´ë¦„ì´ ë™ì¼í•œ ì „ì—­ ë³€ìˆ˜ì— ì ‘ê·¼í•˜ì—¬ ì¶œë ¥
 +
 +g = GString()
 +g.Set("First Message")
 +g.Print()
  
-13  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì5¤¸¤¿¤·/5-5-1.py
+13  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ5ã…ˆã…ã…‡/5-5-1.py
 @@ -0,0 +1,13 @@
 +# -*- coding: cp949 -*-
 +class MyClass:
-+    def __init__(self, value):  # »ı¼ºÀÚ ¸Ş¼Òµå
++    def __init__(self, value):  # ìƒì„±ì ë©”ì†Œë“œ
 +        self.Value = value
 +        print("Class is created! Value = ", value)
 +        
-+    def __del__(self):          # ¼Ò¸êÀÚ ¸Ş¼Òµå
++    def __del__(self):          # ì†Œë©¸ì ë©”ì†Œë“œ
 +        print("Class is deleted!")
 +
 +def foo():  
-+    d = MyClass(10)      # ÇÔ¼ö foo ºí·Ï¾È¿¡¼­¸¸ ÀÎ½ºÅÏ½º °´Ã¼ d°¡ Á¸Àç
++    d = MyClass(10)      # í•¨ìˆ˜ foo ë¸”ë¡ì•ˆì—ì„œë§Œ ì¸ìŠ¤í„´ìŠ¤ ê°ì²´ dê°€ ì¡´ì¬
 +
 +foo() 
  
-11  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì5¤¸¤¿¤·/5-6-1.py
+11  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ5ã…ˆã…ã…‡/5-6-1.py
 @@ -0,0 +1,11 @@
 +# -*- coding: cp949 -*-
 +class CounterManager:
 +    insCount = 0
-+    def __init__(self):         # ÀÎ½ºÅÏ½º °´Ã¼°¡ »ı¼º½Ã Å¬·¡½º ¿µ¿ªÀÇ insCount º¯¼ö Áõ°¡ 
++    def __init__(self):         # ì¸ìŠ¤í„´ìŠ¤ ê°ì²´ê°€ ìƒì„±ì‹œ í´ë˜ìŠ¤ ì˜ì—­ì˜ insCount ë³€ìˆ˜ ì¦ê°€ 
 +        CounterManager.insCount += 1
-+    def printInstaceCount():    # ÀÎ½ºÅÏ½º °´Ã¼ °¹¼ö Ãâ·Â 
++    def printInstaceCount():    # ì¸ìŠ¤í„´ìŠ¤ ê°ì²´ ê°¯ìˆ˜ ì¶œë ¥ 
 +        print ("Instance Count: ", CounterManager.insCount)
 +
 +a, b, c = CounterManager(), CounterManager(), CounterManager()
-+CounterManager.printInstaceCount()        # ÀÎ½ºÅÏ½º °³¼ö Ãâ·Â 
-+b.printInstaceCount()           # ¾Ï½ÃÀûÀ¸·Î ÀÎ½ºÅÏ½º °´Ã¼¸¦ ¹Ş±â ¶§¹®¿¡ Error°¡ ¹ß»ı
++CounterManager.printInstaceCount()        # ì¸ìŠ¤í„´ìŠ¤ ê°œìˆ˜ ì¶œë ¥ 
++b.printInstaceCount()           # ì•”ì‹œì ìœ¼ë¡œ ì¸ìŠ¤í„´ìŠ¤ ê°ì²´ë¥¼ ë°›ê¸° ë•Œë¬¸ì— Errorê°€ ë°œìƒ
  
-22  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì5¤¸¤¿¤·/5-6-2.py
+22  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ5ã…ˆã…ã…‡/5-6-2.py
 @@ -0,0 +1,22 @@
 +# -*- coding: cp949 -*-
 +class CounterManager:
 +    insCount = 0
 +    def __init__(self):    
 +        CounterManager.insCount += 1
-+    def staticPrintCount():                         # Á¤Àû ¸Ş¼Òµå Á¤ÀÇ
++    def staticPrintCount():                         # ì •ì  ë©”ì†Œë“œ ì •ì˜
 +        print ("Instance Count: ", CounterManager.insCount)
-+    SPrintCount = staticmethod(staticPrintCount)    # Á¤Àû ¸Ş¼Òµå·Î µî·Ï 
++    SPrintCount = staticmethod(staticPrintCount)    # ì •ì  ë©”ì†Œë“œë¡œ ë“±ë¡ 
 +
-+    def classPrintCount(cls):                       # Å¬·¡½º ¸Ş¼Òµå Á¤ÀÇ(¾Ï½ÃÀûÀ¸·Î Ã¹ ÀÎÀÚ´Â Å¬·¡½º¸¦ ¹ŞÀ½) 
++    def classPrintCount(cls):                       # í´ë˜ìŠ¤ ë©”ì†Œë“œ ì •ì˜(ì•”ì‹œì ìœ¼ë¡œ ì²« ì¸ìëŠ” í´ë˜ìŠ¤ë¥¼ ë°›ìŒ) 
 +        print ("Instance Count: ", cls.insCount)
-+    CPrintCount = classmethod(classPrintCount)      # Å¬·¡½º ¸Ş¼Òµå·Î µî·Ï 
++    CPrintCount = classmethod(classPrintCount)      # í´ë˜ìŠ¤ ë©”ì†Œë“œë¡œ ë“±ë¡ 
 +
 +a, b, c = CounterManager(), CounterManager(), CounterManager()
 +
-+# Á¤Àû ¸Ş¼Òµå·Î ÀÎ½ºÅÏ½º °´Ã¼ °¹¼ö¸¦ Ãâ·Â 
++# ì •ì  ë©”ì†Œë“œë¡œ ì¸ìŠ¤í„´ìŠ¤ ê°ì²´ ê°¯ìˆ˜ë¥¼ ì¶œë ¥ 
 +CounterManager.SPrintCount()       
 +b.SPrintCount()
 +
-+# Å¬·¡½º ¸Ş¼Òµå·Î ÀÎ½ºÅÏ½º °´Ã¼ °¹¼ö¸¦ Ãâ·Â
++# í´ë˜ìŠ¤ ë©”ì†Œë“œë¡œ ì¸ìŠ¤í„´ìŠ¤ ê°ì²´ ê°¯ìˆ˜ë¥¼ ì¶œë ¥
 +CounterManager.CPrintCount()
 +b.CPrintCount()
  
-11  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì5¤¸¤¿¤·/5-6-3.py
+11  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ5ã…ˆã…ã…‡/5-6-3.py
 @@ -0,0 +1,11 @@
 +# -*- coding: cp949 -*-
 +class CounterManager:
-+    __insCount = 0			# ÀÌ¸§ º¯°æÀ» À§ÇÏ¿© '__'¸¦ º¯¼ö¸í ¾Õ¿¡ »ç¿ë 
++    __insCount = 0			# ì´ë¦„ ë³€ê²½ì„ ìœ„í•˜ì—¬ '__'ë¥¼ ë³€ìˆ˜ëª… ì•ì— ì‚¬ìš© 
 +    def __init__(self):    
 +        CounterManager.__insCount += 1
 +    def staticPrintCount():
-+        print ("Instance Count: %d" % CounterManager.__insCount)  # Å¬·¡½º ³»ºÎ¿¡¼­ »ç¿ë½Ã ¼±¾ğÇÑ ÀÌ¸§°ú µ¿ÀÏÇÏ°Ô »ç¿ë °¡´É
++        print ("Instance Count: %d" % CounterManager.__insCount)  # í´ë˜ìŠ¤ ë‚´ë¶€ì—ì„œ ì‚¬ìš©ì‹œ ì„ ì–¸í•œ ì´ë¦„ê³¼ ë™ì¼í•˜ê²Œ ì‚¬ìš© ê°€ëŠ¥
 +    SPrintCount = staticmethod(staticPrintCount)
 +
 +a, b, c = CounterManager(), CounterManager(), CounterManager()
 +CounterManager.SPrintCount()
  
-20  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì5¤¸¤¿¤·/5-7-1.py
+20  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ5ã…ˆã…ã…‡/5-7-1.py
 @@ -0,0 +1,20 @@
 +# -*- coding: cp949 -*-
 +class GString:
 +    def __init__(self, init = None):    
 +        self.content = init
-+    def __sub__(self, str):             # '-'¿¬»êÀÚ¸¦ Áßº¹ 
++    def __sub__(self, str):             # '-'ì—°ì‚°ìë¥¼ ì¤‘ë³µ 
 +        for i in str:
 +            self.content = self.content.replace(i, '')
 +        return GString(self.content)
 +
-+    def __abs__(self):                  # 'abs()' ³»Àå ÇÔ¼ö¸¦ Áßº¹ 
++    def __abs__(self):                  # 'abs()' ë‚´ì¥ í•¨ìˆ˜ë¥¼ ì¤‘ë³µ 
 +        return GString(self.content.upper())
 +
 +    def Print(self):
 +        print (self.content);
 +
 +g = GString("aBcdef")
-+g -= "df"           # '-'¿¬»êÀÚ°¡ Áßº¹µÈ °æ¿ì '-='µµ Áö¿ø 
-+g.Print()           # Ãâ·Â °á°ú: aBce
++g -= "df"           # '-'ì—°ì‚°ìê°€ ì¤‘ë³µëœ ê²½ìš° '-='ë„ ì§€ì› 
++g.Print()           # ì¶œë ¥ ê²°ê³¼: aBce
 +g = abs(g)
-+g.Print()           # Ãâ·Â °á°ú: ABCE 
++g.Print()           # ì¶œë ¥ ê²°ê³¼: ABCE 
  
-14  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì5¤¸¤¿¤·/5-7-2.py
+14  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ5ã…ˆã…ã…‡/5-7-2.py
 @@ -0,0 +1,14 @@
 +# -*- coding: cp949 -*-
 +class GString:
 +    def __init__(self, init = None):   
 +        self.content = init
 +
-+    def __sub__(self, str):             # '-'¿¬»êÀÚ Áßº¹
++    def __sub__(self, str):             # '-'ì—°ì‚°ì ì¤‘ë³µ
 +       print("- opreator is called!")
 +
-+    def __isub__(self, str):            # '-='¿¬»êÀÚ Áßº¹
++    def __isub__(self, str):            # '-='ì—°ì‚°ì ì¤‘ë³µ
 +        print("-= opreator is called!")
 +
 +g = GString("aBcdef")
-+g - "a"     # Ãâ·Â °á°ú: - opreator is called!
-+g -= "a"    # Ãâ·Â °á°ú: -= opreator is called!
++g - "a"     # ì¶œë ¥ ê²°ê³¼: - opreator is called!
++g -= "a"    # ì¶œë ¥ ê²°ê³¼: -= opreator is called!
  
-13  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì5¤¸¤¿¤·/5-7-3.py
+13  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ5ã…ˆã…ã…‡/5-7-3.py
 @@ -0,0 +1,13 @@
 +# -*- coding: cp949 -*-
 +class Sequencer:
-+    def __init__(self, maxValue):       # »ı¼ºÀÚ ¸Ş¼Òµå
++    def __init__(self, maxValue):       # ìƒì„±ì ë©”ì†Œë“œ
 +        self.maxValue = maxValue
-+    def __len__(self):                  # len()È£Ãâ½Ã
++    def __len__(self):                  # len()í˜¸ì¶œì‹œ
 +        return self.maxValue
-+    def __getitem__(self, index):      # ÀÎµ¦½º·Î ¾ÆÀÌÅÛÀÇ °ªÀ» Á¢±Ù 
++    def __getitem__(self, index):      # ì¸ë±ìŠ¤ë¡œ ì•„ì´í…œì˜ ê°’ì„ ì ‘ê·¼ 
 +        if( 0 < index <= self.maxValue):
 +            return index*10
 +        else:
 +            raise IndexError("Index out of range")
-+    def __contains__(self, item):       # ºÒ¸° ÇüÅÂ·Î ÀÎµ¦½º¸¦ ³Ñ¾î°¬´ÂÁö ¹İÈ¯ 
++    def __contains__(self, item):       # ë¶ˆë¦° í˜•íƒœë¡œ ì¸ë±ìŠ¤ë¥¼ ë„˜ì–´ê°”ëŠ”ì§€ ë°˜í™˜ 
 +        return (0 < item <= self.maxValue)
  
-12  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì5¤¸¤¿¤·/5-7.py
+12  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ5ã…ˆã…ã…‡/5-7.py
 @@ -0,0 +1,12 @@
 +# -*- coding: cp949 -*-
 +class GString:
-+    def __init__(self, init = None):    # »ı¼ºÀÚ 
++    def __init__(self, init = None):    # ìƒì„±ì 
 +        self.content = init
 +
-+    def __sub__(self, str):             # '-' ¿¬»êÀÚ Áßº¹ 
++    def __sub__(self, str):             # '-' ì—°ì‚°ì ì¤‘ë³µ 
 +        for i in str:
 +            self.content = self.content.replace(i, '')
 +        return GString(self.content)
 +
-+    def Remove(self, str):              # Remove ¸Ş¼Òµå´Â '-' ¿¬»êÀÚ Áßº¹°ú µ¿ÀÏÇÏ±â¿¡ '__sub__'¸¦ ÀçÈ£Ãâ
++    def Remove(self, str):              # Remove ë©”ì†Œë“œëŠ” '-' ì—°ì‚°ì ì¤‘ë³µê³¼ ë™ì¼í•˜ê¸°ì— '__sub__'ë¥¼ ì¬í˜¸ì¶œ
 +        return self.__sub__(str)
  
-20  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì5¤¸¤¿¤·/5-8-1.py
+20  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ5ã…ˆã…ã…‡/5-8-1.py
 @@ -0,0 +1,20 @@
 +# -*- coding: cp949 -*-
 +class Person:
-+	" ºÎ¸ğ Å¬·¡½º "
++	" ë¶€ëª¨ í´ë˜ìŠ¤ "
 +	def __init__(self, name, phoneNumber):
 +		self.Name = name
 +		self.PhoneNumber = phoneNumber
@@ -278,18 +278,18 @@ print("Always this is printed")       # ·çÇÁ ¿ÜºÎ ¹®Àå
 +		print ("Person(Name:{0}, Phone Number: {1})".format(self.Name, self.PhoneNumber))
 +
 +class Student(Person):
-+	" ÀÚ½Ä Å¬·¡½º "
-+	def __init__(self, name, phoneNumber, subject, studentID):   # ÀÚ½Ä Å¬·¡½ºÀÇ »ı¼ºÀÚ ¸Ş¼Òµå
++	" ìì‹ í´ë˜ìŠ¤ "
++	def __init__(self, name, phoneNumber, subject, studentID):   # ìì‹ í´ë˜ìŠ¤ì˜ ìƒì„±ì ë©”ì†Œë“œ
 +		self.Name = name
 +		self.PhoneNumber = phoneNumber
 +		self.Subject = subject
 +		self.StudentID = studentID
  
-19  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì5¤¸¤¿¤·/5-8-2.py
+19  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ5ã…ˆã…ã…‡/5-8-2.py
 @@ -0,0 +1,19 @@
 +# -*- coding: cp949 -*-
 +class Person:
-+    " ºÎ¸ğ Å¬·¡½º "
++    " ë¶€ëª¨ í´ë˜ìŠ¤ "
 +    def __init__(self, name, phoneNumber):
 +        self.Name = name
 +        self.PhoneNumber = phoneNumber
@@ -301,17 +301,17 @@ print("Always this is printed")       # ·çÇÁ ¿ÜºÎ ¹®Àå
 +        print ("Person(Name:{0}, Phone Number: {1})".format(self.Name, self.PhoneNumber))
 +
 +class Student(Person):
-+    " ÀÚ½Ä Å¬·¡½º "
++    " ìì‹ í´ë˜ìŠ¤ "
 +    def __init__(self, name, phoneNumber, subject, studentID):
-+        Person.__init__(self, name, phoneNumber)    # ¸í½ÃÀûÀ¸·Î Person »ı¼ºÀÚ¸¦ È£Ãâ
++        Person.__init__(self, name, phoneNumber)    # ëª…ì‹œì ìœ¼ë¡œ Person ìƒì„±ìë¥¼ í˜¸ì¶œ
 +        self.Subject = subject
 +        self.StudentID = studentID
  
-22  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì5¤¸¤¿¤·/5-8-3.py
+22  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ5ã…ˆã…ã…‡/5-8-3.py
 @@ -0,0 +1,22 @@
 +# -*- coding: cp949 -*-
 +class Person:
-+    " ºÎ¸ğ Å¬·¡½º "
++    " ë¶€ëª¨ í´ë˜ìŠ¤ "
 +    def __init__(self, name, phoneNumber):
 +        self.Name = name
 +        self.PhoneNumber = phoneNumber
@@ -323,20 +323,20 @@ print("Always this is printed")       # ·çÇÁ ¿ÜºÎ ¹®Àå
 +        print ("Person(Name:{0}, Phone Number: {1})".format(self.Name, self.PhoneNumber))
 +
 +class Student(Person):
-+    " ÀÚ½Ä Å¬·¡½º "
++    " ìì‹ í´ë˜ìŠ¤ "
 +    def __init__(self, name, phoneNumber, subject, studentID):
 +        Person.__init__(self, name, phoneNumber)    
 +        self.Subject = subject
 +        self.StudentID = studentID
 +
-+    def PrintStudentData(self):         # »õ·Î¿î ¸Ş¼Òµå¸¦ Ãß°¡
++    def PrintStudentData(self):         # ìƒˆë¡œìš´ ë©”ì†Œë“œë¥¼ ì¶”ê°€
 +        print("Student(Subject: {0}, Student ID: {1})".format(self.Subject, self.StudentID))
  
-25  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì5¤¸¤¿¤·/5-8-4.py
+25  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ5ã…ˆã…ã…‡/5-8-4.py
 @@ -0,0 +1,25 @@
 +# -*- coding: cp949 -*-
 +class Person:
-+    " ºÎ¸ğ Å¬·¡½º "
++    " ë¶€ëª¨ í´ë˜ìŠ¤ "
 +    def __init__(self, name, phoneNumber):
 +        self.Name = name
 +        self.PhoneNumber = phoneNumber
@@ -356,15 +356,15 @@ print("Always this is printed")       # ·çÇÁ ¿ÜºÎ ¹®Àå
 +    def PrintStudentData(self):
 +        print("Student(Subject: {0}, Student ID: {1})".format(self.Subject, self.StudentID))
 +        
-+    def PrintInfo(self):      # PersonÀÇ PrintInfo() ¸Ş¼Òµå¸¦ ÀçÁ¤ÀÇ
++    def PrintInfo(self):      # Personì˜ PrintInfo() ë©”ì†Œë“œë¥¼ ì¬ì •ì˜
 +        print("Info(Name:{0}, Phone Number:{1})".format(self.Name, self.PhoneNumber))
 +        print("Info(Subject:{0}, Student ID:{1})".format(self.Subject, self.StudentID))
  
-25  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì5¤¸¤¿¤·/5-8-5.py
+25  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ5ã…ˆã…ã…‡/5-8-5.py
 @@ -0,0 +1,25 @@
 +# -*- coding: cp949 -*-
 +class Person:
-+    " ºÎ¸ğ Å¬·¡½º "
++    " ë¶€ëª¨ í´ë˜ìŠ¤ "
 +    def __init__(self, name, phoneNumber):
 +        self.Name = name
 +        self.PhoneNumber = phoneNumber
@@ -385,45 +385,45 @@ print("Always this is printed")       # ·çÇÁ ¿ÜºÎ ¹®Àå
 +        print("Student(Subject: {0}, Student ID: {1})".format(self.Subject, self.StudentID))
 +        
 +    def PrintInfo(self):
-+        Person.PrintInfo(self)      # ¸í½ÃÀûÀ¸·Î Person Å¬·¡½ºÀÇ PrintPersonData()¸¦ È£Ãâ
++        Person.PrintInfo(self)      # ëª…ì‹œì ìœ¼ë¡œ Person í´ë˜ìŠ¤ì˜ PrintPersonData()ë¥¼ í˜¸ì¶œ
 +        print("Info(Subject:{0}, Student ID:{1})".format(self.Subject, self.StudentID))
  
-12  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì5¤¸¤¿¤·/5-8-6.py
+12  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ5ã…ˆã…ã…‡/5-8-6.py
 @@ -0,0 +1,12 @@
 +# -*- coding: cp949 -*-
 +class Tiger:
 +    def Jump(self):
-+        print("È£¶ûÀÌÃ³·³ ¸Ö¸® Á¡ÇÁÇÏ±â")
++        print("í˜¸ë‘ì´ì²˜ëŸ¼ ë©€ë¦¬ ì í”„í•˜ê¸°")
 +
 +class Lion:
 +    def Bite(self):
-+        print("»çÀÚÃ³·³ ÇÑÀÔ¿¡ ²Ü²©ÇÏ±â")
++        print("ì‚¬ìì²˜ëŸ¼ í•œì…ì— ê¿€êº½í•˜ê¸°")
 +
-+class Liger(Tiger, Lion):	# »ó¼Ó¹ŞÀ» Å¬·¡½ºµé
++class Liger(Tiger, Lion):	# ìƒì†ë°›ì„ í´ë˜ìŠ¤ë“¤
 +    def Play(self):
-+        print("¶óÀÌ°Å¸¸ÀÇ »çÀ°»ç¿Í Àç¹ÌÀÖ°Ô ³î±â")
++        print("ë¼ì´ê±°ë§Œì˜ ì‚¬ìœ¡ì‚¬ì™€ ì¬ë¯¸ìˆê²Œ ë†€ê¸°")
  
-17  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì5¤¸¤¿¤·/5-8-7.py
+17  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ5ã…ˆã…ã…‡/5-8-7.py
 @@ -0,0 +1,17 @@
 +# -*- coding: cp949 -*-
 +class Tiger:
 +    def Jump(self):
-+        print("È£¶ûÀÌÃ³·³ ¸Ö¸® Á¡ÇÁÇÏ±â")
++        print("í˜¸ë‘ì´ì²˜ëŸ¼ ë©€ë¦¬ ì í”„í•˜ê¸°")
 +    def Cry(self):
-+        print("È£¶ûÀÌ: ¾îÈï~")
++        print("í˜¸ë‘ì´: ì–´í¥~")
 +
 +class Lion:
 +    def Bite(self):
-+        print("»çÀÚÃ³·³ ÇÑÀÔ¿¡ ²Ü²©ÇÏ±â")
++        print("ì‚¬ìì²˜ëŸ¼ í•œì…ì— ê¿€êº½í•˜ê¸°")
 +    def Cry(self):
-+        print("»çÀÚ: À¸¸£··~")
++        print("ì‚¬ì: ìœ¼ë¥´ë ~")
 +    
 +
 +class Liger(Tiger, Lion):
 +    def Play(self):
-+        print("¶óÀÌ°Å¸¸ÀÇ »çÀ°»ç¿Í Àç¹ÌÀÖ°Ô ³î±â")
++        print("ë¼ì´ê±°ë§Œì˜ ì‚¬ìœ¡ì‚¬ì™€ ì¬ë¯¸ìˆê²Œ ë†€ê¸°")
  
-20  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì5¤¸¤¿¤·/5-8-8.py
+20  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ5ã…ˆã…ã…‡/5-8-8.py
 @@ -0,0 +1,20 @@
 +# -*- coding: cp949 -*-
 +class Animal:
@@ -432,21 +432,21 @@ print("Always this is printed")       # ·çÇÁ ¿ÜºÎ ¹®Àå
 +
 +class Tiger(Animal):
 +    def __init__(self):
-+        Animal.__init__(self)		# Animal »ı¼ºÀÚ ¸Ş¼Òµå È£Ãâ
++        Animal.__init__(self)		# Animal ìƒì„±ì ë©”ì†Œë“œ í˜¸ì¶œ
 +        print("Tiger __init__()")
 +
 +class Lion(Animal):
 +    def __init__(self):
-+        Animal.__init__(self)		# Animal »ı¼ºÀÚ ¸Ş¼Òµå È£Ãâ
++        Animal.__init__(self)		# Animal ìƒì„±ì ë©”ì†Œë“œ í˜¸ì¶œ
 +        print("Lion __init__()")
 +
 +class Liger(Tiger, Lion):
 +    def __init__(self):
-+        Tiger.__init__(self)		# Tiger »ı¼ºÀÚ ¸Ş¼Òµå È£Ãâ
-+        Lion.__init__(self)			# Lion »ı¼ºÀÚ ¸Ş¼Òµå È£Ãâ
++        Tiger.__init__(self)		# Tiger ìƒì„±ì ë©”ì†Œë“œ í˜¸ì¶œ
++        Lion.__init__(self)			# Lion ìƒì„±ì ë©”ì†Œë“œ í˜¸ì¶œ
 +        print("Liger __init__()")
  
-19  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì5¤¸¤¿¤·/5-8-9.py
+19  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ5ã…ˆã…ã…‡/5-8-9.py
 @@ -0,0 +1,19 @@
 +# -*- coding: cp949 -*-
 +class Animal:
@@ -455,30 +455,30 @@ print("Always this is printed")       # ·çÇÁ ¿ÜºÎ ¹®Àå
 +
 +class Tiger(Animal):
 +    def __init__(self):
-+        super().__init__()			# ºÎ¸ğ Å¬·¡½ºÀÇ »ı¼ºÀÚ ¸Ş¼Òµå È£Ãâ
++        super().__init__()			# ë¶€ëª¨ í´ë˜ìŠ¤ì˜ ìƒì„±ì ë©”ì†Œë“œ í˜¸ì¶œ
 +        print("Tiger __init__()")
 +
 +class Lion(Animal):
 +    def __init__(self):
-+        super().__init__()			# ºÎ¸ğ Å¬·¡½ºÀÇ »ı¼ºÀÚ ¸Ş¼Òµå È£Ãâ
++        super().__init__()			# ë¶€ëª¨ í´ë˜ìŠ¤ì˜ ìƒì„±ì ë©”ì†Œë“œ í˜¸ì¶œ
 +        print("Lion __init__()")
 +
 +class Liger(Tiger, Lion):
 +    def __init__(self):
-+        super().__init__()			# ºÎ¸ğ Å¬·¡½ºÀÇ »ı¼ºÀÚ ¸Ş¼Òµå È£Ãâ
++        super().__init__()			# ë¶€ëª¨ í´ë˜ìŠ¤ì˜ ìƒì„±ì ë©”ì†Œë“œ í˜¸ì¶œ
 +        print("Liger __init__()")
  
-7  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì6¤¸¤¿¤·/mymod.py
+7  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ6ã…ˆã…ã…‡/mymod.py
 @@ -0,0 +1,7 @@
 +# -*- coding: cp949 -*-
 +print ("my module")
 +
 +if __name__ == '__main__':
-+   print ("¸ğµâÀ» Á÷Á¢ ½ÇÇà ½ÃÅ°¼Ì³×¿ä")
++   print ("ëª¨ë“ˆì„ ì§ì ‘ ì‹¤í–‰ ì‹œí‚¤ì…¨ë„¤ìš”")
 +else:
-+   print ("ÀÓÆ÷Æ® ÇÏ¼Ì³×¿ä")
++   print ("ì„í¬íŠ¸ í•˜ì…¨ë„¤ìš”")
  
-40  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì6¤¸¤¿¤·/simpleset.py
+40  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ6ã…ˆã…ã…‡/simpleset.py
 @@ -0,0 +1,40 @@
 +from functools import *
 +
@@ -521,7 +521,7 @@ print("Always this is printed")       # ·çÇÁ ¿ÜºÎ ¹®Àå
 +
 +
  
-5  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì6¤¸¤¿¤·/testmodule.py
+5  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ6ã…ˆã…ã…‡/testmodule.py
 @@ -0,0 +1,5 @@
 +# -*- coding: cp949 -*-
 +print ("test module")
@@ -529,7 +529,7 @@ print("Always this is printed")       # ·çÇÁ ¿ÜºÎ ¹®Àå
 +def printDefaultValue():
 +    print(defaultvalue) 
  
-10  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì6¤¸¤¿¤·/testmodule2.py
+10  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ6ã…ˆã…ã…‡/testmodule2.py
 @@ -0,0 +1,10 @@
 +# -*- coding: cp949 -*-
 +
@@ -542,7 +542,7 @@ print("Always this is printed")       # ·çÇÁ ¿ÜºÎ ¹®Àå
 +    defaultvalue = 100
 +    printDefaultValue() 
  
-12  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì7¤¸¤¿¤·/7-3-1.py
+12  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ7ã…ˆã…ã…‡/7-3-1.py
 @@ -0,0 +1,12 @@
 +# -*- coding: cp949 -*-
 +def devide(a, b):
@@ -551,13 +551,13 @@ print("Always this is printed")       # ·çÇÁ ¿ÜºÎ ¹®Àå
 +try:
 +	c = devide(5, 'string')
 +except ZeroDivisionError:
-+	print('µÎ¹øÂ° ÀÎÀÚ´Â 0ÀÌ¸é ¾ÈµË´Ï´Ù.')
++	print('ë‘ë²ˆì§¸ ì¸ìëŠ” 0ì´ë©´ ì•ˆë©ë‹ˆë‹¤.')
 +except TypeError:
-+	print('¸ğµç ÀÎ¼ö´Â ¼ıÀÚÀÌ¾î¾ß ÇÕ´Ï´Ù.')
++	print('ëª¨ë“  ì¸ìˆ˜ëŠ” ìˆ«ìì´ì–´ì•¼ í•©ë‹ˆë‹¤.')
 +except:
-+	print('À½~ ¹«½¼ ¿¡·¯ÀÎÁö ¸ğ¸£°Ú¾î¿ä!!')  
++	print('ìŒ~ ë¬´ìŠ¨ ì—ëŸ¬ì¸ì§€ ëª¨ë¥´ê² ì–´ìš”!!')  
  
-12  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì7¤¸¤¿¤·/7-3-2.py
+12  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ7ã…ˆã…ã…‡/7-3-2.py
 @@ -0,0 +1,12 @@
 +# -*- coding: cp949 -*-
 +def devide(a, b):
@@ -566,13 +566,13 @@ print("Always this is printed")       # ·çÇÁ ¿ÜºÎ ¹®Àå
 +try:
 +    c = devide(5, 'apple')
 +except Exception:
-+    print('À½~ ¹«½¼ ¿¡·¯ÀÎÁö ¸ğ¸£°Ú¾î¿ä!!')  # ¸ğµç ¿¡·¯¿¡ ´ëÇÏ¿© ÀÌ ºÎºĞ¿¡¼­ Ã³¸® 
++    print('ìŒ~ ë¬´ìŠ¨ ì—ëŸ¬ì¸ì§€ ëª¨ë¥´ê² ì–´ìš”!!')  # ëª¨ë“  ì—ëŸ¬ì— ëŒ€í•˜ì—¬ ì´ ë¶€ë¶„ì—ì„œ ì²˜ë¦¬ 
 +except ZeroDivisionError:
-+    print('µÎ¹øÂ° ÀÎÀÚ´Â 0ÀÌ¸é ¾ÈµË´Ï´Ù.')
++    print('ë‘ë²ˆì§¸ ì¸ìëŠ” 0ì´ë©´ ì•ˆë©ë‹ˆë‹¤.')
 +except TypeError:
-+    print('¸ğµç ÀÎ¼ö´Â ¼ıÀÚÀÌ¿©¾ß ÇÕ´Ï´Ù.')
++    print('ëª¨ë“  ì¸ìˆ˜ëŠ” ìˆ«ìì´ì—¬ì•¼ í•©ë‹ˆë‹¤.')
  
-16  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì7¤¸¤¿¤·/7-3-3.py
+16  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ7ã…ˆã…ã…‡/7-3-3.py
 @@ -0,0 +1,16 @@
 +# -*- coding: cp949 -*-
 +def devide(a, b):
@@ -581,57 +581,57 @@ print("Always this is printed")       # ·çÇÁ ¿ÜºÎ ¹®Àå
 +try:
 +    c = devide(5, 2)
 +except ZeroDivisionError:
-+    print('µÎ¹øÂ° ÀÎÀÚ´Â 0ÀÌ¸é ¾ÈµË´Ï´Ù.')
++    print('ë‘ë²ˆì§¸ ì¸ìëŠ” 0ì´ë©´ ì•ˆë©ë‹ˆë‹¤.')
 +except TypeError:
-+    print('¸ğµç ÀÎ¼ö´Â ¼ıÀÚÀÌ¿©¾ß ÇÕ´Ï´Ù.')
++    print('ëª¨ë“  ì¸ìˆ˜ëŠ” ìˆ«ìì´ì—¬ì•¼ í•©ë‹ˆë‹¤.')
 +except:
-+    print('ZeroDivisionError, TypeError¸¦ Á¦¿ÜÇÑ ´Ù¸¥ ¿¡·¯')
-+else:      # ¿¹¿Ü°¡ ¹ß»ıÇÏÁö ¾Ê´Â °æ¿ì
++    print('ZeroDivisionError, TypeErrorë¥¼ ì œì™¸í•œ ë‹¤ë¥¸ ì—ëŸ¬')
++else:      # ì˜ˆì™¸ê°€ ë°œìƒí•˜ì§€ ì•ŠëŠ” ê²½ìš°
 +    print('Result: {0}'.format(c))
-+finally:   # ¿¹¿Ü ¹ß»ı À¯¹«¿Í »ó°ü¾øÀÌ ¼öÇà 
-+    print('Ç×»ó finally ºí·ÏÀº ¼öÇàµË´Ï´Ù.')
++finally:   # ì˜ˆì™¸ ë°œìƒ ìœ ë¬´ì™€ ìƒê´€ì—†ì´ ìˆ˜í–‰ 
++    print('í•­ìƒ finally ë¸”ë¡ì€ ìˆ˜í–‰ë©ë‹ˆë‹¤.')
  
-9  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì7¤¸¤¿¤·/7-3-4.py
+9  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ7ã…ˆã…ã…‡/7-3-4.py
 @@ -0,0 +1,9 @@
 +# -*- coding: cp949 -*-
 +def devide(a, b):
 +    return a/b
 +try:
 +    c = devide(5, "af")
-+except TypeError as e:	# Àü´ŞµÇ´Â ¿¹¿Ü ÀÎ½ºÅÏ½º °´Ã¼¸¦ e·Î ¹Ş¾Æ¼­ »ç¿ë
-+    print('¿¡·¯: ', e.args[0])
++except TypeError as e:	# ì „ë‹¬ë˜ëŠ” ì˜ˆì™¸ ì¸ìŠ¤í„´ìŠ¤ ê°ì²´ë¥¼ eë¡œ ë°›ì•„ì„œ ì‚¬ìš©
++    print('ì—ëŸ¬: ', e.args[0])
 +except Exception:
-+	print('À½~ ¹«½¼ ¿¡·¯ÀÎÁö ¸ğ¸£°Ú¾î¿ä!!')
++	print('ìŒ~ ë¬´ìŠ¨ ì—ëŸ¬ì¸ì§€ ëª¨ë¥´ê² ì–´ìš”!!')
  
-11  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì7¤¸¤¿¤·/7-3-5.py
+11  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ7ã…ˆã…ã…‡/7-3-5.py
 @@ -0,0 +1,11 @@
 +# -*- coding: cp949 -*-
 +def devide(a, b):
 +    return a/b
 +try:
 +    c = devide(5, 0)
-+except (ZeroDivisionError, OverflowError, FloatingPointError): # ¸í½ÃµÈ ¿¡·¯¸¦ ¸ğµÎ Ã³¸® 
-+    print('¼öÄ¡ ¿¬»ê °ü·Ã ¿¡·¯ÀÔ´Ï´Ù.')
++except (ZeroDivisionError, OverflowError, FloatingPointError): # ëª…ì‹œëœ ì—ëŸ¬ë¥¼ ëª¨ë‘ ì²˜ë¦¬ 
++    print('ìˆ˜ì¹˜ ì—°ì‚° ê´€ë ¨ ì—ëŸ¬ì…ë‹ˆë‹¤.')
 +except TypeError:
-+    print('¸ğµç ÀÎ¼ö´Â ¼ıÀÚÀÌ¾î¾ß ÇÕ´Ï´Ù.')
++    print('ëª¨ë“  ì¸ìˆ˜ëŠ” ìˆ«ìì´ì–´ì•¼ í•©ë‹ˆë‹¤.')
 +except Exception:
-+    print('À½~ ¹«½¼ ¿¡·¯ÀÎÁö ¸ğ¸£°Ú¾î¿ä!!')
++    print('ìŒ~ ë¬´ìŠ¨ ì—ëŸ¬ì¸ì§€ ëª¨ë¥´ê² ì–´ìš”!!')
  
-11  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì7¤¸¤¿¤·/7-3-6.py
+11  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ7ã…ˆã…ã…‡/7-3-6.py
 @@ -0,0 +1,11 @@
 +# -*- coding: cp949 -*-
 +def devide(a, b):
 +    return a/b
 +try:
 +    c = devide(5, 0)
-+except ArithmeticError:    # »óÀ§ Å¬·¡½º¸¦ Ã³¸®½Ã ÇÏÀ§ ¸ğµç Å¬·¡½ºµµ ÀÌ ºĞ¿¡¼­ Ã³¸®
-+    print('¼öÄ¡ ¿¬»ê °ü·Ã ¿¡·¯ÀÔ´Ï´Ù.')
++except ArithmeticError:    # ìƒìœ„ í´ë˜ìŠ¤ë¥¼ ì²˜ë¦¬ì‹œ í•˜ìœ„ ëª¨ë“  í´ë˜ìŠ¤ë„ ì´ ë¶„ì—ì„œ ì²˜ë¦¬
++    print('ìˆ˜ì¹˜ ì—°ì‚° ê´€ë ¨ ì—ëŸ¬ì…ë‹ˆë‹¤.')
 +except TypeError:
-+    print('¸ğµç ÀÎ¼ö´Â ¼ıÀÚÀÌ¾î¾ß ÇÕ´Ï´Ù.')
++    print('ëª¨ë“  ì¸ìˆ˜ëŠ” ìˆ«ìì´ì–´ì•¼ í•©ë‹ˆë‹¤.')
 +except Exception:
-+    print('À½~ ¹«½¼ ¿¡·¯ÀÎÁö ¸ğ¸£°Ú¾î¿ä!!')
++    print('ìŒ~ ë¬´ìŠ¨ ì—ëŸ¬ì¸ì§€ ëª¨ë¥´ê² ì–´ìš”!!')
  
-12  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì7¤¸¤¿¤·/7-3-7.py
+12  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ7ã…ˆã…ã…‡/7-3-7.py
 @@ -0,0 +1,12 @@
 +# -*- coding: cp949 -*-
 +FilePath = './test.txt'
@@ -646,41 +646,41 @@ print("Always this is printed")       # ·çÇÁ ¿ÜºÎ ¹®Àå
 +except IOError:
 +    print("Fail to open {0} file".format(FilePath))
  
-8  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì7¤¸¤¿¤·/7-4-1.py
+8  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ7ã…ˆã…ã…‡/7-4-1.py
 @@ -0,0 +1,8 @@
 +# -*- coding: cp949 -*-
 +def RaiseErrorFunc():
-+    raise NameError     # ©ø¡íAa ¢¯©ö¢¯UAI NameError¢¬| ©ö©¬¡íy
++    raise NameError     # Â³â‰«Aa Â¿Â¹Â¿UAI NameErrorÂ¸| Â¹ÃŸâ‰«y
 +
 +try:
 +    RaiseErrorFunc()
 +except: 
 +    print("NameError is Catched")
  
-12  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì7¤¸¤¿¤·/7-4-2.py
+12  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ7ã…ˆã…ã…‡/7-4-2.py
 @@ -0,0 +1,12 @@
 +# -*- coding: cp949 -*-
 +def RaiseErrorFunc():
-+    raise NameError("NameErrorÀÇ ÀÎÀÚ")
++    raise NameError("NameErrorì˜ ì¸ì")
 +
 +def PropagateError():
 +    try:
 +        RaiseErrorFunc()                        
 +    except:
-+        print("¿¡·¯Àü´Ş ÀÌÀü¿¡ ¸ÕÀú ÀÌ ¸Ş¼¼Áö°¡ Ãâ·ÂµË´Ï´Ù.")
-+        raise     # ¹ß»ıÇÑ ¿¡·¯¸¦ »óÀ§·Î Àü´Ş 
++        print("ì—ëŸ¬ì „ë‹¬ ì´ì „ì— ë¨¼ì € ì´ ë©”ì„¸ì§€ê°€ ì¶œë ¥ë©ë‹ˆë‹¤.")
++        raise     # ë°œìƒí•œ ì—ëŸ¬ë¥¼ ìƒìœ„ë¡œ ì „ë‹¬ 
 +
 +PropagateError()
  
-20  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì7¤¸¤¿¤·/7-5-1.py
+20  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ7ã…ˆã…ã…‡/7-5-1.py
 @@ -0,0 +1,20 @@
 +# -*- coding: cp949 -*-
-+class NegativeDivisionError(Exception):   # »ç¿ëÀÚ Á¤ÀÇ ¿¹¿Ü Á¤ÀÇ
++class NegativeDivisionError(Exception):   # ì‚¬ìš©ì ì •ì˜ ì˜ˆì™¸ ì •ì˜
 +    def __init__(self, value):
 +        self.value = value
 +
 +def PositiveDevide(a, b):
-+    if(b < 0):         # Á¦¼ö°¡ 0º¸´Ù ÀÛÀº °æ¿ì, NegativeDivisionError ¹ß»ı
++    if(b < 0):         # ì œìˆ˜ê°€ 0ë³´ë‹¤ ì‘ì€ ê²½ìš°, NegativeDivisionError ë°œìƒ
 +        raise NegativeDivisionError(b)
 +    return a/b
 +
@@ -688,32 +688,32 @@ print("Always this is printed")       # ·çÇÁ ¿ÜºÎ ¹®Àå
 +try:
 +    ret = PositiveDevide(10, -3)
 +    print('10 / 3 = {0}'.format(ret))
-+except NegativeDivisionError as e:     # »ç¿ëÀÚ Á¤ÀÇ ¿¹¿ÜÀÎ °æ¿ì
++except NegativeDivisionError as e:     # ì‚¬ìš©ì ì •ì˜ ì˜ˆì™¸ì¸ ê²½ìš°
 +    print('Error - Second argument of PositiveDevide is ', e.value)
-+except ZeroDivisionError as e:         # '0'À¸·Î ³ª´©´Â °æ¿ì
++except ZeroDivisionError as e:         # '0'ìœ¼ë¡œ ë‚˜ëˆ„ëŠ” ê²½ìš°
 +    print('Error - ', e.args[0])
-+except :         # ±× ¿Ü ¸ğµç ¿¹¿ÜÀÇ °æ¿ì
++except :         # ê·¸ ì™¸ ëª¨ë“  ì˜ˆì™¸ì˜ ê²½ìš°
 +    print(e.args)
  
-7  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì7¤¸¤¿¤·/7-6-1.py
+7  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ7ã…ˆã…ã…‡/7-6-1.py
 @@ -0,0 +1,7 @@
 +# -*- coding: cp949 -*-
 +def foo(x):
-+	assert type(x) == int, "Input value must be integer"   # ¹ŞÀº ÀÎÀÚÀÇ typeÀÌ Á¤¼öÇüÀÎÁö °Ë»ç
++	assert type(x) == int, "Input value must be integer"   # ë°›ì€ ì¸ìì˜ typeì´ ì •ìˆ˜í˜•ì¸ì§€ ê²€ì‚¬
 +	return x*10
 +
-+ret = foo("a")   # AssertionError°¡ ¹ß»ı 
++ret = foo("a")   # AssertionErrorê°€ ë°œìƒ 
 +print(ret)
  
-180  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì9¤¸¤¿¤·/circle/circle.c
+180  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ9ã…ˆã…ã…‡/circle/circle.c
 @@ -0,0 +1,180 @@
 +#include <Python.h>
-+#include "structmember.h"  // PyMethodDef ±¸Á¶Ã¼¸¦ »ç¿ëÇÏ±â À§ÇØ¼­ ÀÓÆ÷Æ® ÇÕ´Ï´Ù.   
++#include "structmember.h"  // PyMethodDef êµ¬ì¡°ì²´ë¥¼ ì‚¬ìš©í•˜ê¸° ìœ„í•´ì„œ ì„í¬íŠ¸ í•©ë‹ˆë‹¤.   
 +#define PI  3.14
 +typedef struct {
 +    PyObject_HEAD
-+    PyObject *color;   // ÀÎ½ºÅÏ½º ¸â¹ö: circle color 
-+    int radius;        // ÀÎ½ºÅÏ½º ¸â¹ö: circle radius    
++    PyObject *color;   // ì¸ìŠ¤í„´ìŠ¤ ë©¤ë²„: circle color 
++    int radius;        // ì¸ìŠ¤í„´ìŠ¤ ë©¤ë²„: circle radius    
 +} circle_CircleObject;
 +static PyObject *
 +Circle_new(PyTypeObject *type, PyObject *args, PyObject *keywords)
@@ -746,24 +746,24 @@ print("Always this is printed")       # ·çÇÁ ¿ÜºÎ ¹®Àå
 +    if (! PyArg_ParseTupleAndKeywords(args, keywords, "|Si", keywordList,
 +                                    &color, &self->radius))
 +        return -1;
-+    if (color) {    // ÀÎ¼ö ÃÊ±âÈ­
++    if (color) {    // ì¸ìˆ˜ ì´ˆê¸°í™”
 +        tmp = self->color;
 +        Py_INCREF(color);
-+        self->color = color;   // ÀÌÀü ÀÎ½ºÅÏ½º¿¡ ´ëÇØ¼­ ·¹ÆÛ·±½º Ä«¿îÆ®¸¦ °¨¼Ò ½ÃÅµ´Ï´Ù.  
++        self->color = color;   // ì´ì „ ì¸ìŠ¤í„´ìŠ¤ì— ëŒ€í•´ì„œ ë ˆí¼ëŸ°ìŠ¤ ì¹´ìš´íŠ¸ë¥¼ ê°ì†Œ ì‹œí‚µë‹ˆë‹¤.  
 +        Py_XDECREF(tmp);
 +    }
 +    return 0;
 +}
-+// ¿ÜºÎ°´Ã¼¿¡ °ø°³µÉ ÀÎ½ºÅÏ½º ¸â¹ö¸¦ µî·ÏÇÕ´Ï´Ù.
++// ì™¸ë¶€ê°ì²´ì— ê³µê°œë  ì¸ìŠ¤í„´ìŠ¤ ë©¤ë²„ë¥¼ ë“±ë¡í•©ë‹ˆë‹¤.
 +static PyMemberDef Circle_members[] = {
 +    {"color", T_OBJECT_EX, offsetof(circle_CircleObject, color), 0,
 +    "color of circle"},
 +    {"radius", T_INT, offsetof(circle_CircleObject, radius), 0,
 +    "radius of circle"},
-+    {NULL}  /* ½ºÆ®·°ÃÄÀÇ ³¡ */
++    {NULL}  /* ìŠ¤íŠ¸ëŸ­ì³ì˜ ë */
 +};
 +
-+// »ç¿ëÀÚ Á¤ÀÇ ÇÔ¼ö ±¸ÇöºÎ  
++// ì‚¬ìš©ì ì •ì˜ í•¨ìˆ˜ êµ¬í˜„ë¶€  
 +static PyObject *
 +Circle_color(circle_CircleObject* self)
 +{
@@ -783,7 +783,7 @@ print("Always this is printed")       # ·çÇÁ ¿ÜºÎ ¹®Àå
 +    if (tmp == NULL)
 +        return NULL;
 +    result = PyUnicode_Format(fmt, tmp);
-+    Py_DECREF(tmp);     // ·¹ÆÛ·±½º Ä«¿îÆ®¸¦ °¨¼Ò ½ÃÄÑ Áİ´Ï´Ù.
++    Py_DECREF(tmp);     // ë ˆí¼ëŸ°ìŠ¤ ì¹´ìš´íŠ¸ë¥¼ ê°ì†Œ ì‹œì¼œ ì¤ë‹ˆë‹¤.
 +  
 +    return result;
 +}
@@ -800,7 +800,7 @@ print("Always this is printed")       # ·çÇÁ ¿ÜºÎ ¹®Àå
 +  
 +    return Py_BuildValue("i", area_circle);
 +}
-+// »ç¿ëÀÚ Á¤ÀÇ ÇÔ¼ö.  
++// ì‚¬ìš©ì ì •ì˜ í•¨ìˆ˜.  
 +static PyMethodDef Circle_methods[] = {
 +    {"color", (PyCFunction)Circle_color, METH_NOARGS,
 +    "Return the color of circle"
@@ -888,14 +888,14 @@ print("Always this is printed")       # ·çÇÁ ¿ÜºÎ ¹®Àå
 +    return m;
 +}
  
-4  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì9¤¸¤¿¤·/circle/setup.py
+4  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ9ã…ˆã…ã…‡/circle/setup.py
 @@ -0,0 +1,4 @@
 +from distutils.core import setup, Extension
 +setup(name="circle",
 +      version="1.0",
 +      ext_modules=[Extension("circle", ["circle.c"])])  
  
-54  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì9¤¸¤¿¤·/circle_prototype/circle_prototype.c
+54  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ9ã…ˆã…ã…‡/circle_prototype/circle_prototype.c
 @@ -0,0 +1,54 @@
 +#include <python.h>
 +
@@ -952,17 +952,17 @@ print("Always this is printed")       # ·çÇÁ ¿ÜºÎ ¹®Àå
 +    return m;
 +} 
  
-4  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì9¤¸¤¿¤·/circle_prototype/setup.py
+4  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ9ã…ˆã…ã…‡/circle_prototype/setup.py
 @@ -0,0 +1,4 @@
 +from distutils.core import setup, Extension
 +setup(name="circle",
 +      version="1.0",
 +      ext_modules=[Extension("circle", ["circle_prototype.c"])]) 
  
-BIN  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì9¤¸¤¿¤·/spam/spam.ncb
+BIN  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ9ã…ˆã…ã…‡/spam/spam.ncb
 Binary file not shown.
  
-20  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì9¤¸¤¿¤·/spam/spam.sln
+20  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ9ã…ˆã…ã…‡/spam/spam.sln
 @@ -0,0 +1,20 @@
 +?
 +Microsoft Visual Studio Solution File, Format Version 10.00
@@ -985,12 +985,12 @@ Binary file not shown.
 +	EndGlobalSection
 +EndGlobal
  
-11  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì9¤¸¤¿¤·/spam/spam/setup.py
+11  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ9ã…ˆã…ã…‡/spam/spam/setup.py
 @@ -0,0 +1,11 @@
 +# -*- coding: cp949 -*-
-+# ÆÄÀÌ½ã
-+# »ç¿ë¹æ¹ı : 'setup.py install' ºôµå¿Í ¼³Ä¡°¡ µ¿½Ã¿¡ ÁøÇàµË´Ï´Ù. 
-+# 'setup.py --help'Ã³·³ ½ÇÇàÇÏ½Ã¸é ÀÚ¼¼ÇÑ »ç¿ë¹æ¹ıÀ» º¼ ¼ö ÀÖ½À´Ï´Ù.
++# íŒŒì´ì¬
++# ì‚¬ìš©ë°©ë²• : 'setup.py install' ë¹Œë“œì™€ ì„¤ì¹˜ê°€ ë™ì‹œì— ì§„í–‰ë©ë‹ˆë‹¤. 
++# 'setup.py --help'ì²˜ëŸ¼ ì‹¤í–‰í•˜ì‹œë©´ ìì„¸í•œ ì‚¬ìš©ë°©ë²•ì„ ë³¼ ìˆ˜ ìˆìŠµë‹ˆë‹¤.
 +from distutils.core import setup, Extension
 +spam_mod = Extension('spam', sources = ['spammodule.c'])
 +setup(name = "spam",
@@ -999,7 +999,7 @@ Binary file not shown.
 +    ext_modules = [spam_mod],
 +)
  
-199  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì9¤¸¤¿¤·/spam/spam/spam.vcproj
+199  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ9ã…ˆã…ã…‡/spam/spam/spam.vcproj
 @@ -0,0 +1,199 @@
 +<?xml version="1.0" encoding="ks_c_5601-1987"?>
 +<VisualStudioProject
@@ -1201,7 +1201,7 @@ Binary file not shown.
 +	</Globals>
 +</VisualStudioProject>
  
-35  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì9¤¸¤¿¤·/spam/spam/spammodule.c
+35  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ9ã…ˆã…ã…‡/spam/spam/spammodule.c
 @@ -0,0 +1,35 @@
 +#include "python.h" 
 +
@@ -1212,7 +1212,7 @@ Binary file not shown.
 +    const char* str=NULL;
 +    int len; 
 +
-+    if (!PyArg_ParseTuple(args, "s", &str)) // ¸Å°³º¯¼ö °ªÀ» ºĞ¼®ÇÏ°í Áö¿ªº¯¼ö¿¡ ÇÒ´ç ½ÃÅµ´Ï´Ù.
++    if (!PyArg_ParseTuple(args, "s", &str)) // ë§¤ê°œë³€ìˆ˜ ê°’ì„ ë¶„ì„í•˜ê³  ì§€ì—­ë³€ìˆ˜ì— í• ë‹¹ ì‹œí‚µë‹ˆë‹¤.
 +         return NULL; 
 +
 +    len = strlen(str); 
@@ -1223,13 +1223,13 @@ Binary file not shown.
 +static PyMethodDef SpamMethods[] = {
 +{"strlen", spam_strlen, METH_VARARGS,
 + "count a string length."},
-+ {NULL, NULL, 0, NULL} // ¹è¿­ÀÇ ³¡À» ³ªÅ¸³À´Ï´Ù.
++ {NULL, NULL, 0, NULL} // ë°°ì—´ì˜ ëì„ ë‚˜íƒ€ëƒ…ë‹ˆë‹¤.
 +}; 
 +
 +static struct PyModuleDef spammodule = {
 +    PyModuleDef_HEAD_INIT,
-+    "spam",            // ¸ğµâ ÀÌ¸§
-+    "It is test module.", // ¸ğµâ ¼³¸íÀ» Àû´Â ºÎºĞ, ¸ğµâÀÇ __doc__¿¡ ÀúÀåµË´Ï´Ù.
++    "spam",            // ëª¨ë“ˆ ì´ë¦„
++    "It is test module.", // ëª¨ë“ˆ ì„¤ëª…ì„ ì ëŠ” ë¶€ë¶„, ëª¨ë“ˆì˜ __doc__ì— ì €ì¥ë©ë‹ˆë‹¤.
 +    -1,SpamMethods
 +};
 +
@@ -1239,12 +1239,12 @@ Binary file not shown.
 +    return PyModule_Create(&spammodule);
 +}
  
-11  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì9¤¸¤¿¤·/spam2/setup.py
+11  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ9ã…ˆã…ã…‡/spam2/setup.py
 @@ -0,0 +1,11 @@
 +# -*- coding: cp949 -*-
-+# ÆÄÀÌ½ã
-+# »ç¿ë¹æ¹ı : 'setup.py install' ºôµå¿Í ¼³Ä¡°¡ µ¿½Ã¿¡ ÁøÇàµË´Ï´Ù. 
-+# 'setup.py --help'Ã³·³ ½ÇÇàÇÏ½Ã¸é ÀÚ¼¼ÇÑ »ç¿ë¹æ¹ıÀ» º¼ ¼ö ÀÖ½À´Ï´Ù.
++# íŒŒì´ì¬
++# ì‚¬ìš©ë°©ë²• : 'setup.py install' ë¹Œë“œì™€ ì„¤ì¹˜ê°€ ë™ì‹œì— ì§„í–‰ë©ë‹ˆë‹¤. 
++# 'setup.py --help'ì²˜ëŸ¼ ì‹¤í–‰í•˜ì‹œë©´ ìì„¸í•œ ì‚¬ìš©ë°©ë²•ì„ ë³¼ ìˆ˜ ìˆìŠµë‹ˆë‹¤.
 +from distutils.core import setup, Extension
 +spam_mod = Extension('spam', sources = ['spammodule.c'])
 +setup(name = "spam",
@@ -1253,7 +1253,7 @@ Binary file not shown.
 +    ext_modules = [spam_mod],
 +)
  
-60  1¤²¤Ì ¤±¤Ì¤¤¤²¤Ã¤²/1¤²¤Ì9¤¸¤¿¤·/spam2/spammodule.c
+60  1ã…‚ã…œ ã…ã…œã„´ã…‚ã…“ã…‚/1ã…‚ã…œ9ã…ˆã…ã…‡/spam2/spammodule.c
 @@ -0,0 +1,60 @@
 +#include "python.h" 
 +
@@ -1264,7 +1264,7 @@ Binary file not shown.
 +    const char* str=NULL;
 +    int len; 
 +
-+    if (!PyArg_ParseTuple(args, "s", &str)) // ¸Å°³º¯¼ö °ªÀ» ºĞ¼®ÇÏ°í Áö¿ªº¯¼ö¿¡ ÇÒ´ç ½ÃÅµ´Ï´Ù.
++    if (!PyArg_ParseTuple(args, "s", &str)) // ë§¤ê°œë³€ìˆ˜ ê°’ì„ ë¶„ì„í•˜ê³  ì§€ì—­ë³€ìˆ˜ì— í• ë‹¹ ì‹œí‚µë‹ˆë‹¤.
 +         return NULL; 
 +
 +    len = strlen(str); 
@@ -1278,14 +1278,14 @@ Binary file not shown.
 +    int quotient=0;
 +    int dividend,divisor=0; 
 +           
-+    if (!PyArg_ParseTuple(args, "ii", &dividend,&divisor)) //ÇÇÁ¦¼ö¿Í Á¦¼ö ÇÒ´ç
++    if (!PyArg_ParseTuple(args, "ii", &dividend,&divisor)) //í”¼ì œìˆ˜ì™€ ì œìˆ˜ í• ë‹¹
 +          return NULL;
 +   
 +    if (divisor){
 +         quotient = dividend/divisor;
-+    } else {  // Á¦¼ö°¡ 0ÀÏ ¶§ ¿¹¿Ü Ã³¸®¸¦ ÇÕ´Ï´Ù.
-+         // ¿¹¿Ü Ã³¸®¸¦ ÇÒ ¶§´Â ¹İµå½Ã NULLÀ» ¸®ÅÏ ÇØÁİ´Ï´Ù. PyErr_SetStringÇÔ¼ö´Â Ç×»ó NULLÀ» ¸®ÅÏÇÕ´Ï´Ù.
-+         //PyExc_ZeroDivisionError´Â 0À¸·Î ³ª´©·Á°í ÇÒ ¶§ ¾²´Â ¿¹¿ÜÀÔ´Ï´Ù.
++    } else {  // ì œìˆ˜ê°€ 0ì¼ ë•Œ ì˜ˆì™¸ ì²˜ë¦¬ë¥¼ í•©ë‹ˆë‹¤.
++         // ì˜ˆì™¸ ì²˜ë¦¬ë¥¼ í•  ë•ŒëŠ” ë°˜ë“œì‹œ NULLì„ ë¦¬í„´ í•´ì¤ë‹ˆë‹¤. PyErr_SetStringí•¨ìˆ˜ëŠ” í•­ìƒ NULLì„ ë¦¬í„´í•©ë‹ˆë‹¤.
++         //PyExc_ZeroDivisionErrorëŠ” 0ìœ¼ë¡œ ë‚˜ëˆ„ë ¤ê³  í•  ë•Œ ì“°ëŠ” ì˜ˆì™¸ì…ë‹ˆë‹¤.
 +         PyErr_SetString(PyExc_ZeroDivisionError, "divisor must not be zero");
 +         return  NULL;
 +    }
@@ -1299,14 +1299,14 @@ Binary file not shown.
 +    "count a string length."},
 +    {"division", spam_division, METH_VARARGS,
 +    "division function \n return quotient, quotient is dividend / divisor"},
-+    {NULL, NULL, 0, NULL}    //¹è¿­ÀÇ ³¡À» ³ªÅ¸³½´Ù.
++    {NULL, NULL, 0, NULL}    //ë°°ì—´ì˜ ëì„ ë‚˜íƒ€ë‚¸ë‹¤.
 +};
 +
 +
 +static struct PyModuleDef spammodule = {
 +    PyModuleDef_HEAD_INIT,
-+    "spam",            // ¸ğµâ ÀÌ¸§
-+    "It is test module.", // ¸ğµâ ¼³¸íÀ» Àû´Â ºÎºĞ, ¸ğµâÀÇ __doc__¿¡ ÀúÀåµË´Ï´Ù.
++    "spam",            // ëª¨ë“ˆ ì´ë¦„
++    "It is test module.", // ëª¨ë“ˆ ì„¤ëª…ì„ ì ëŠ” ë¶€ë¶„, ëª¨ë“ˆì˜ __doc__ì— ì €ì¥ë©ë‹ˆë‹¤.
 +    -1,SpamMethods
 +};
 +
@@ -1316,7 +1316,7 @@ Binary file not shown.
 +    return PyModule_Create(&spammodule);
 +}
  
-21  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì10¤¸¤¿¤·/caesar.py
+21  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ10ã…ˆã…ã…‡/caesar.py
 @@ -0,0 +1,21 @@
 +SHIFT=1
 +
@@ -1340,12 +1340,12 @@ Binary file not shown.
 +    decrypted = decrypt( encrypted )
 +    print("decrypted : " + decrypted) 
  
-10  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì11¤¸¤¿¤·/sleep.py
+10  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ11ã…ˆã…ã…‡/sleep.py
 @@ -0,0 +1,10 @@
 +# -*- coding: cp949 -*-
 +import time
 +t = time.time()
-+time.sleep(10)		# 10 AE¡Æ¡Ì sleep
++time.sleep(10)		# 10 AEÂ°ï¿¡ sleep
 +t2 = time.time()
 +
 +spendtime = t2 - t
@@ -1353,7 +1353,7 @@ Binary file not shown.
 +print("After timestemp: ", t2)
 +print("Wait {0} seconds".format(spendtime))
  
-25  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì13¤¸¤¿¤·/tree.py
+25  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ13ã…ˆã…ã…‡/tree.py
 @@ -0,0 +1,25 @@
 +import glob
 +import os.path
@@ -1384,7 +1384,7 @@ Binary file not shown.
 ---------------------------------------------------
 sqlite3
 ---------------------------------------------------
-11  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì14¤¸¤¿¤·/14-10-1.py
+11  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ14ã…ˆã…ã…‡/14-10-1.py
 @@ -0,0 +1,11 @@
 import sqlite3
 con = sqlite3.connect(":memory:")
@@ -1399,21 +1399,21 @@ for l in con.iterdump():
     print(l)
 
 -------------------------------------------------- 
-10  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì14¤¸¤¿¤·/14-2-1.py
+10  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ14ã…ˆã…ã…‡/14-2-1.py
 @@ -0,0 +1,10 @@
 +# -*- coding: cp949 -*-
 +import sqlite3
 +
 +con = sqlite3.connect(":memory:")
 +
-+with open('script.txt') as f:	# script.txt¢¯¢®¨ù¡© SQL ¡¾¢¬©ö¢çA¡í A¨¢A¨ö
++with open('script.txt') as f:	# script.txtÂ¿Â¡Â¼Â­ SQL Â±Â¸Â¹ï¿½Aâ‰« AÃAÂ½
 +	SQLScript = f.read()
 +
 +cur = con.cursor()
 +cur.executescript(SQLScript)
  
 -------------------------------------------------- 
-7  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì14¤¸¤¿¤·/14-4-1.py
+7  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ14ã…ˆã…ã…‡/14-4-1.py
 @@ -0,0 +1,7 @@
 import sqlite3
 con = sqlite3.connect("./test.db")
@@ -1424,7 +1424,7 @@ cur.execute("SELECT * FROM PhoneBook;")
 print(cur.fetchall())
  
 -------------------------------------------------- 
-5  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì14¤¸¤¿¤·/14-4-2.py
+5  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ14ã…ˆã…ã…‡/14-4-2.py
 @@ -0,0 +1,5 @@
 +import sqlite3
 +con = sqlite3.connect("./test.db")
@@ -1435,7 +1435,7 @@ print(cur.fetchall())
 -------------------------------------------------- 
 con.commit()
 
-6  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì14¤¸¤¿¤·/14-4-3.py
+6  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ14ã…ˆã…ã…‡/14-4-3.py
 @@ -0,0 +1,6 @@
 import sqlite3
 con = sqlite3.connect("./commit.db")
@@ -1444,7 +1444,7 @@ cur.execute("CREATE TABLE PhoneBook(Name text, PhoneNum text);")
 cur.execute("INSERT INTO PhoneBook VALUES('Derick', '010-1234-5678');")
 con.commit()
  
-5  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì14¤¸¤¿¤·/14-4-4.py
+5  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ14ã…ˆã…ã…‡/14-4-4.py
 @@ -0,0 +1,5 @@
 +import sqlite3
 +con = sqlite3.connect("./commit.db")
@@ -1452,7 +1452,7 @@ con.commit()
 +cur.execute("SELECT * FROM PhoneBook;")
 +print(cur.fetchall())
  
-20  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì14¤¸¤¿¤·/14-6-1.py
+20  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ14ã…ˆã…ã…‡/14-6-1.py
 @@ -0,0 +1,20 @@
 +# -*- coding: cp949 -*-
 +import sqlite3
@@ -1463,32 +1463,32 @@ con.commit()
 +list = (('Tom', 24),('Derick',30), ('Peter',53), ('Jane',29))
 +cur.executemany("INSERT INTO PhoneBook VALUES(?, ?);", list)
 +
-+cur.execute("SELECT length(Name), upper(Name), lower(Name) FROM PhoneBook")    # ¹®ÀÚ¿­ ±æÀÌ, ´ë¹®ÀÚ, ¼Ò¹®ÀÚ
++cur.execute("SELECT length(Name), upper(Name), lower(Name) FROM PhoneBook")    # ë¬¸ìì—´ ê¸¸ì´, ëŒ€ë¬¸ì, ì†Œë¬¸ì
 +print("== length(), upper(), lower() ==")
 +print([r for r in cur])
 +
-+cur.execute("SELECT max(Age), min(Age), sum(Age) FROM PhoneBook")     # ÃÖ´ë°ª, ÃÖ¼Ò°ª, ÃÑÇÕ
++cur.execute("SELECT max(Age), min(Age), sum(Age) FROM PhoneBook")     # ìµœëŒ€ê°’, ìµœì†Œê°’, ì´í•©
 +print("== max(), min(), sum() ==")
 +print([r for r in cur])
 +
-+cur.execute("SELECT count(*), random(*) FROM PhoneBook")              # ·¹ÄÚµå °¹¼ö, ÀÓÀÇÀÇ °ª
++cur.execute("SELECT count(*), random(*) FROM PhoneBook")              # ë ˆì½”ë“œ ê°¯ìˆ˜, ì„ì˜ì˜ ê°’
 +print("== count(*), random(*) ==")
 +print([r for r in cur])
  
-27  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì14¤¸¤¿¤·/14-7-1.py
+27  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ14ã…ˆã…ã…‡/14-7-1.py
 @@ -0,0 +1,27 @@
 +# -*- coding: cp949 -*-
 +class Average:
 +    def __init__(self):
-+        self.sum = 0          # sum, cntÀÇ ÃÊ±âÈ­
++        self.sum = 0          # sum, cntì˜ ì´ˆê¸°í™”
 +        self.cnt = 0
 +
 +    def step(self, value):
-+        self.sum += value     # ÀÔ·ÂµÈ °ªÀ» sum¿¡ ´õÇÏ°í, Ä«¿îÆ®(cnt)¸¦ Áõ°¡ 
++        self.sum += value     # ì…ë ¥ëœ ê°’ì„ sumì— ë”í•˜ê³ , ì¹´ìš´íŠ¸(cnt)ë¥¼ ì¦ê°€ 
 +        self.cnt += 1
 +
 +    def finalize(self):
-+        return self.sum / self.cnt    # Æò±ÕÀ» ¹İÈ¯
++        return self.sum / self.cnt    # í‰ê· ì„ ë°˜í™˜
 +
 +import sqlite3
 +con = sqlite3.connect(":memory:")
@@ -1500,83 +1500,83 @@ con.commit()
 +('Derick', '25'))
 +cur.executemany("INSERT INTO User VALUES(?, ?);", list)   
 +
-+con.create_aggregate("avg", 1, Average)        # Average Å¬·¡½º¸¦ »ç¿ëÀÚ Á¤ÀÇ Áı°èÇÔ¼ö·Î µî·Ï
++con.create_aggregate("avg", 1, Average)        # Average í´ë˜ìŠ¤ë¥¼ ì‚¬ìš©ì ì •ì˜ ì§‘ê³„í•¨ìˆ˜ë¡œ ë“±ë¡
 +
-+cur.execute("SELECT avg(Age) FROM User")       # ÁúÀÇ½Ã »ı¼ºÇÑ »ç¿ëÀÚ Á¤ÀÇ Áı°è ÇÔ¼ö¸¦ »ç¿ë
-+print(cur.fetchone()[0])                       # Ãâ·Â °á°ú: 24.6666666667 
++cur.execute("SELECT avg(Age) FROM User")       # ì§ˆì˜ì‹œ ìƒì„±í•œ ì‚¬ìš©ì ì •ì˜ ì§‘ê³„ í•¨ìˆ˜ë¥¼ ì‚¬ìš©
++print(cur.fetchone()[0])                       # ì¶œë ¥ ê²°ê³¼: 24.6666666667 
  
-34  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì14¤¸¤¿¤·/14-9-1.py
+34  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ14ã…ˆã…ã…‡/14-9-1.py
 @@ -0,0 +1,34 @@
 +# -*- coding: cp949 -*-
 +class Point(object):   
 +    def __init__(self, x, y):
 +        self.x, self.y = x, y
 +
-+    def __repr__(self):             # Point °´Ã¼ÀÇ ³»¿ë Ãâ·Â     
++    def __repr__(self):             # Point ê°ì²´ì˜ ë‚´ìš© ì¶œë ¥     
 +        return "Point(%f, %f)" % (self.x, self.y)
 +
 +import sqlite3
-+def PointAdapter(point):                # Å¬·¡½º °´Ã¼¿¡¼­ SQLite3 ÀÔ·Â °¡´ÉÇÑ ÀÚ·áÇüÀ¸·Î º¯È¯      
++def PointAdapter(point):                # í´ë˜ìŠ¤ ê°ì²´ì—ì„œ SQLite3 ì…ë ¥ ê°€ëŠ¥í•œ ìë£Œí˜•ìœ¼ë¡œ ë³€í™˜      
 +    return "%f:%f" % (point.x, point.y)
 +
-+def PointConverter(s):                  # SQLite3¿¡¼­ Á¶È¸ÇÑ °á°ú¸¦ Å¬·¡½º °´Ã¼·Î º¯È¯ 
++def PointConverter(s):                  # SQLite3ì—ì„œ ì¡°íšŒí•œ ê²°ê³¼ë¥¼ í´ë˜ìŠ¤ ê°ì²´ë¡œ ë³€í™˜ 
 +    x, y = list(map(float, s.decode().split(":")))
 +    return Point(x, y)
 +
-+sqlite3.register_adapter(Point, PointAdapter)          # Å¬·¡½º ÀÌ¸§°ú º¯È¯ ÇÔ¼ö µî·Ï
-+sqlite3.register_converter("point", PointConverter)    # SQL ±¸¹®¿¡¼­ »ç¿ëÇÒ ÀÚ·áÇü ÀÌ¸§°ú º¯È¯ÇÔ¼ö µî·Ï
++sqlite3.register_adapter(Point, PointAdapter)          # í´ë˜ìŠ¤ ì´ë¦„ê³¼ ë³€í™˜ í•¨ìˆ˜ ë“±ë¡
++sqlite3.register_converter("point", PointConverter)    # SQL êµ¬ë¬¸ì—ì„œ ì‚¬ìš©í•  ìë£Œí˜• ì´ë¦„ê³¼ ë³€í™˜í•¨ìˆ˜ ë“±ë¡
 +
-+p = Point(4, -3.2)           # ÀÔ·ÂÇÒ µ¥ÀÌÅÍ(ÆÄÀÌ½ã Å¬·¡½º °´Ã¼)
++p = Point(4, -3.2)           # ì…ë ¥í•  ë°ì´í„°(íŒŒì´ì¬ í´ë˜ìŠ¤ ê°ì²´)
 +p2 = Point(-1.4, 6.2)
 +
-+# ¾Ï¹¬ÀûÀ¸·Î ¼±¾ğµÈ ÀÚ·áÇüÀ¸·Î Á¶È¸ÇÏµµ·Ï ¼³Á¤  
++# ì•”ë¬µì ìœ¼ë¡œ ì„ ì–¸ëœ ìë£Œí˜•ìœ¼ë¡œ ì¡°íšŒí•˜ë„ë¡ ì„¤ì •  
 +con = sqlite3.connect(":memory:", detect_types=sqlite3.PARSE_DECLTYPES)
 +cur = con.cursor()
-+cur.execute("create table test(p point)")             # point ÀÚ·áÇüÀ» ÀÌ¿ëÇÏ¿© Å×ÀÌºí »ı¼º
++cur.execute("create table test(p point)")             # point ìë£Œí˜•ì„ ì´ìš©í•˜ì—¬ í…Œì´ë¸” ìƒì„±
 +
-+cur.execute("insert into test values (?)", (p, ))     # point ·¹ÄÚµå ÀÔ·Â
++cur.execute("insert into test values (?)", (p, ))     # point ë ˆì½”ë“œ ì…ë ¥
 +cur.execute("insert into test(p) values (?)", (p2,))
 +
-+cur.execute("select p from test")    # Å×ÀÌºí Á¶È¸ 
++cur.execute("select p from test")    # í…Œì´ë¸” ì¡°íšŒ 
 +print([r[0] for r in cur])           
 +cur.close()
 +con.close()
  
-BIN  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì14¤¸¤¿¤·/commit.db
+BIN  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ14ã…ˆã…ã…‡/commit.db
 Binary file not shown.
 
 ---------------------------------- 
-/2¤²¤Ì14¤¸¤¿¤·/pysqlite_command.py
+/2ã…‚ã…œ14ã…ˆã…ã…‡/pysqlite_command.py
 @@ -0,0 +1,74 @@
 # -*- coding: cp949 -*-
 import sqlite3
 import sys
 import re
 
-# µ¥ÀÌÅÍº£ÀÌ½º °æ·Î ¼³Á¤ 
+# ë°ì´í„°ë² ì´ìŠ¤ ê²½ë¡œ ì„¤ì • 
 if len(sys.argv) == 2:
 	path = sys.argv[1]
 else:
 	path = ":memory:"
 
 con = sqlite3.connect(path)
-con.isolation_level = None	# Æ®·£Àè¼Ç¾øÀÌ ÀÚµ¿ Ä¿¹ÔÀÌ µÇµµ·Ï ¼³Á¤
+con.isolation_level = None	# íŠ¸ëœì­ì…˜ì—†ì´ ìë™ ì»¤ë°‹ì´ ë˜ë„ë¡ ì„¤ì •
 cur = con.cursor()
 
-buffer = ""			# Äõ¸® ¹öÆÛ 
+buffer = ""			# ì¿¼ë¦¬ ë²„í¼ 
 
 def PrintIntro():
-	"ÇÁ·Î±×·¥ ÀÎÆ®·Î ¸Ş¼¼Áö"
-	print("pysqliteÀÇ command ÇÁ·Î±×·¥ÀÔ´Ï´Ù.")
-	print("Æ¯¼ö ¸í·É¾î¸¦ ¾Ë°í ½ÍÀ¸½Ã¸é '.help;'¸¦ ÀÔ·ÂÇÏ¼¼¿ä.")
-	print("SQL ±¸¹®Àº ';'À¸·Î ³¡³ª¾ß ÇÕ´Ï´Ù.")
+	"í”„ë¡œê·¸ë¨ ì¸íŠ¸ë¡œ ë©”ì„¸ì§€"
+	print("pysqliteì˜ command í”„ë¡œê·¸ë¨ì…ë‹ˆë‹¤.")
+	print("íŠ¹ìˆ˜ ëª…ë ¹ì–´ë¥¼ ì•Œê³  ì‹¶ìœ¼ì‹œë©´ '.help;'ë¥¼ ì…ë ¥í•˜ì„¸ìš”.")
+	print("SQL êµ¬ë¬¸ì€ ';'ìœ¼ë¡œ ëë‚˜ì•¼ í•©ë‹ˆë‹¤.")
 
 def PrintHelp():
-	"µµ¿ò¸»"
-	print(".dump\t\tµ¥ÀÌÅÍº£ÀÌ½ºÀÇ ³»¿ëÀ» ´ıÇÁÇÕ´Ï´Ù.")
+	"ë„ì›€ë§"
+	print(".dump\t\të°ì´í„°ë² ì´ìŠ¤ì˜ ë‚´ìš©ì„ ë¤í”„í•©ë‹ˆë‹¤.")
 
 def SQLDump(con, file=None):
-	"µ¥ÀÌÅÍº£ÀÌ½º ³»¿ë ´ıÇÁ"
+	"ë°ì´í„°ë² ì´ìŠ¤ ë‚´ìš© ë¤í”„"
 	if file != None:
 		f = open(file, "w")
 	else:
@@ -1588,18 +1588,18 @@ def SQLDump(con, file=None):
 	if f != sys.stdout:
 		f.close()
 
-PrintIntro()		# ÀÎÆ®·Î ¸Ş¼¼Áö Ãâ·Â
+PrintIntro()		# ì¸íŠ¸ë¡œ ë©”ì„¸ì§€ ì¶œë ¥
 
 while True:
-	line = input("pysqlite>> ")		# ¸í·É¾î ÀÔ·Â
+	line = input("pysqlite>> ")		# ëª…ë ¹ì–´ ì…ë ¥
 	if buffer == "" and line == "":
 		break;
 	buffer = line
 	
-	if sqlite3.complete_statement(buffer):		# ';'À¸·Î ±¸¹®ÀÌ ³¡³ª´ÂÁö °Ë»ç
+	if sqlite3.complete_statement(buffer):		# ';'ìœ¼ë¡œ êµ¬ë¬¸ì´ ëë‚˜ëŠ”ì§€ ê²€ì‚¬
 		buffer = buffer.strip()
 
-		if buffer[0]==".":		# Æ¯¼ö ¸í·É¾îÀÎ °æ¿ì
+		if buffer[0]==".":		# íŠ¹ìˆ˜ ëª…ë ¹ì–´ì¸ ê²½ìš°
 			cmd = re.sub('[ ;]', ' ', buffer).split()
 			if cmd[0] == '.help':
 				PrintHelp()
@@ -1608,33 +1608,33 @@ while True:
 					SQLDump(con, cmd[1])
 				else:
 					SQLDump(con)
-		else:					# ÀÏ¹İ SQL ±¸¹®ÀÎ °æ¿ì
+		else:					# ì¼ë°˜ SQL êµ¬ë¬¸ì¸ ê²½ìš°
 			try:
 				buffer = buffer.strip()
 				cur.execute(buffer)
 
-				if buffer.lstrip().upper().startswith("SELECT"):	# SELECT ÁúÀÇÀÎ °æ¿ì
+				if buffer.lstrip().upper().startswith("SELECT"):	# SELECT ì§ˆì˜ì¸ ê²½ìš°
 					print(cur.fetchall())
 			except sqlite3.Error as e:
 				print("Error: ", e.args[0])
 			else:
-				print("±¸¹®ÀÌ ¼º°øÀûÀ¸·Î ¼öÇàµÇ¾ú½À´Ï´Ù.") 
-		buffer=""		# ÀÔ·Â ¹öÆÛ ÃÊ±âÈ­
+				print("êµ¬ë¬¸ì´ ì„±ê³µì ìœ¼ë¡œ ìˆ˜í–‰ë˜ì—ˆìŠµë‹ˆë‹¤.") 
+		buffer=""		# ì…ë ¥ ë²„í¼ ì´ˆê¸°í™”
 con.close()
-print("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù. ¾ß¿Ë~")
+print("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤. ì•¼ì˜¹~")
 
 
 ---------------------------------- 
-3  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì14¤¸¤¿¤·/script.txt
+3  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ14ã…ˆã…ã…‡/script.txt
 @@ -0,0 +1,3 @@
 +CREATE TABLE PhoneBook(Name text, PhoneNum text);
 +INSERT INTO PhoneBook VALUES('Derick', '010-1234-5678');
 +INSERT INTO PhoneBook VALUES('Sangjung', '010-5670-2343');
  
-BIN  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì14¤¸¤¿¤·/test.db
+BIN  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ14ã…ˆã…ã…‡/test.db
 Binary file not shown.
  
-16  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì15¤¸¤¿¤·/ObjectManager.py
+16  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ15ã…ˆã…ã…‡/ObjectManager.py
 @@ -0,0 +1,16 @@
 +# -*- coding: cp949 -*-
 +import weakref
@@ -1643,24 +1643,24 @@ Binary file not shown.
 +        self.weakDict = weakref.WeakValueDictionary()
 +
 +    def InputObject(self, obj):
-+        objectID = id(obj)                # ÀÔ·Â¹ŞÀº °´Ã¼ÀÇ ID »ı¼º
-+        self.weakDict[objectID] = obj     # ¾àÇÑ µñ¼Å³Ê¸®ÀÇ °ªÀ¸·Î ÀÔ·Â 
++        objectID = id(obj)                # ì…ë ¥ë°›ì€ ê°ì²´ì˜ ID ìƒì„±
++        self.weakDict[objectID] = obj     # ì•½í•œ ë”•ì…”ë„ˆë¦¬ì˜ ê°’ìœ¼ë¡œ ì…ë ¥ 
 +        return objectID
 +
 +    def GetObject(self, objectID):
 +        try:
-+            return self.weakDict[objectID]    # °´Ã¼°¡ Á¸ÀçÇÏ´Â °æ¿ì ¹İÈ¯
++            return self.weakDict[objectID]    # ê°ì²´ê°€ ì¡´ì¬í•˜ëŠ” ê²½ìš° ë°˜í™˜
 +        except:
-+            return None                       # °´Ã¼°¡ ¼Ò¸êµÈ °æ¿ì None ¹İÈ¯
++            return None                       # ê°ì²´ê°€ ì†Œë©¸ëœ ê²½ìš° None ë°˜í™˜
  
-4  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì15¤¸¤¿¤·/test_argv.py
+4  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ15ã…ˆã…ã…‡/test_argv.py
 @@ -0,0 +1,4 @@
 +import sys
 +print( "argv size :", len(sys.argv) )
 +for i,arg in enumerate(sys.argv):
 +	print( i, arg ) 
  
-34  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì15¤¸¤¿¤·/thread.py
+34  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ15ã…ˆã…ã…‡/thread.py
 @@ -0,0 +1,34 @@
 +from threading import Thread, Lock
 +import time
@@ -1697,10 +1697,10 @@ Binary file not shown.
 +  print(dev.name, 'fixed', dev.fixed)
 +
  
-208  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì16¤¸¤¿¤·/book.py
+208  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ16ã…ˆã…ã…‡/book.py
 @@ -0,0 +1,208 @@
 +# -*- coding: cp949 -*-
-+from xml.dom.minidom import parse, parseString # minidom ¸ğµâÀÇ ÆÄ½Ì ÇÔ¼ö¸¦ ÀÓÆ÷Æ®ÇÕ´Ï´Ù.
++from xml.dom.minidom import parse, parseString # minidom ëª¨ë“ˆì˜ íŒŒì‹± í•¨ìˆ˜ë¥¼ ì„í¬íŠ¸í•©ë‹ˆë‹¤.
 +from xml.etree import ElementTree
 +
 +##### global
@@ -1749,17 +1749,17 @@ Binary file not shown.
 +
 +#### xml function implementation
 +def LoadXMLFromFile():
-+    fileName = str(input ("please input file name to load :"))  # ÀĞ¾î¿Ã ÆÄÀÏ°æ·Î¸¦ ÀÔ·Â ¹Ş½À´Ï´Ù.
++    fileName = str(input ("please input file name to load :"))  # ì½ì–´ì˜¬ íŒŒì¼ê²½ë¡œë¥¼ ì…ë ¥ ë°›ìŠµë‹ˆë‹¤.
 +    global xmlFD
 + 
 +    try:
-+        xmlFD = open(fileName)   # xml ¹®¼­¸¦ openÇÕ´Ï´Ù.
++        xmlFD = open(fileName)   # xml ë¬¸ì„œë¥¼ opení•©ë‹ˆë‹¤.
 +    except IOError:
 +        print ("invalid file name or path")
 +        return None
 +    else:
 +        try:
-+            dom = parse(xmlFD)   # XML ¹®¼­¸¦ ÆÄ½ÌÇÕ´Ï´Ù.
++            dom = parse(xmlFD)   # XML ë¬¸ì„œë¥¼ íŒŒì‹±í•©ë‹ˆë‹¤.
 +        except Exception:
 +            print ("loading fail!!!")
 +        else:
@@ -1769,7 +1769,7 @@ Binary file not shown.
 +
 +def BooksFree():
 +    if checkDocument():
-+        BooksDoc.unlink()   # minidom °´Ã¼ ÇØÁ¦ÇÕ´Ï´Ù.
++        BooksDoc.unlink()   # minidom ê°ì²´ í•´ì œí•©ë‹ˆë‹¤.
 +     
 +def QuitBookMgr():
 +    global loopFlag
@@ -1782,31 +1782,31 @@ Binary file not shown.
 +
 +def PrintBookList(tags):
 +    global BooksDoc
-+    if not checkDocument():  # DOMÀÌ NoneÀÎÁö °Ë»çÇÕ´Ï´Ù.
++    if not checkDocument():  # DOMì´ Noneì¸ì§€ ê²€ì‚¬í•©ë‹ˆë‹¤.
 +        return None
 +        
 +    booklist = BooksDoc.childNodes
 +    book = booklist[0].childNodes
 +    for item in book:
-+        if item.nodeName == "book":  # ¿¤¸®¸ÕÆ®¸¦ Áß bookÀÎ °ÍÀ» °ñ¶ó ³À´Ï´Ù.
-+            subitems = item.childNodes  # book¿¡ µé¾î ÀÖ´Â ³ëµåµéÀ» °¡Á®¿É´Ï´Ù.
++        if item.nodeName == "book":  # ì—˜ë¦¬ë¨¼íŠ¸ë¥¼ ì¤‘ bookì¸ ê²ƒì„ ê³¨ë¼ ëƒ…ë‹ˆë‹¤.
++            subitems = item.childNodes  # bookì— ë“¤ì–´ ìˆëŠ” ë…¸ë“œë“¤ì„ ê°€ì ¸ì˜µë‹ˆë‹¤.
 +            for atom in subitems:
 +                if atom.nodeName in tags:
-+                    print("title=",atom.firstChild.nodeValue)  # Ã¥ ¸ñ·ÏÀ» Ãâ·Â ÇÕ´Ï´Ù.
++                    print("title=",atom.firstChild.nodeValue)  # ì±… ëª©ë¡ì„ ì¶œë ¥ í•©ë‹ˆë‹¤.
 +                
 +def AddBook(bookdata):
 +    global BooksDoc
 +    if not checkDocument() :
 +        return None
 +     
-+    # Book ¿¤¸®¸ÕÆ®¸¦ ¸¸µì´Ï´Ù.
++    # Book ì—˜ë¦¬ë¨¼íŠ¸ë¥¼ ë§Œë“­ë‹ˆë‹¤.
 +    newBook = BooksDoc.createElement('book')
 +    newBook.setAttribute('ISBN',bookdata['ISBN'])
-+    # Title ¿¤¸®¸ÕÆ®¸¦ ¸¸µì´Ï´Ù.
++    # Title ì—˜ë¦¬ë¨¼íŠ¸ë¥¼ ë§Œë“­ë‹ˆë‹¤.
 +    titleEle = BooksDoc.createElement('title')
-+    # ÅØ½ºÆ® ¿¡¸±¸ÕÆ®¸¦ ¸¸µì´Ï´Ù.
++    # í…ìŠ¤íŠ¸ ì—ë¦´ë¨¼íŠ¸ë¥¼ ë§Œë“­ë‹ˆë‹¤.
 +    titleNode = BooksDoc.createTextNode(bookdata['title'])
-+    # ÅØ½ºÆ® ³ëµå¿Í Title ¿¤¸®¸ÕÆ®¸¦ ¿¬°á ½ÃÅµ´Ï´Ù.
++    # í…ìŠ¤íŠ¸ ë…¸ë“œì™€ Title ì—˜ë¦¬ë¨¼íŠ¸ë¥¼ ì—°ê²° ì‹œí‚µë‹ˆë‹¤.
 +    try:
 +        titleEle.appendChild(titleNode)
 +    except Exception:
@@ -1815,7 +1815,7 @@ Binary file not shown.
 +    else:
 +        titleEle.appendChild(titleNode)
 +
-+    # Title¸¦ book ¿¤¸®¸ÕÆ®¿Í ¿¬°á ½ÃÅµ´Ï´Ù.
++    # Titleë¥¼ book ì—˜ë¦¬ë¨¼íŠ¸ì™€ ì—°ê²° ì‹œí‚µë‹ˆë‹¤.
 +    try:
 +        newBook.appendChild(titleEle)
 +        booklist = BooksDoc.firstChild
@@ -1838,7 +1838,7 @@ Binary file not shown.
 +        print ("Element Tree parsing Error : maybe the xml document is not corrected.")
 +        return None
 +        
-+    # Book ¿¤¸®¸ÕÆ® ¸®½ºÆ®¸¦ °¡Á® ¿É´Ï´Ù.
++    # Book ì—˜ë¦¬ë¨¼íŠ¸ ë¦¬ìŠ¤íŠ¸ë¥¼ ê°€ì ¸ ì˜µë‹ˆë‹¤.
 +    bookElements = tree.getiterator("book") 
 +    for item in bookElements:
 +        strTitle = item.find("title")
@@ -1849,41 +1849,41 @@ Binary file not shown.
 +
 +def MakeHtmlDoc(BookList):
 +    from xml.dom.minidom import getDOMImplementation
-+    # DOM °³Ã¼¸¦ »ı¼ºÇÕ´Ï´Ù.
++    # DOM ê°œì²´ë¥¼ ìƒì„±í•©ë‹ˆë‹¤.
 +    impl = getDOMImplementation()
 +    
-+    newdoc = impl.createDocument(None, "html", None)  # HTML ÃÖ»óÀ§ ¿¤¸®¸ÕÆ®¸¦ »ı¼ºÇÕ´Ï´Ù.
++    newdoc = impl.createDocument(None, "html", None)  # HTML ìµœìƒìœ„ ì—˜ë¦¬ë¨¼íŠ¸ë¥¼ ìƒì„±í•©ë‹ˆë‹¤.
 +    top_element = newdoc.documentElement
 +    header = newdoc.createElement('header')
 +    top_element.appendChild(header)
 +
-+    # Body ¿¤¸®¸ÕÆ® »ı¼º
++    # Body ì—˜ë¦¬ë¨¼íŠ¸ ìƒì„±
 +    body = newdoc.createElement('body')
 +
 +    for bookitem in BookList:
-+        # Bold ¿¤¸®¸ÕÆ®¸¦ »ı¼ºÇÕ´Ï´Ù.
++        # Bold ì—˜ë¦¬ë¨¼íŠ¸ë¥¼ ìƒì„±í•©ë‹ˆë‹¤.
 +        b = newdoc.createElement('b')
-+        # ÅØ½ºÆ® ³ëµå¸¦ ¸¸µì´Ï´Ù.
++        # í…ìŠ¤íŠ¸ ë…¸ë“œë¥¼ ë§Œë“­ë‹ˆë‹¤.
 +        ibsnText = newdoc.createTextNode("ISBN:" + bookitem[0])
 +        b.appendChild(ibsnText)
 +
 +        body.appendChild(b)
 +    
-+        # <br> ºÎºĞÀ» »ı¼ºÇÕ´Ï´Ù.
++        # <br> ë¶€ë¶„ì„ ìƒì„±í•©ë‹ˆë‹¤.
 +        br = newdoc.createElement('br')
 +
 +        body.appendChild(br)
 +
-+        # title ºÎºĞÀ» »ı¼ºÇÕ´Ï´Ù.
++        # title ë¶€ë¶„ì„ ìƒì„±í•©ë‹ˆë‹¤.
 +        p = newdoc.createElement('p')
-+        # ÅØ½ºÆ® ³ëµå¸¦ ¸¸µì´Ï´Ù.
++        # í…ìŠ¤íŠ¸ ë…¸ë“œë¥¼ ë§Œë“­ë‹ˆë‹¤.
 +        titleText= newdoc.createTextNode("Title:" + bookitem[1])
 +        p.appendChild(titleText)
 +
 +        body.appendChild(p)
-+        body.appendChild(br)  # <br> ºÎºĞÀ» ºÎ¸ğ ¿¡¸±¸ÕÆ®¿¡ Ãß°¡ÇÕ´Ï´Ù.
++        body.appendChild(br)  # <br> ë¶€ë¶„ì„ ë¶€ëª¨ ì—ë¦´ë¨¼íŠ¸ì— ì¶”ê°€í•©ë‹ˆë‹¤.
 +         
-+    # Body ¿¤¸®¸ÕÆ®¸¦ ÃÖ»óÀ§ ¿¤¸®¸ÕÆ®¿¡ Ãß°¡½ÃÅµ´Ï´Ù.
++    # Body ì—˜ë¦¬ë¨¼íŠ¸ë¥¼ ìµœìƒìœ„ ì—˜ë¦¬ë¨¼íŠ¸ì— ì¶”ê°€ì‹œí‚µë‹ˆë‹¤.
 +    top_element.appendChild(body)
 +    
 +    return newdoc.toxml()
@@ -1908,7 +1908,7 @@ Binary file not shown.
 +else:
 +    print ("Thank you! Good Bye")
  
-18  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì16¤¸¤¿¤·/book.xml
+18  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ16ã…ˆã…ã…‡/book.xml
 @@ -0,0 +1,18 @@
 +<?xml version="1.0" ?>
 +<booklist cnt="3">
@@ -1929,7 +1929,7 @@ Binary file not shown.
 + </book>
 +</booklist> 
  
-49  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì17¤¸¤¿¤·/MixedType.py
+49  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ17ã…ˆã…ã…‡/MixedType.py
 @@ -0,0 +1,49 @@
 +# -*- coding: cp949 -*-
 +import smtplib
@@ -1944,8 +1944,8 @@ Binary file not shown.
 +htmlFileName = "logo.html"
 +imageFileName = "logo.gif"
 +
-+senderAddr = "test@send.com"     #º¸³»´Â »ç¶÷ email ÁÖ¼Ò.
-+recipientAddr = "test@rec.com"   #¹Ş´Â »ç¶÷ email ÁÖ¼Ò.
++senderAddr = "test@send.com"     #ë³´ë‚´ëŠ” ì‚¬ëŒ email ì£¼ì†Œ.
++recipientAddr = "test@rec.com"   #ë°›ëŠ” ì‚¬ëŒ email ì£¼ì†Œ.
 +
 +#create MMIMEBase 
 +msg = MIMEBase("multipart", "mixed")
@@ -1963,11 +1963,11 @@ Binary file not shown.
 +ImagePart = MIMEImage(imageFD.read())
 +imageFD.close()
 +
-+# ¸¸µé¾ú´ø mimeÀ» MIMEBase¿¡ Ã·ºÎ ½ÃÅ²´Ù.
++# ë§Œë“¤ì—ˆë˜ mimeì„ MIMEBaseì— ì²¨ë¶€ ì‹œí‚¨ë‹¤.
 +msg.attach(ImagePart)
 +msg.attach(HtmlPart)
 +
-+#Çì´õ¿¡ Ã·ºÎ ÆÄÀÏ¿¡ ´ëÇÑ Á¤º¸¸¦ Ãß°¡ ½ÃÅ²´Ù.
++#í—¤ë”ì— ì²¨ë¶€ íŒŒì¼ì— ëŒ€í•œ ì •ë³´ë¥¼ ì¶”ê°€ ì‹œí‚¨ë‹¤.
 +msg.add_header('Content-Disposition','attachment',filename=imageFileName)
 +
 +msg['Subject'] = "test python email"
@@ -1975,13 +1975,13 @@ Binary file not shown.
 +msg['To'] = recipientAddr
 +
 +
-+#¸ŞÀÏÀ» ¹ß¼ÛÇÑ´Ù.
++#ë©”ì¼ì„ ë°œì†¡í•œë‹¤.
 +s = smtplib.SMTP(host)
 +s.connect()
 +s.sendmail(senderAddr , [recipientAddr], msg.as_string())
 +s.close()
  
-18  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì17¤¸¤¿¤·/book.xml
+18  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ17ã…ˆã…ã…‡/book.xml
 @@ -0,0 +1,18 @@
 +<?xml version="1.0" ?>
 +<booklist cnt="3">
@@ -2002,7 +2002,7 @@ Binary file not shown.
 + </book>
 +</booklist> 
  
-76  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì17¤¸¤¿¤·/gmail.py
+76  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ17ã…ˆã…ã…‡/gmail.py
 @@ -0,0 +1,76 @@
 +# -*- coding: cp949 -*-
 +import mimetypes
@@ -2011,29 +2011,29 @@ Binary file not shown.
 +from email.mime.text import MIMEText
 +
 +#global value
-+host = "smtp.gmail.com" # Gmail STMP ¼­¹ö ÁÖ¼Ò.
++host = "smtp.gmail.com" # Gmail STMP ì„œë²„ ì£¼ì†Œ.
 +port = "587"
 +htmlFileName = "logo.html"
 +
-+senderAddr = "mil*****@gmail.com"     # º¸³»´Â »ç¶÷ email ÁÖ¼Ò.
-+recipientAddr = "mi****@naver.com"   # ¹Ş´Â »ç¶÷ email ÁÖ¼Ò.
++senderAddr = "mil*****@gmail.com"     # ë³´ë‚´ëŠ” ì‚¬ëŒ email ì£¼ì†Œ.
++recipientAddr = "mi****@naver.com"   # ë°›ëŠ” ì‚¬ëŒ email ì£¼ì†Œ.
 +
 +msg = MIMEBase("multipart", "alternative")
 +msg['Subject'] = "Test email in Python 3.0"
 +msg['From'] = senderAddr
 +msg['To'] = recipientAddr
 +
-+# MIME ¹®¼­¸¦ »ı¼ºÇÕ´Ï´Ù.
++# MIME ë¬¸ì„œë¥¼ ìƒì„±í•©ë‹ˆë‹¤.
 +htmlFD = open(htmlFileName, 'rb')
 +HtmlPart = MIMEText(htmlFD.read(),'html', _charset = 'UTF-8' )
 +htmlFD.close()
 +
-+# ¸¸µé¾ú´ø mimeÀ» MIMEBase¿¡ Ã·ºÎ ½ÃÅ²´Ù.
++# ë§Œë“¤ì—ˆë˜ mimeì„ MIMEBaseì— ì²¨ë¶€ ì‹œí‚¨ë‹¤.
 +msg.attach(HtmlPart)
 +
-+# ¸ŞÀÏÀ» ¹ß¼ÛÇÑ´Ù.
++# ë©”ì¼ì„ ë°œì†¡í•œë‹¤.
 +s = mysmtplib.MySMTP(host,port)
-+#s.set_debuglevel(1)        # µğ¹ö±ëÀÌ ÇÊ¿äÇÒ °æ¿ì ÁÖ¼®À» Ç¬´Ù.
++#s.set_debuglevel(1)        # ë””ë²„ê¹…ì´ í•„ìš”í•  ê²½ìš° ì£¼ì„ì„ í‘¼ë‹¤.
 +s.ehlo()
 +s.starttls()
 +s.ehlo()
@@ -2081,7 +2081,7 @@ Binary file not shown.
 +
 +
  
-136  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì17¤¸¤¿¤·/internetbook.py
+136  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ17ã…ˆã…ã…‡/internetbook.py
 @@ -0,0 +1,136 @@
 +# -*- coding: cp949 -*-
 +from xmlbook import *
@@ -2092,11 +2092,11 @@ Binary file not shown.
 +conn = None
 +#regKey = '73ee2bc65b*******8b927fc6cd79a97'
 +
-+# ³×ÀÌ¹ö OpenAPI Á¢¼Ó Á¤º¸ information
++# ë„¤ì´ë²„ OpenAPI ì ‘ì† ì •ë³´ information
 +server = "openapi.naver.com"
 +
-+# smtp Á¤º¸
-+host = "smtp.gmail.com" # Gmail SMTP ¼­¹ö ÁÖ¼Ò.
++# smtp ì •ë³´
++host = "smtp.gmail.com" # Gmail SMTP ì„œë²„ ì£¼ì†Œ.
 +port = "587"
 +
 +def userURIBuilder(server,**user):
@@ -2129,7 +2129,7 @@ Binary file not shown.
 +    from xml.etree import ElementTree
 +    tree = ElementTree.fromstring(strXml)
 +    print (strXml)
-+    # Book ¿¤¸®¸ÕÆ®¸¦ °¡Á®¿É´Ï´Ù.
++    # Book ì—˜ë¦¬ë¨¼íŠ¸ë¥¼ ê°€ì ¸ì˜µë‹ˆë‹¤.
 +    itemElements = tree.getiterator("item")  # return list type
 +    print(itemElements)
 +    for item in itemElements:
@@ -2153,11 +2153,11 @@ Binary file not shown.
 +        html = MakeHtmlDoc(SearchBookTitle(keyword))
 +    
 +    import mysmtplib
-+    # MIMEMultipartÀÇ MIMEÀ» »ı¼ºÇÕ´Ï´Ù.
++    # MIMEMultipartì˜ MIMEì„ ìƒì„±í•©ë‹ˆë‹¤.
 +    from email.mime.multipart import MIMEMultipart
 +    from email.mime.text import MIMEText
 +    
-+    #Message container¸¦ »ı¼ºÇÕ´Ï´Ù.
++    #Message containerë¥¼ ìƒì„±í•©ë‹ˆë‹¤.
 +    msg = MIMEMultipart('alternative')
 +
 +    #set message
@@ -2168,7 +2168,7 @@ Binary file not shown.
 +    msgPart = MIMEText(msgtext, 'plain')
 +    bookPart = MIMEText(html, 'html', _charset = 'UTF-8')
 +    
-+    # ¸Ş¼¼Áö¿¡ »ı¼ºÇÑ MIME ¹®¼­¸¦ Ã·ºÎÇÕ´Ï´Ù.
++    # ë©”ì„¸ì§€ì— ìƒì„±í•œ MIME ë¬¸ì„œë¥¼ ì²¨ë¶€í•©ë‹ˆë‹¤.
 +    msg.attach(msgPart)
 +    msg.attach(bookPart)
 +    
@@ -2178,7 +2178,7 @@ Binary file not shown.
 +    s.ehlo()
 +    s.starttls()
 +    s.ehlo()
-+    s.login(senderAddr, passwd)    # ·Î±äÀ» ÇÕ´Ï´Ù. 
++    s.login(senderAddr, passwd)    # ë¡œê¸´ì„ í•©ë‹ˆë‹¤. 
 +    s.sendmail(senderAddr , [recipientAddr], msg.as_string())
 +    s.close()
 +    
@@ -2194,14 +2194,14 @@ Binary file not shown.
 +        keyword, value = parts.query.split('=',1)
 +
 +        if keyword == "title" :
-+            html = MakeHtmlDoc(SearchBookTitle(value)) # keyword¿¡ ÇØ´çÇÏ´Â Ã¥À» °Ë»öÇØ¼­ HTML·Î ÀüÈ¯ÇÕ´Ï´Ù.
-+            ##Çì´õ ºÎºĞÀ» ÀÛ¼º.
++            html = MakeHtmlDoc(SearchBookTitle(value)) # keywordì— í•´ë‹¹í•˜ëŠ” ì±…ì„ ê²€ìƒ‰í•´ì„œ HTMLë¡œ ì „í™˜í•©ë‹ˆë‹¤.
++            ##í—¤ë” ë¶€ë¶„ì„ ì‘ì„±.
 +            self.send_response(200)
 +            self.send_header('Content-type', 'text/html')
 +            self.end_headers()
-+            self.wfile.write(html.encode('utf-8')) #  º»ºĞ( body ) ºÎºĞÀ» Ãâ·Â ÇÕ´Ï´Ù.
++            self.wfile.write(html.encode('utf-8')) #  ë³¸ë¶„( body ) ë¶€ë¶„ì„ ì¶œë ¥ í•©ë‹ˆë‹¤.
 +        else:
-+            self.send_error(400,' bad requst : please check the your url') # Àß ¸øµÈ ¿äÃ»¶ó´Â ¿¡·¯¸¦ ÀÀ´äÇÑ´Ù.
++            self.send_error(400,' bad requst : please check the your url') # ì˜ ëª»ëœ ìš”ì²­ë¼ëŠ” ì—ëŸ¬ë¥¼ ì‘ë‹µí•œë‹¤.
 +        
 +def startWebService():
 +    try:
@@ -2211,7 +2211,7 @@ Binary file not shown.
 +        
 +    except KeyboardInterrupt:
 +        print ("shutdown web server")
-+        server.socket.close()  # server Á¾·áÇÕ´Ï´Ù.
++        server.socket.close()  # server ì¢…ë£Œí•©ë‹ˆë‹¤.
 +
 +def checkConnection():
 +    global conn
@@ -2220,7 +2220,7 @@ Binary file not shown.
 +        return False
 +    return True
  
-67  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì17¤¸¤¿¤·/launcher.py
+67  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ17ã…ˆã…ã…‡/launcher.py
 @@ -0,0 +1,67 @@
 +# -*- coding: cp949 -*-
 +loopFlag = 1
@@ -2290,10 +2290,10 @@ Binary file not shown.
 +else:
 +    print ("Thank you! Good Bye")
  
-BIN  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì17¤¸¤¿¤·/logo.gif
+BIN  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ17ã…ˆã…ã…‡/logo.gif
 Sorry, something went wrong. Reload?
 
-8  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì17¤¸¤¿¤·/logo.html
+8  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ17ã…ˆã…ã…‡/logo.html
 @@ -0,0 +1,8 @@
 +<html>
 +<header></header>
@@ -2304,7 +2304,7 @@ Sorry, something went wrong. Reload?
 +</body>
 +</html>
  
-54  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì17¤¸¤¿¤·/mysmtplib.py
+54  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ17ã…ˆã…ã…‡/mysmtplib.py
 @@ -0,0 +1,54 @@
 +# -*- coding: cp949 -*-
 +import smtplib
@@ -2361,32 +2361,32 @@ Sorry, something went wrong. Reload?
 +            raise SMTPAuthenticationError(code, resp)
 +        return (code, resp) 
  
-22  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì17¤¸¤¿¤·/simpleEmail.py
+22  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ17ã…ˆã…ã…‡/simpleEmail.py
 @@ -0,0 +1,22 @@
 +# -*- coding: cp949 -*-
 +import smtplib #Import smtplib for the actual sending function
 +
 +from email.mime.text import MIMEText
 +
-+smtpHost = "smtp.test.com"   #smtp ¼­¹ö ÁÖ¼Ò
++smtpHost = "smtp.test.com"   #smtp ì„œë²„ ì£¼ì†Œ
 +
 +text = "hello world"
-+msg = MIMEText(text)  #ÅØ½ºÆ®°¡ ±âº»ÀÎ ¸ŞÀÏÀ» ÇÏ³ª »ı¼ºÇÕ´Ï´Ù. text´Â ¹İµíÀÌ ASCIIÄÚµå¿©¾ß¸¸ ÇÕ´Ï´Ù. ¸¸¾à unicode°¡ µé¾î ÀÖ´Ù¸é ¹Ş´Â ÂÊ¿¡¼­ ¹®ÀÚ°¡ ±úÁ®ÀÖ´Â ¸ŞÀÏÀ» ¹Ş°Ô µÉ °Í ÀÔ´Ï´Ù.
++msg = MIMEText(text)  #í…ìŠ¤íŠ¸ê°€ ê¸°ë³¸ì¸ ë©”ì¼ì„ í•˜ë‚˜ ìƒì„±í•©ë‹ˆë‹¤. textëŠ” ë°˜ë“¯ì´ ASCIIì½”ë“œì—¬ì•¼ë§Œ í•©ë‹ˆë‹¤. ë§Œì•½ unicodeê°€ ë“¤ì–´ ìˆë‹¤ë©´ ë°›ëŠ” ìª½ì—ì„œ ë¬¸ìê°€ ê¹¨ì ¸ìˆëŠ” ë©”ì¼ì„ ë°›ê²Œ ë  ê²ƒ ì…ë‹ˆë‹¤.
 +
-+senderAddr = "test@send.com"     #º¸³»´Â »ç¶÷ email ÁÖ¼Ò.
-+recipientAddr = "test@rec.com"   #¹Ş´Â »ç¶÷ email ÁÖ¼Ò.
++senderAddr = "test@send.com"     #ë³´ë‚´ëŠ” ì‚¬ëŒ email ì£¼ì†Œ.
++recipientAddr = "test@rec.com"   #ë°›ëŠ” ì‚¬ëŒ email ì£¼ì†Œ.
 +
 +msg['Subject'] = "test email"
 +msg['From'] = senderAddr
 +msg['To'] = recipientAddr
 +
-+#SMTP ¼­¹ö¸¦ ÀÌ¿ëÇØ ¸ŞÀÏ º¸³À´Ï´Ù.
++#SMTP ì„œë²„ë¥¼ ì´ìš©í•´ ë©”ì¼ ë³´ëƒ…ë‹ˆë‹¤.
 +s = smtplib.SMTP(smtpHost)
 +s.connect()
 +s.sendmail(senderAddr , [recipientAddr], msg.as_string())
 +s.close()
  
-155  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì17¤¸¤¿¤·/xmlbook.py
+155  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ17ã…ˆã…ã…‡/xmlbook.py
 @@ -0,0 +1,155 @@
 +# -*- coding: cp949 -*-
 +from xml.dom.minidom import parse, parseString
@@ -2396,7 +2396,7 @@ Sorry, something went wrong. Reload?
 +xmlFD = -1
 +BooksDoc = None
 +
-+#### xml °ü·Ã ÇÔ¼ö ±¸Çö
++#### xml ê´€ë ¨ í•¨ìˆ˜ êµ¬í˜„
 +def LoadXMLFromFile():
 +    fileName = str(input ("please input file name to load :"))
 +    global xmlFD, BooksDoc
@@ -2442,14 +2442,14 @@ Sorry, something went wrong. Reload?
 +     if not checkDocument() :
 +        return None
 +     
-+     # book ¿¤¸®¸ÕÆ® »ı¼º
++     # book ì—˜ë¦¬ë¨¼íŠ¸ ìƒì„±
 +     newBook = BooksDoc.createElement('book')
 +     newBook.setAttribute('ISBN',bookdata['ISBN'])
-+     # Title ¿¤¸®¸ÕÆ® »ı¼º
++     # Title ì—˜ë¦¬ë¨¼íŠ¸ ìƒì„±
 +     titleEle = BooksDoc.createElement('title')
-+     # ÅØ½ºÆ® ³ëµå »ı¼º
++     # í…ìŠ¤íŠ¸ ë…¸ë“œ ìƒì„±
 +     titleNode = BooksDoc.createTextNode(bookdata['title'])
-+     # ÅØ½ºÆ® ³ëµå¸¦ Title ¿¤¸®¸ÕÆ®¿Í ¿¬°á
++     # í…ìŠ¤íŠ¸ ë…¸ë“œë¥¼ Title ì—˜ë¦¬ë¨¼íŠ¸ì™€ ì—°ê²°
 +     try:
 +         titleEle.appendChild(titleNode)
 +     except Exception:
@@ -2458,7 +2458,7 @@ Sorry, something went wrong. Reload?
 +     else:
 +         titleEle.appendChild(titleNode)
 +
-+     # Title ¿¤¸®¸ÕÆ®¸¦ Book ¿¤¸®¸ÕÆ®¿Í ¿¬°á.
++     # Title ì—˜ë¦¬ë¨¼íŠ¸ë¥¼ Book ì—˜ë¦¬ë¨¼íŠ¸ì™€ ì—°ê²°.
 +     try:
 +         newBook.appendChild(titleEle)
 +         booklist = BooksDoc.firstChild
@@ -2495,12 +2495,12 @@ Sorry, something went wrong. Reload?
 +    #get Dom Implementation
 +    impl = getDOMImplementation()
 +    
-+    newdoc = impl.createDocument(None, "html", None)  #DOM °´Ã¼ »ı¼º
++    newdoc = impl.createDocument(None, "html", None)  #DOM ê°ì²´ ìƒì„±
 +    top_element = newdoc.documentElement
 +    header = newdoc.createElement('header')
 +    top_element.appendChild(header)
 +
-+    # Body ¿¤¸®¸ÕÆ® »ı¼º.
++    # Body ì—˜ë¦¬ë¨¼íŠ¸ ìƒì„±.
 +    body = newdoc.createElement('body')
 +
 +    for bookitem in BookList:
@@ -2512,7 +2512,7 @@ Sorry, something went wrong. Reload?
 +
 +        body.appendChild(b)
 +    
-+        # BR ÅÂ±× (¿¤¸®¸ÕÆ®) »ı¼º.
++        # BR íƒœê·¸ (ì—˜ë¦¬ë¨¼íŠ¸) ìƒì„±.
 +        br = newdoc.createElement('br')
 +
 +        body.appendChild(br)
@@ -2544,7 +2544,7 @@ Sorry, something went wrong. Reload?
 +    return True
 +   
  
-13  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì18¤¸¤¿¤·/18-1-1.py
+13  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ18ã…ˆã…ã…‡/18-1-1.py
 @@ -0,0 +1,13 @@
 +import unittest
 +
@@ -2560,7 +2560,7 @@ Sorry, something went wrong. Reload?
 +if __name__=="__main__":
 +	unittest.main() 
  
-13  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì18¤¸¤¿¤·/18-1-2.py
+13  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ18ã…ˆã…ã…‡/18-1-2.py
 @@ -0,0 +1,13 @@
 +import unittest
 +
@@ -2576,7 +2576,7 @@ Sorry, something went wrong. Reload?
 +if __name__=="__main__":
 +	unittest.main() 
  
-29  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì18¤¸¤¿¤·/18-1-3.py
+29  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ18ã…ˆã…ã…‡/18-1-3.py
 @@ -0,0 +1,29 @@
 +import unittest
 +
@@ -2608,7 +2608,7 @@ Sorry, something went wrong. Reload?
 +	allsuites = unittest.TestSuite( [suite1, suite2] )
 +	unittest.TextTestRunner( verbosity=2 ).run( allsuites ) 
  
-16  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì18¤¸¤¿¤·/18-1-4.py
+16  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ18ã…ˆã…ã…‡/18-1-4.py
 @@ -0,0 +1,16 @@
 +import unittest
 +
@@ -2627,7 +2627,7 @@ Sorry, something went wrong. Reload?
 +	suite = unittest.TestSuite( [ testcase ] )
 +	unittest.TextTestRunner( verbosity=2 ).run( suite ) 
  
-26  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì18¤¸¤¿¤·/18-3-1.py
+26  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ18ã…ˆã…ã…‡/18-3-1.py
 @@ -0,0 +1,26 @@
 +
 +def div(x,y):
@@ -2656,7 +2656,7 @@ Sorry, something went wrong. Reload?
 +	import doctest
 +	doctest.testmod() 
  
-25  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì18¤¸¤¿¤·/18-3-2.py
+25  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ18ã…ˆã…ã…‡/18-3-2.py
 @@ -0,0 +1,25 @@
 +
 +def div(x,y):
@@ -2684,7 +2684,7 @@ Sorry, something went wrong. Reload?
 +if __name__=="__main__":
 +	pass 
  
-18  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì18¤¸¤¿¤·/18-3-3.txt
+18  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ18ã…ˆã…ã…‡/18-3-3.txt
 @@ -0,0 +1,18 @@
 +This function is to divide x into y.
 +
@@ -2705,7 +2705,7 @@ Sorry, something went wrong. Reload?
 +    5/0
 +ZeroDivisionError: int division or modulo by zero
  
-7  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì18¤¸¤¿¤·/div.py
+7  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ18ã…ˆã…ã…‡/div.py
 @@ -0,0 +1,7 @@
 +
 +def div(x,y):
@@ -2715,32 +2715,32 @@ Sorry, something went wrong. Reload?
 +	import doctest
 +	doctest.testfile('9-7.txt') 
  
-BIN  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì18¤¸¤¿¤·/div.pyc
+BIN  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ18ã…ˆã…ã…‡/div.pyc
 Binary file not shown.
  
-1  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/book/book/__init__.py
+1  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/book/book/__init__.py
 @@ -0,0 +1 @@
 +__all__ = ["book_xml", "book_internet","bookDataBase"]
  
-3  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/book/book/bookDataBase/__init__.py
+3  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/book/book/bookDataBase/__init__.py
 @@ -0,0 +1,3 @@
 +__all__ = [
 +    'booksql',
 +    ] 
  
-1  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/book/book/bookDataBase/booksql.py
+1  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/book/book/bookDataBase/booksql.py
 @@ -0,0 +1 @@
 +print ("booksql") 
  
-1  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/book/book/book_internet.py
+1  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/book/book/book_internet.py
 @@ -0,0 +1 @@
 +print("book internet")
  
-1  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/book/book/book_xml.py
+1  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/book/book/book_xml.py
 @@ -0,0 +1 @@
 +print("book xml")
  
-9  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/book/setup.py
+9  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/book/setup.py
 @@ -0,0 +1,9 @@
 +
 +from distutils.core import setup, Extension
@@ -2752,13 +2752,13 @@ Binary file not shown.
 +)
 +
  
-3  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/ext_book/MANIFEST
+3  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/ext_book/MANIFEST
 @@ -0,0 +1,3 @@
 +book.c
 +page.c
 +setup.py
  
-34  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/ext_book/book.c
+34  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/ext_book/book.c
 @@ -0,0 +1,34 @@
 +#include "Python.h"
 +
@@ -2773,12 +2773,12 @@ Binary file not shown.
 +static PyMethodDef BookMethods[] = {
 +	 {"print", book_print, METH_VARARGS,
 +     "print book module information."},
-+     {NULL, NULL, 0, NULL}    //¹è¿­ÀÇ ³¡À» ³ªÅ¸³À´Ï´Ù.
++     {NULL, NULL, 0, NULL}    //ë°°ì—´ì˜ ëì„ ë‚˜íƒ€ëƒ…ë‹ˆë‹¤.
 +};
 +
 +static struct PyModuleDef bookmodule = {
 +   PyModuleDef_HEAD_INIT,
-+   "book.page",               // ¸ğµâ ÀÌ¸§
++   "book.page",               // ëª¨ë“ˆ ì´ë¦„
 +   "It is test module.", 
 +   -1,BookMethods
 +};
@@ -2795,7 +2795,7 @@ Binary file not shown.
 +    return PyModule_Create(&bookmodule);
 +}
  
-28  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/ext_book/page.c
+28  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/ext_book/page.c
 @@ -0,0 +1,28 @@
 +#include "Python.h"
 +
@@ -2810,12 +2810,12 @@ Binary file not shown.
 +static PyMethodDef PageMethods[] = {
 +	 {"print", page_print, METH_VARARGS,
 +     "print page module information."},
-+     {NULL, NULL, 0, NULL}    //¹è¿­ÀÇ ³¡À» ³ªÅ¸³À´Ï´Ù.
++     {NULL, NULL, 0, NULL}    //ë°°ì—´ì˜ ëì„ ë‚˜íƒ€ëƒ…ë‹ˆë‹¤.
 +};
 +
 +static struct PyModuleDef pagemodule = {
 +   PyModuleDef_HEAD_INIT,
-+   "page",               // ¸ğµâ ÀÌ¸§
++   "page",               // ëª¨ë“ˆ ì´ë¦„
 +   "It is test module.", 
 +   -1,PageMethods
 +};
@@ -2826,7 +2826,7 @@ Binary file not shown.
 +    return PyModule_Create(&pagemodule);
 +}
  
-5  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/ext_book/setup.cfg
+5  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/ext_book/setup.cfg
 @@ -0,0 +1,5 @@
 +[sdist] 
 +dist_dir=sdist_pkg
@@ -2834,7 +2834,7 @@ Binary file not shown.
 +[bdist]
 +dist_dir=bdist_pkg 
  
-7  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/ext_book/setup.py
+7  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/ext_book/setup.py
 @@ -0,0 +1,7 @@
 +from distutils.core import setup, Extension
 +setup(name='book',
@@ -2844,39 +2844,39 @@ Binary file not shown.
 +Extension('book.page', ['page.c'])],
 +)
  
-1  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/package/animal/__init__.py
+1  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/package/animal/__init__.py
 @@ -0,0 +1 @@
 +__all__ = ["bird", "mammal","etc"]
  
-1  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/package/animal/bird/__init__.py
+1  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/package/animal/bird/__init__.py
 @@ -0,0 +1 @@
 +__all__ = ["penguin", "sparrow"]
  
-1  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/package/animal/bird/penguin.py
+1  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/package/animal/bird/penguin.py
 @@ -0,0 +1 @@
 +print ("penguin...") 
  
-1  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/package/animal/bird/sparrow.py
+1  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/package/animal/bird/sparrow.py
 @@ -0,0 +1 @@
 +print ("sparrow...") 
  
-1  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/package/animal/etc.py
+1  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/package/animal/etc.py
 @@ -0,0 +1 @@
 +print ("etc...") 
  
-1  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/package/animal/mammal/__init__.py
+1  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/package/animal/mammal/__init__.py
 @@ -0,0 +1 @@
 +__all__ = ["human", "monkey"]
  
-1  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/package/animal/mammal/human.py
+1  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/package/animal/mammal/human.py
 @@ -0,0 +1 @@
 +print('human...') 
  
-1  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/package/animal/mammal/monkey.py
+1  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/package/animal/mammal/monkey.py
 @@ -0,0 +1 @@
 +print('monkey...') 
  
-11  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/package/setup.py
+11  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/package/setup.py
 @@ -0,0 +1,11 @@
 +from distutils.core import setup, Extension
 +
@@ -2890,15 +2890,15 @@ Binary file not shown.
 +
 +) 
  
-2  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/py_book/MANIFEST
+2  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/py_book/MANIFEST
 @@ -0,0 +1,2 @@
 +setup.py
 +c:\python30\test.py
  
-209  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/py_book/book.py
+209  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/py_book/book.py
 @@ -0,0 +1,209 @@
 +# *-* coding: cp949 -*- 
-+from xml.dom.minidom import parse, parseString # minidom ¸ğµâÀÇ ÆÄ½Ì ÇÔ¼ö¸¦ ÀÓÆ÷Æ®ÇÕ´Ï´Ù.
++from xml.dom.minidom import parse, parseString # minidom ëª¨ë“ˆì˜ íŒŒì‹± í•¨ìˆ˜ë¥¼ ì„í¬íŠ¸í•©ë‹ˆë‹¤.
 +from xml.etree import ElementTree
 +
 +##### global
@@ -2947,17 +2947,17 @@ Binary file not shown.
 +
 +#### xml function implementation
 +def LoadXMLFromFile():
-+    fileName = str(input ("please input file name to load :"))  # ÀĞ¾î¿Ã ÆÄÀÏ°æ·Î¸¦ ÀÔ·Â ¹Ş½À´Ï´Ù.
++    fileName = str(input ("please input file name to load :"))  # ì½ì–´ì˜¬ íŒŒì¼ê²½ë¡œë¥¼ ì…ë ¥ ë°›ìŠµë‹ˆë‹¤.
 +    global xmlFD
 + 
 +    try:
-+        xmlFD = open(fileName)   # xml ¹®¼­¸¦ openÇÕ´Ï´Ù.
++        xmlFD = open(fileName)   # xml ë¬¸ì„œë¥¼ opení•©ë‹ˆë‹¤.
 +    except IOError:
 +        print ("invalid file name or path")
 +        return None
 +    else:
 +        try:
-+            dom = parse(xmlFD)   # XML ¹®¼­¸¦ ÆÄ½ÌÇÕ´Ï´Ù.
++            dom = parse(xmlFD)   # XML ë¬¸ì„œë¥¼ íŒŒì‹±í•©ë‹ˆë‹¤.
 +        except Exception:
 +            print ("loading fail!!!")
 +        else:
@@ -2967,7 +2967,7 @@ Binary file not shown.
 +
 +def BooksFree():
 +    if checkDocument():
-+        BooksDoc.unlink()   # minidom °´Ã¼ ¸Ş¸ğ¸®¸¦ ÇØÁ¦ÇÕ´Ï´Ù.
++        BooksDoc.unlink()   # minidom ê°ì²´ ë©”ëª¨ë¦¬ë¥¼ í•´ì œí•©ë‹ˆë‹¤.
 +     
 +def QuitBookMgr():
 +    global loopFlag
@@ -3107,7 +3107,7 @@ Binary file not shown.
 +    print ("Thank you! Good Bye")
 +
  
-6  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/py_book/setup.py
+6  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/py_book/setup.py
 @@ -0,0 +1,6 @@
 +from distutils.core import setup
 +
@@ -3116,13 +3116,13 @@ Binary file not shown.
 +    py_modules=['c:\\python30\\test'],
 +   ) 
  
-3  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/setup configurate/MANIFEST
+3  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/setup configurate/MANIFEST
 @@ -0,0 +1,3 @@
 +book.py
 +setup.cfg
 +setup.py
  
-160  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/setup configurate/book.py
+160  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/setup configurate/book.py
 @@ -0,0 +1,160 @@
 +from xml.dom.minidom import parse, parseString
 +from xml.etree import ElementTree
@@ -3285,7 +3285,7 @@ Binary file not shown.
 +else:
 +    print ("Thank you! Good Bye")
  
-5  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/setup configurate/setup.cfg
+5  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/setup configurate/setup.cfg
 @@ -0,0 +1,5 @@
 +[sdist]
 +home=sdist_pkg
@@ -3293,7 +3293,7 @@ Binary file not shown.
 +[bdist]
 +dist_dir=bdist_pkg 
  
-6  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/setup configurate/setup.py
+6  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/setup configurate/setup.py
 @@ -0,0 +1,6 @@
 +from distutils.core import setup
 +
@@ -3302,12 +3302,12 @@ Binary file not shown.
 +      py_modules=['book']
 +      )
  
-2  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/MANIFEST
+2  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/MANIFEST
 @@ -0,0 +1,2 @@
 +book.py
 +setup.py
  
-160  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/book.py
+160  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/book.py
 @@ -0,0 +1,160 @@
 +from xml.dom.minidom import parse, parseString
 +from xml.etree import ElementTree
@@ -3470,7 +3470,7 @@ Binary file not shown.
 +else:
 +    print ("Thank you! Good Bye")
  
-6  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/setup.py
+6  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/setup.py
 @@ -0,0 +1,6 @@
 +from distutils.core import setup
 +
@@ -3479,7 +3479,7 @@ Binary file not shown.
 +      py_modules=['book']
 +      )
  
-47  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/__init__.py
+47  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/__init__.py
 @@ -0,0 +1,47 @@
 +"""Core XML support for Python.
 +
@@ -3529,10 +3529,10 @@ Binary file not shown.
 +        else:
 +            del v
  
-BIN  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/__init__.pyc
+BIN  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/__init__.pyc
 Binary file not shown.
  
-27  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/dom/NodeFilter.py
+27  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/dom/NodeFilter.py
 @@ -0,0 +1,27 @@
 +# This is the Python mapping for interface NodeFilter from
 +# DOM2-Traversal-Range. It contains only constants.
@@ -3562,10 +3562,10 @@ Binary file not shown.
 +    def acceptNode(self, node):
 +        raise NotImplementedError
  
-BIN  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/dom/NodeFilter.pyc
+BIN  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/dom/NodeFilter.pyc
 Binary file not shown.
  
-139  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/dom/__init__.py
+139  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/dom/__init__.py
 @@ -0,0 +1,139 @@
 +"""W3C Document Object Model implementation for Python.
 +
@@ -3707,10 +3707,10 @@ Binary file not shown.
 +
 +from .domreg import getDOMImplementation, registerDOMImplementation
  
-BIN  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/dom/__init__.pyc
+BIN  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/dom/__init__.pyc
 Binary file not shown.
  
-99  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/dom/domreg.py
+99  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/dom/domreg.py
 @@ -0,0 +1,99 @@
 +"""Registration facilities for DOM. This module should not be used
 +directly. Instead, the functions getDOMImplementation and
@@ -3812,17 +3812,17 @@ Binary file not shown.
 +        features.append((feature, version))
 +    return tuple(features)
  
-BIN  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/dom/domreg.pyc
+BIN  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/dom/domreg.pyc
 Binary file not shown.
  
-983  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/dom/expatbuilder.py
+983  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/dom/expatbuilder.py
 Large diffs are not rendered by default.
 
  
-BIN  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/dom/expatbuilder.pyc
+BIN  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/dom/expatbuilder.pyc
 Binary file not shown.
  
-105  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/dom/minicompat.py
+105  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/dom/minicompat.py
 @@ -0,0 +1,105 @@
 +"""Python version compatibility support for minidom."""
 +
@@ -3930,19 +3930,19 @@ Binary file not shown.
 +    prop = property(get, set, doc=doc)
 +    setattr(klass, name, prop)
  
-BIN  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/dom/minicompat.pyc
+BIN  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/dom/minicompat.pyc
 Binary file not shown.
  
-1,940  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/dom/minidom.py
+1,940  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/dom/minidom.py
 Large diffs are not rendered by default.
 
  
-BIN  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/dom/minidom.pyc
+BIN  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/dom/minidom.pyc
 Binary file not shown.
  
  
 ---------------------------------- 
-/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/dom/pulldom.py
+/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/dom/pulldom.py
 @@ -0,0 +1,346 @@
 +import xml.sax
 +import xml.sax.handler
@@ -4291,7 +4291,7 @@ Binary file not shown.
 +        parser = xml.sax.make_parser()
 +    return DOMEventStream(buf, parser, bufsize)
  
-386  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/dom/xmlbuilder.py
+386  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/dom/xmlbuilder.py
 @@ -0,0 +1,386 @@
 +"""Implementation of the DOM Level 3 'LS-Load' feature."""
 +
@@ -4680,10 +4680,10 @@ Binary file not shown.
 +    def createDOMInputSource(self):
 +        return DOMInputSource()
  
-BIN  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/dom/xmlbuilder.pyc
+BIN  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/dom/xmlbuilder.pyc
 Binary file not shown.
  
-143  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/etree/ElementInclude.py
+143  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/etree/ElementInclude.py
 @@ -0,0 +1,143 @@
 +#
 +# ElementTree
@@ -4829,7 +4829,7 @@ Binary file not shown.
 +            include(e, loader)
 +        i = i + 1
  
-198  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/etree/ElementPath.py
+198  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/etree/ElementPath.py
 @@ -0,0 +1,198 @@
 +#
 +# ElementTree
@@ -5030,17 +5030,17 @@ Binary file not shown.
 +def findall(element, path):
 +    return _compile(path).findall(element)
  
-BIN  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/etree/ElementPath.pyc
+BIN  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/etree/ElementPath.pyc
 Binary file not shown.
  
-1,216  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/etree/ElementTree.py
+1,216  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/etree/ElementTree.py
 Large diffs are not rendered by default.
 
  
-BIN  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/etree/ElementTree.pyc
+BIN  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/etree/ElementTree.pyc
 Binary file not shown.
  
-33  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/etree/__init__.py
+33  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/etree/__init__.py
 @@ -0,0 +1,33 @@
 +# $Id: __init__.py 1821 2004-06-03 16:57:49Z fredrik $
 +# elementtree package
@@ -5076,16 +5076,16 @@ Binary file not shown.
 +# Licensed to PSF under a Contributor Agreement.
 +# See http://www.python.org/2.4/license for licensing details.
  
-BIN  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/etree/__init__.pyc
+BIN  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/etree/__init__.pyc
 Binary file not shown.
  
-3  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/etree/cElementTree.py
+3  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/etree/cElementTree.py
 @@ -0,0 +1,3 @@
 +# Wrapper module for _elementtree
 +
 +from _elementtree import *
  
-8  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/parsers/__init__.py
+8  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/parsers/__init__.py
 @@ -0,0 +1,8 @@
 +"""Python interfaces to XML parsers.
 +
@@ -5096,20 +5096,20 @@ Binary file not shown.
 +
 +"""
  
-BIN  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/parsers/__init__.pyc
+BIN  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/parsers/__init__.pyc
 Binary file not shown.
  
-4  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/parsers/expat.py
+4  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/parsers/expat.py
 @@ -0,0 +1,4 @@
 +"""Interface to the Expat non-validating XML parser."""
 +__version__ = '$Revision: 17640 $'
 +
 +from pyexpat import *
  
-BIN  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/parsers/expat.pyc
+BIN  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/parsers/expat.pyc
 Binary file not shown.
  
-105  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/sax/__init__.py
+105  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/sax/__init__.py
 @@ -0,0 +1,105 @@
 +"""Simple API for XML (SAX) implementation for Python.
 +
@@ -5217,10 +5217,10 @@ Binary file not shown.
 +
 +del sys
  
-BIN  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/sax/__init__.pyc
+BIN  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/sax/__init__.pyc
 Binary file not shown.
  
-131  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/sax/_exceptions.py
+131  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/sax/_exceptions.py
 @@ -0,0 +1,131 @@
 +"""Different kinds of SAX Exceptions"""
 +import sys
@@ -5354,14 +5354,14 @@ Binary file not shown.
 +    It also may be raised during parsing, e.g. if executing an external
 +    program is not permitted."""
  
-BIN  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/sax/_exceptions.pyc
+BIN  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/sax/_exceptions.pyc
 Binary file not shown.
  
-414  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/sax/expatreader.py
+414  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/sax/expatreader.py
 Large diffs are not rendered by default.
 
  
-342  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/sax/handler.py
+342  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/sax/handler.py
 @@ -0,0 +1,342 @@
 +"""
 +This module contains the core classes of version 2.0 of SAX for Python.
@@ -5706,10 +5706,10 @@ Large diffs are not rendered by default.
 +                  property_encoding,
 +                  property_interning_dict]
  
-BIN  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/sax/handler.pyc
+BIN  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/sax/handler.pyc
 Binary file not shown.
  
-297  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/sax/saxutils.py
+297  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/sax/saxutils.py
 @@ -0,0 +1,297 @@
 +"""\
 +A library of useful helper classes to the SAX classes, for the
@@ -6009,7 +6009,7 @@ Binary file not shown.
 +
 +    return source
  
-378  2¤²¤Ì ¤±¤Ç¤§¤Ğ¤©/2¤²¤Ì19¤¸¤¿¤·/simple Example/xml/sax/xmlreader.py
+378  2ã…‚ã…œ ã…ã…—ã„·ã… ã„¹/2ã…‚ã…œ19ã…ˆã…ã…‡/simple Example/xml/sax/xmlreader.py
 @@ -0,0 +1,378 @@
 +"""An XML Reader is the SAX 2 name for an XML parser. XML Parsers
 +should be based on this code. """
